@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>登録外注</value>
+    </caseValues>
+    <fields>
+        <label><!-- FAX --></label>
+        <name>FAX__c</name>
+    </fields>
+    <fields>
+        <label><!-- TEL --></label>
+        <name>TEL__c</name>
+    </fields>
+    <fields>
+        <label><!-- 住所1 --></label>
+        <name>address1__c</name>
+    </fields>
+    <fields>
+        <label><!-- 住所2 --></label>
+        <name>address2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 銀行名 --></label>
+        <name>ginkou__c</name>
+    </fields>
+    <fields>
+        <label><!-- 業種 --></label>
+        <name>gyousyu__c</name>
+    </fields>
+    <fields>
+        <label><!-- 法人/個人 --></label>
+        <name>houjikojin__c</name>
+        <picklistValues>
+            <masterLabel>個人</masterLabel>
+            <translation><!-- 個人 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>法人</masterLabel>
+            <translation><!-- 法人 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 口座番号 --></label>
+        <name>kouzabangou__c</name>
+    </fields>
+    <fields>
+        <label><!-- 電子メール --></label>
+        <name>mail__c</name>
+    </fields>
+    <fields>
+        <label><!-- 口座名義 --></label>
+        <name>meigi__c</name>
+    </fields>
+    <fields>
+        <label><!-- 郵便番号 --></label>
+        <name>postalcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- 支払日 --></label>
+        <name>siharaibi__c</name>
+    </fields>
+    <fields>
+        <label><!-- 支払方法 --></label>
+        <name>siharaihouhou__c</name>
+        <picklistValues>
+            <masterLabel>小切手</masterLabel>
+            <translation><!-- 小切手 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>手形(105日)</masterLabel>
+            <translation><!-- 手形(105日) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>振込</masterLabel>
+            <translation><!-- 振込 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 支払サイクル --></label>
+        <name>siharaisaikule__c</name>
+        <picklistValues>
+            <masterLabel>翌々々月</masterLabel>
+            <translation><!-- 翌々々月 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>翌々月</masterLabel>
+            <translation><!-- 翌々月 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 締日 --></label>
+        <name>simebi__c</name>
+    </fields>
+    <fields>
+        <label><!-- サイト --></label>
+        <name>site__c</name>
+    </fields>
+    <fields>
+        <label><!-- 支店名 --></label>
+        <name>sitenmei__c</name>
+    </fields>
+    <fields>
+        <label><!-- 状況 --></label>
+        <name>status__c</name>
+        <picklistValues>
+            <masterLabel>却下</masterLabel>
+            <translation><!-- 却下 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>取消</masterLabel>
+            <translation><!-- 取消 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>承認</masterLabel>
+            <translation><!-- 承認 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>未申請</masterLabel>
+            <translation><!-- 未申請 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>申請中</masterLabel>
+            <translation><!-- 申請中 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 社内/社外 --></label>
+        <name>syanaigai__c</name>
+        <picklistValues>
+            <masterLabel>社内</masterLabel>
+            <translation><!-- 社内 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>社外</masterLabel>
+            <translation><!-- 社外 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 担当者部署 --></label>
+        <name>tanto_busyo__c</name>
+    </fields>
+    <fields>
+        <label><!-- 担当者名 --></label>
+        <name>tanto_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- 担当者役職 --></label>
+        <name>yakusyoku__c</name>
+    </fields>
+    <fields>
+        <label><!-- 預金種別 --></label>
+        <name>yokinsyubetu__c</name>
+        <picklistValues>
+            <masterLabel>当座預金</masterLabel>
+            <translation><!-- 当座預金 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>普通預金</masterLabel>
+            <translation><!-- 普通預金 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>登録外注レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 支払情報 --></label>
+            <section>支払情報</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション --></label>
+            <section>新規セクション</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

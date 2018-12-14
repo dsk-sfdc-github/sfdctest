@@ -1,0 +1,6 @@
+<messaging:emailTemplate subject="テスト件名" recipientType="User" relatedToType="pjmng__c">
+<messaging:plainTextEmailBody >
+おめでとうございます!
+これが新しい Visualforce メールテンプレートです。
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,29 @@
+<apex:page id="page" controller="SendMailAttachmentController" contentType="charset=Windows-31J;">
+<!-- Begin Default Content REMOVE THIS -->
+<head>
+
+</head>
+<apex:form >
+<h1>Congratulations</h1>
+This is your new Page<br/>あいうえお
+<tr>
+                <td colspan="3" style="text-align: center;font-size: 10pt;font-family:ＭＳ Ｐゴシック; vertical-align:middle; border-left:.5pt solid windowtext; border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext; border-top:.5pt solid windowtext;">
+                         <apex:inputHidden value="{!sjisStr}"/>
+<!--                    <apex:inputText value="{!sjisStr}" /> -->
+                </td>
+            </tr>
+            <apex:commandButton action="{!sendMail}" title="送信"/>
+</apex:form>
+	<script type="text/javascript">
+		var flg = "{!sendFlg}";
+		//alert(flg);
+		if (flg == "true") {
+			window.open(
+			'https://c.na7.visual.force.com/apex/CreateExcelAndMail',   //移動先
+			this,  //ダイアログに渡すパラメータ（この例では、自分自身のwindowオブジェクト）
+			"dialogWidth=800px; dialogHeight=480px;"
+			);
+		}
+	</script>
+<!-- End Default Content REMOVE THIS -->
+</apex:page>

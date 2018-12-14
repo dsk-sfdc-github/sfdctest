@@ -1,0 +1,23 @@
+<apex:page controller="Target" showHeader="false" sidebar="false">
+
+    <h1>Target</h1>
+    <apex:repeat value="{!ids}" var="id">
+        <div>{!id}</div>
+    </apex:repeat>
+    
+    <input type="text" value="" />
+    
+    <input type="button" value="閉じる" onClick="fncWindowClose();" />
+    
+    <script type="text/javascript">
+        var baseTarget = document.createElement("base");
+        baseTarget.setAttribute("target", "_self");
+        document.getElementsByTagName("head")[0].appendChild(baseTarget);
+
+        function fncWindowClose() {
+            if (confirm("閉じますよ")) {
+                window.close();
+            }
+        }
+    </script>
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page standardController="Contact">
+    <apex:form >
+        <apex:inputField id="selectCategoryLForApex" value="{!Contact.CategoryL__c}" style="margin-bottom: 5px;" />
+        <apex:inputField id="selectCategoryMForApex" value="{!Contact.CategoryM__c}" style="margin-bottom: 5px;" />
+    </apex:form>
+</apex:page>

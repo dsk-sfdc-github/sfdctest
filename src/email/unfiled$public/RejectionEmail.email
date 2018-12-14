@@ -1,0 +1,15 @@
+{!Connection_ExternalContactFirstName}様
+
+{!Connection_ReceivedDate}にいただいたお知らせにて、貴社の組織「{!Organization.Name}」との接続にご招待いただきありがとうございました。
+
+検討の結果、今回は辞退させていただきたいと思います。このような難しい決断に至るまでには、さまざまな観点から検討しましたことをお伝えいたします。
+
+貴社の変わらぬご成功をお祈りいたします。また近い将来、両社が接続できることを期待しています。
+
+
+株式会社セールスフォース・ドットコム
+
+
+{!User.FirstName} {!User.LastName}
+
+{!Organization.Name}

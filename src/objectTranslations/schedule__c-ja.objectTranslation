@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>会議管理</value>
+    </caseValues>
+    <fields>
+        <label><!-- 説明 --></label>
+        <name>biko__c</name>
+    </fields>
+    <fields>
+        <label><!-- 終了日時 --></label>
+        <name>enddatetime__c</name>
+    </fields>
+    <fields>
+        <label><!-- 関連プロジェクト --></label>
+        <name>pjname__c</name>
+        <relationshipLabel><!-- 会議管理 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 場所 --></label>
+        <name>place__c</name>
+    </fields>
+    <fields>
+        <label><!-- 開始日時 --></label>
+        <name>startdatetime__c</name>
+    </fields>
+    <layouts>
+        <layout>スケジュール管理レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

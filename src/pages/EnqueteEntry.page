@@ -1,0 +1,53 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" controller="EnqueteEntryController">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>お客様アンケート</title>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, '/bootstrap3/css/bootstrap.min.css')}"/>
+        <!-- <apex:stylesheet value="{!URLFOR($Resource.datepicker, '/css/datepicker.css')}"/> -->
+        <apex:stylesheet value="{!URLFOR($Resource.EnqueteCSS)}"/>
+        <apex:includeScript value="{!$Resource.jQuery}" />
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap3, '/bootstrap3/js/bootstrap.min.js')}"/>
+        <!-- <apex:includeScript value="{!URLFOR($Resource.datepicker, '/js/bootstrap-datepicker.js')}"/> -->
+        <script>
+            $(function(){
+                //$('.dateInput').datepicker({
+                //  format: 'yyyy/mm/dd'
+                //});
+            });
+        </script>
+        <style type="text/css">
+<!--
+            .container{
+                background-image: url("{!URLFOR($Resource.LogoImage)}");
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-position: right top;
+            }
+-->
+        </style>
+    </head>
+    <body>
+        <apex:form rendered="{!NOT(isCompleted)}">
+            <div class="container">
+                <img src="{!URLFOR($Resource.LogoImage)}" />
+                <h1>お客様アンケート</h1>
+                <apex:pageMessages />
+                <h3 class="section-header">{!profileLabel}</h3>
+                <c:EnqueteFields fieldList="{!profileFieldList}" />
+                <h3 class="section-header">{!weddingPlanLabel}</h3>
+                <c:EnqueteFields fieldList="{!weddingPlanFieldList}" />
+                <h3 class="section-header">{!enqueteLabel}</h3>
+                <c:EnqueteFields fieldList="{!enqueteFieldList}" />
+                <apex:commandButton value="　登録　" action="{!save}" styleClass="btn btn-default" />
+                <br/><br/>
+            </div>
+        </apex:form>
+        <apex:outputPanel rendered="{!isCompleted}">
+            <div class="container">
+                <h1>お客様アンケート</h1>
+                <h5>ありがとうございました。</h5>
+            </div>
+        </apex:outputPanel>
+    </body>
+</apex:page>

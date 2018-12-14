@@ -1,0 +1,18 @@
+<apex:page controller="AccountTestController" id="page">
+    <apex:form id="form">
+        <apex:commandButton action="{!updateTorihikisaki}" value="取引先更新"/>
+        <br/>
+        <apex:commandButton action="{!updateTorihikisaki2}" value="請求書発行" oncomplete="openInv01();" rerender="form"/>
+        <apex:outputPanel >
+            <script type="text/javascript">
+                function openInv01() {
+                    window.open('TestCreatePDF?Id={!accIdParam}', '請求書', 'height=500, width=800,menubar=no,location=no,scrollbars=yes,resizable=yes');
+                }
+                
+                function outMsg() {
+                    alert('PDF出力成功しました。');
+                }
+            </script>
+        </apex:outputPanel>
+    </apex:form> 
+</apex:page>

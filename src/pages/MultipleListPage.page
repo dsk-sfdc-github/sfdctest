@@ -1,0 +1,10 @@
+<apex:page controller="Cls_MultipleTest">
+    <apex:form >
+        <apex:selectList value="{!selecter}" multiselect="true">
+            <apex:selectOptions value="{!selectOptionList}"/>
+        </apex:selectList><p/>
+        
+        <c:MultiselectPicklist leftLabel="選択可能" leftOptions="{!selectOptionList}" rightLabel="選択済み" rightOptions="{!selectOptionList}" size="10" width="150px"/>
+
+    </apex:form>
+</apex:page>

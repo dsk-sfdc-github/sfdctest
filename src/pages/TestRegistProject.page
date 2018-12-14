@@ -1,0 +1,22 @@
+<apex:page standardController="TestProjectMst__c" recordSetVar="project" tabStyle="TestRegistProjectTab__tab">
+    <apex:sectionHeader title="プロジェクト一覧" subtitle="プロジェクトの一覧を表示します" />
+    <apex:outputpanel >
+        <apex:pageBlock title="登録されたプロジェクト">
+            <apex:pageBlockTable value="{!project}" var="prj">
+                <apex:facet name="caption">プロジェクト一覧</apex:facet>
+                <apex:facet name="header">プロジェクト一覧ヘッダ部</apex:facet>
+                <apex:facet name="footer">プロジェクト一覧フッタ部</apex:facet>
+                <apex:column style="width:120px;">
+                    <apex:facet name="header">プロジェクト名</apex:facet>
+                    <apex:outputLink value="/{!prj.Name}"><apex:outputField value="{!prj.TestProjectName__c}" /></apex:outputLink>
+                    <!-- <apex:facet name="footer">column footer ［取引先責任者名］</apex:facet> -->
+                </apex:column>
+                <apex:column style="width:120px;">
+                    <apex:facet name="header">進捗状況</apex:facet>
+                    <apex:outputField value="{!prj.Status__c}" />
+                    <!-- <apex:facet name="footer">column footer　［取引先名］</apex:facet> -->
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:outputpanel>
+</apex:page>

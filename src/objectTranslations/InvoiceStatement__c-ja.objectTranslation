@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>インボイス明細</value>
+    </caseValues>
+    <fields>
+        <label><!-- 説明 --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- インボイス金額 --></label>
+        <name>InvoiceValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- 承認者ユーザ --></label>
+        <name>OuterUser__c</name>
+        <relationshipLabel><!-- インボイス明細 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 状況 --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>オープン</masterLabel>
+            <translation><!-- オープン --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>クローズ</masterLabel>
+            <translation><!-- クローズ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ペンディング</masterLabel>
+            <translation><!-- ペンディング --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>交渉中</masterLabel>
+            <translation><!-- 交渉中 --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

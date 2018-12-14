@@ -1,0 +1,21 @@
+<apex:page >
+<!--
+<apex:page renderAs="pdf">
+-->
+<head>
+<script type='text/javascript' src='/canvas/sdk/js/publisher.js'/> 
+ <script src="https://mobile1.t.salesforce.com/soap/ajax/30.0/connection.js" type="text/javascript" /> 
+<script type="text/javascript" >
+    alert('画面遷移');
+    try {
+    sforce.one.navigateToSObject('001A0000018rihe');
+    } catch (e) {
+    alert(e);
+    }
+</script>
+</head>
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page OutputPDF
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

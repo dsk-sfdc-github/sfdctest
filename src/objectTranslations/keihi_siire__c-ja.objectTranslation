@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>経費/仕入</value>
+    </caseValues>
+    <fields>
+        <label><!-- 金額（税抜） --></label>
+        <name>amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- 案件名 --></label>
+        <name>anken__c</name>
+        <relationshipLabel><!-- 経費/仕入 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 負担部門 --></label>
+        <name>bumon__c</name>
+        <picklistValues>
+            <masterLabel>大阪</masterLabel>
+            <translation><!-- 大阪 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>本社</masterLabel>
+            <translation><!-- 本社 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>本部</masterLabel>
+            <translation><!-- 本部 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>首都圏</masterLabel>
+            <translation><!-- 首都圏 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 外注区分 --></label>
+        <name>gaichu__c</name>
+        <picklistValues>
+            <masterLabel>仕入れ請求</masterLabel>
+            <translation><!-- 仕入れ請求 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>仮払い処理</masterLabel>
+            <translation><!-- 仮払い処理 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>未登録</masterLabel>
+            <translation><!-- 未登録 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>登録</masterLabel>
+            <translation><!-- 登録 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>社内仕入れ</masterLabel>
+            <translation><!-- 社内仕入れ --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 科目 --></label>
+        <name>kamoku__c</name>
+        <picklistValues>
+            <masterLabel>その他</masterLabel>
+            <translation><!-- その他 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>会議費</masterLabel>
+            <translation><!-- 会議費 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>外注費</masterLabel>
+            <translation><!-- 外注費 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>接待交際費</masterLabel>
+            <translation><!-- 接待交際費 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>販売促進費</masterLabel>
+            <translation><!-- 販売促進費 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 支払希望日 --></label>
+        <name>kibou__c</name>
+    </fields>
+    <fields>
+        <label><!-- 項目 --></label>
+        <name>koumoku__c</name>
+    </fields>
+    <fields>
+        <label><!-- 未登録外注先名 --></label>
+        <name>mitorokugaichu__c</name>
+    </fields>
+    <fields>
+        <label><!-- 目的 --></label>
+        <name>mokuteki__c</name>
+    </fields>
+    <fields>
+        <label><!-- 支払日 --></label>
+        <name>siharaibi__c</name>
+    </fields>
+    <fields>
+        <label><!-- 支払先 --></label>
+        <name>siharaisaki__c</name>
+        <relationshipLabel><!-- 経費/仕入 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- フェーズ --></label>
+        <name>status__c</name>
+        <picklistValues>
+            <masterLabel>仮仕入</masterLabel>
+            <translation><!-- 仮仕入 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>値決め</masterLabel>
+            <translation><!-- 値決め --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>出金処理済</masterLabel>
+            <translation><!-- 出金処理済 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>請求処理済</masterLabel>
+            <translation><!-- 請求処理済 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 金額（税込） --></label>
+        <name>zeikomi__c</name>
+    </fields>
+    <layouts>
+        <layout>仕入レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション --></label>
+            <section>新規セクション</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>経費レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- 経費 --></label>
+        <name>RcT_Keihi</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 仕入 --></label>
+        <name>RcT_Shiire</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- CustomLink1 --></label>
+        <name>CustomLink1</name>
+    </webLinks>
+</CustomObjectTranslation>

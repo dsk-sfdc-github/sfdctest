@@ -1,0 +1,230 @@
+<apex:page >
+
+<!--<script type="text/javascript" src="{!URLFOR($Resource.Javascript,'javascript/lib/jquery-1.8.1.min.js')}" ></script>-->
+<apex:includeScript value="{!$Resource.jQuery}" />
+<script type="text/javascript" >
+var __sfdcSessionId = '{!GETSESSIONID()}';
+</script>
+
+<script src="../../soap/ajax/26.0/connection.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" >
+
+$(function(){
+    //動作確認用↓
+    //オブジェクトを情報取得
+    var result = sforce.connection.describeSObject("Curriculum__c");
+    var fieldMap = new Object();
+
+    //フィールド情報を詰める
+    for (var i=0; i<result.fields.length; i++) {
+        var field = result.fields[i];
+        fieldMap[field.name] = field;
+    }
+
+    //console.log(fieldMap);
+
+    //対象のフィールド情報を取得：Main_classification__cの項目を取得する場合
+    var targetField = fieldMap["Main_classification__c"];
+
+    console.log("name=" + targetField.name);
+
+    //選択できる値分繰り返す
+    for(var j = 0; j < targetField.picklistValues.length; j++) {
+
+        //項目の連動関係を取得
+        //第1引数：連動項目
+        //第2引数：制御項目
+        var currValues = getDependentValues("test__c",  targetField.picklistValues[j].label);
+
+        console.log( " field.picklistValues[j].label: " + targetField.picklistValues[j].label);
+
+        console.log( " currValues: " +getPickVals("test__c", currValues.values));
+
+    }
+    //動作確認用↑
+    
+    
+    //イベント定義
+    $('.select').each(function(i){
+        var thisFieldId = $(this).attr('id');
+         var controller =  getControllerName(thisFieldId);
+
+         //if this field is a controlled field (has a controller, then find an onchange handler to its parent)
+         if(controller.success) {
+              var currValues = getDependentValues(thisFieldId,  $('#'+controller.values).val());
+              setPickVals('#'+thisFieldId,currValues.values);
+
+             $('#'+controller.values).change(function(data){
+                 var values = getDependentValues(thisFieldId, this.value);
+                setPickVals('#'+thisFieldId,values.values);
+             });
+         } else {
+              values = getPicklistValues(thisFieldId);
+              setPickVals('#'+thisFieldId,  values.values);
+         }
+    });
+
+});
+
+function getPickVals(field,optionsArray){
+    var options = new Array;
+    for(var i = 0; i < optionsArray.length; i++){
+            options.push(optionsArray[i].value);
+
+    }
+    return options;
+}
+
+//オブジェクトを指定する
+var describeResults = sforce.connection.describeSObject('Curriculum__c');
+
+//ピックリストの値を取得する
+function getPicklistValues(field){
+
+    var returnObj = new returnObject();
+
+    try {
+        var validField = false;
+        for(var i = 0; i < describeResults.fields.length; i++){
+            var fieldList = describeResults.fields[i];
+            var fieldName = fieldList.name;
+
+            if(fieldName.toLowerCase() == field.toLowerCase()){
+                validField = true;
+                for(var j = 0; j < fieldList.picklistValues.length; j++){
+
+                    var newValue = new Object();
+                    newValue.label = fieldList.picklistValues[j].label;
+                    newValue.value = fieldList.picklistValues[j].value;
+                    newValue.default = fieldList.picklistValues[j].defaultValue;
+                    if(fieldList.picklistValues[j].hasOwnProperty('validFor')) {
+                        newValue.validFor = fieldList.picklistValues[j].validFor;
+                    }
+                    returnObj.values.push(newValue);
+                }
+                break;
+            }
+        }
+        if(!validField){
+            throw 'Invalid field '+field+' specified for object ' + params.object;
+        }
+    } catch(exception) {
+        returnObj.message = exception;
+        returnObj.success = false;
+    }
+
+    return returnObj;
+}
+
+
+function getDependentValues(field, value){
+
+    var returnObj = new returnObject();
+    try {
+        var dependencyCode = new Array();
+        var getValues = getPicklistValues(field);
+        if(!getValues.success){
+            throw getValues.message;
+        }
+        var picklistValues =  getValues.values;
+        var getController = getControllerName(field);
+
+        if(!getController.success){
+            throw getController.message;
+        }
+        var controller = getController.values;
+
+        // sub function to do the validFor test
+        function isDependentValue(index, validFor){
+            var base64 = new sforce.Base64Binary("");
+            var decoded = base64.decode(validFor);
+            var bits = decoded.charCodeAt(index>>3);
+
+            return ((bits & (0x80 >> (index%8))) != 0);
+        }
+        var controllerFields =getPicklistValues(controller);
+
+        for(var item = 0; item < controllerFields.values.length; item++){
+            if(controllerFields.values[item].value.toLowerCase() == value.toLowerCase()){
+                for(var i = 0; i < picklistValues.length; i++) {
+                    if(isDependentValue(item, picklistValues[i].validFor)) {
+                        var newValue = new Object();
+                        newValue.label = picklistValues[i].label;
+                        newValue.value = picklistValues[i].value;
+                        newValue.default = picklistValues[i].defaultValue;
+                        newValue.validFor = picklistValues[i].validFor;
+                        newValue.validForName =controllerFields.values[item].value;
+                        returnObj.values.push(newValue);
+                    }
+                }
+            }
+        }
+    } catch(exception){
+        returnObj.success = false;
+        returnObj.message = exception;
+    }
+
+    return returnObj;
+}
+
+// get the controller field name
+function getControllerName(field){
+
+    var returnObj = new returnObject();
+
+    try{
+        var isValid = false;
+
+        for(var i = 0; i < describeResults.fields.length; i++){
+            var fieldList = describeResults.fields[i];
+            var fieldName = fieldList.name;
+
+            if(fieldName.toLowerCase() == field.toLowerCase()) {
+                if(fieldList.controllerName == undefined) {
+                    throw 'Field has no controller';
+                } else {
+                    returnObj.values = fieldList.controllerName;
+                    isValid = true;
+                }
+                break;
+            }
+        }
+
+        if(!isValid){
+            throw 'Invalid field '+field+' specified';
+        }
+    } catch(exception){
+        returnObj.success = false;
+        returnObj.message = exception;
+    }
+    return  returnObj;
+}
+
+function returnObject(){
+
+    this.success = true;
+    this.message = 'Operation Ran Successfully';
+    this.values = new Array();
+}
+
+function setPickVals(field,optionsArray){
+      var options = '';
+         for(var i = 0; i < optionsArray.length; i++){
+             options += '<option value="'+optionsArray[i].value+'">'+optionsArray[i].label+'</option>';
+         }
+         $(field).html(options);
+}
+
+</script>
+
+
+<!---  ---->
+<form name="testForm">
+    <select id="test__c" class="select"/>
+
+    <select id="Main_classification__c" class="select" />
+</form>
+
+</apex:page>

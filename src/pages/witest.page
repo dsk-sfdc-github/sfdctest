@@ -1,0 +1,15 @@
+<apex:page >
+    <apex:form >
+        <ul>
+            <a onClick="doTest();">A</a>
+            <a onClick="doTest();">B</a>
+            <a onClick="doTest();">C</a>
+        </ul>
+        
+        <script type="text/javascript">
+            function doTest(){
+                var win = window.open('https://na7.salesforce.com/home/home.jsp','testWindowwww', 'width=400, height=300, menubar=no, toolbar=no, scrollbars=yes');
+            }
+            </script>
+    </apex:form>
+</apex:page>

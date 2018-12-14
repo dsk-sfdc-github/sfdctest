@@ -1,0 +1,9 @@
+<apex:page controller="MainController" showHeader="false" standardStylesheets="false" >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>コンソール画面</title>
+</head>
+<c:Component01 dtoData="{!dto}" />
+</html>
+</apex:page>

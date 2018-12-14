@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="{!relatedTo.Name}の所有者があなたに割り当てられました" recipientType="User" relatedToType="Task2__c">
+<messaging:plainTextEmailBody >
+タスク {!relatedTo.Name} があなたに割り当てられました。詳細を参照するには、下記のリンクをクリックしてください。
+
+https://na7.salesforce.com/{!relatedTo.Id}
+パートナーユーザはこちらへ
+https://ctc-commufa.force.com/Community/{!relatedTo.Id} 
+
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

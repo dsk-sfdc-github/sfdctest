@@ -1,0 +1,160 @@
+<apex:page id="page" standardController="Account" extensions="SearchOutputInvoice4Supplier" tabstyle="OutputInvoice4SupplierTab__tab">
+    <head>
+        <style>
+            .tdCenter {
+                text-align:center;
+                vertical-align:middle;
+                background-color:white;
+            }
+            .tdLeft {
+                text-align:left;
+                vertical-align:middle;
+                background-color:white;
+            }
+            .tdRight {
+                text-align:right;
+                vertical-align:middle;
+                background-color:white;
+            }
+        </style>
+    </head>
+    <apex:form id="form">
+        <apex:sectionHeader title="外注・仕入先用 請求書発行" />
+        <!-- 検索条件 -->
+        <apex:pageBlock id="searchBlock" mode="edit">
+            <apex:pageBlockSection title="検索条件" columns="2">
+                <apex:panelGroup style="width:100px; position:relative; left:25%;">
+                    <apex:pageBlockSectionItem >
+                        <apex:panelGroup >
+                            <apex:outputLabel value="締め日 " style="font-weight:bold;"/>
+                            <apex:selectList value="{!selectMonth}" multiselect="false" size="1">
+                                <apex:selectOptions value="{!monthItems}"/>
+                            </apex:selectList>
+                            <apex:outputLabel value=" 月 " style="font-weight:bold;" />
+                        </apex:panelGroup>
+                        <apex:pageBlockSectionItem >
+                            <apex:inputField value="{!Account.Field5__c}"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSectionItem>
+                </apex:panelGroup>
+                <apex:inputField value="{!project.AccountId__c}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:inputCheckbox value="{!claimValue}"/>
+                    <apex:outputText value="未請求のみ表示"/>
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!project.ContactS__c}" required="false"/>
+                <apex:pageBlockSectionItem >
+                    <apex:inputCheckbox value="{!phaseValue}"/>
+                    <apex:outputText value="【伝票フェーズ】のみ表示"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                <!--<apex:inputField value="{!Account.targetDate__c}"/>-->
+            </apex:pageBlockSection>
+            <apex:commandButton action="{!searchList}" value="　抽出　" style="width:100px; position:relative; left:70%;"/>
+            <br /><br />
+        </apex:pageBlock>
+
+        <!-- エラーメッセージ -->
+        <apex:pageMessages />
+
+        <!-- 締め日設定 -->
+        <apex:pageBlock id="setBlock" mode="edit">
+            <apex:pageBlockSection title="締め日設定" columns="2">
+                <apex:panelGroup style="width:100px; position:relative; left:25%;">
+                    <apex:pageBlockSectionItem >
+                        <apex:panelGroup >
+                            <apex:outputLabel value="締め日 " style="font-weight:bold;"/>
+                            <apex:selectList value="{!selectMonth}" multiselect="false" size="1">
+                                <apex:selectOptions value="{!monthItems}"/>
+                            </apex:selectList>
+                            <apex:outputLabel value=" 月 " style="font-weight:bold;" />
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                </apex:panelGroup>
+         				<apex:inputField value="{!Account.targetDate__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <!-- 検索結果 -->
+        <apex:outputPanel id="searchResult" rendered="{!searchedListRendered}">
+            <table align="center">
+                <tr><td>
+                <apex:commandButton action="{!outputInvoice}" value="　請求書発行　"/>
+                </td></tr>
+            </table>
+            <apex:dataTable id="searchResultTable" value="{!searchedList}" var="rec" border="1" bgcolor="lightGray">
+                <apex:Column width="8%" styleClass="tdCenter">
+                    <apex:Facet name="header">
+                        <apex:panelGroup >
+                            <apex:inputcheckbox onClick="openAll(this, 'outputChecked');" />
+                            <apex:outputLabel for="AllOpen" value="発行" />
+                        </apex:panelGroup>
+                    </apex:Facet>
+                    <apex:inputCheckbox id="outputChecked" value="{!rec.outputSelected}"/>
+                </apex:Column>
+                <apex:Column width="8%" styleClass="tdCenter">
+                    <apex:Facet name="header">
+                        <apex:panelGroup >
+                            <apex:inputcheckbox onClick="openAll(this, 'projectChecked');" />
+                            <apex:outputLabel for="AllOpen" value="案件ごと" />
+                        </apex:panelGroup>
+                    </apex:Facet>
+                    <apex:inputCheckbox id="projectChecked" value="{!rec.projectSelected}"/>
+                </apex:Column>
+                <apex:column width="27%" styleClass="tdLeft">
+                    <apex:facet name="header">取引先名</apex:facet>
+                    <apex:outputField value="{!rec.record.AccountId__c}"/>
+                </apex:column>
+                <apex:column width="27%" styleClass="tdLeft">
+                    <apex:facet name="header">担当者</apex:facet>
+                    <apex:outputField value="{!rec.record.ContactId__c}"/>
+                </apex:column>
+                <apex:column width="10%" styleClass="tdCenter">
+                    <apex:facet name="header">締め日</apex:facet>
+                    <apex:outputLabel value="{!rec.closePoint}"/>
+                </apex:column>
+                <apex:column width="10%" styleClass="tdRight ">
+                    <apex:facet name="header">金額(税込)</apex:facet>
+                    <apex:outputField value="{!rec.record.SaleAmount__c}"/>
+                </apex:column>
+                <apex:column width="10%" styleClass="tdRight ">
+                    <apex:facet name="header">案件数</apex:facet>
+                    <apex:outputLabel value="{!rec.cntProject}"/>
+                </apex:column>
+                <apex:column width="10%" styleClass="tdCenter">
+                    <apex:facet name="header">発行済</apex:facet>
+                    <apex:outputLabel value="未"/>
+                </apex:column>
+            </apex:dataTable>
+            <table align="center">
+                <tr><td>
+                <apex:commandButton action="{!outputInvoice}" value="　請求書発行　"/>
+                </td></tr>
+            </table>
+        </apex:outputPanel>
+    </apex:form>
+    <script type="text/javascript">
+        //チェックボックスのOn/Offを制御
+        //function openAll(obj, targetName) {
+            //var arr = document.getElementsByName("outputChecked");
+            //var arr = document.getElementsByName(targetName);
+          //  var arr = document.getElementById(targetName);
+            //page:form:searchResultTable:AllOpen
+           // for ( var i = 0 ; i < arr.length ; i++ ) {
+             //   arr[i].checked = obj.checked;
+            //}
+        //}
+
+        function openAll(obj, targetName) {
+            var inputElem = document.getElementsByTagName("input");
+
+            if (inputElem.length) {
+                for(var i=0; i<inputElem.length; i++) {
+                    if (inputElem[i].id.indexOf(targetName)!=-1) {
+                        inputElem[i].checked = obj.checked;
+                    }
+                }
+            }
+        }
+    </script>
+</apex:page>

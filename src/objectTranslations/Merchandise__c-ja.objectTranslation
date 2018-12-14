@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>商品</value>
+    </caseValues>
+    <fields>
+        <label><!-- 状態 --></label>
+        <name>Condition__c</name>
+        <picklistValues>
+            <masterLabel>１</masterLabel>
+            <translation><!-- １ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>２</masterLabel>
+            <translation><!-- ２ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>３</masterLabel>
+            <translation><!-- ３ --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- 最大255文字まで入力可能 --></help>
+        <label><!-- 製品説明 --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- 整数16桁 --></help>
+        <label><!-- 価格 --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- 整数18桁 --></help>
+        <label><!-- 数量 --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <layouts>
+        <layout>aaa</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション --></label>
+            <section>新規セクション</section>
+        </sections>
+        <sections>
+            <label><!-- 項目 --></label>
+            <section>項目</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

@@ -1,0 +1,22 @@
+<apex:page >
+
+    <input type="button" value="ボタン" onClick="btnClick();" />
+
+    <script type="text/javascript">
+        function btnClick() {
+            //var urlStr = "https://na7.salesforce.com/00OA0000005qqNb?pv0=test&nooverride=1";
+            var urlStr = "https://na7.salesforce.com/00OA0000005qqNb?pv0=test";
+
+            //window.location.href = urlStr;
+            //alert(window.top);
+            //window.top.location.href = urlStr;
+
+
+            //alert(encodeURI(urlStr));
+            //sforce.one.navigateToURL(urlStr,false);
+            //encodeURI
+
+            window.open(urlStr);
+        }
+    </script>
+</apex:page>

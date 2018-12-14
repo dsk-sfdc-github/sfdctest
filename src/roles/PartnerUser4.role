@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>パートナー取引先メール確認用あああ パートナー ユーザ</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>パートナー取引先メール確認用あああ パートナー ユーザ</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>PartnerManager4</parentRole>
+</Role>

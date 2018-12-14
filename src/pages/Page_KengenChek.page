@@ -1,0 +1,6 @@
+<apex:page controller="Cls_KengenCheck">
+    
+    <apex:form >
+        <apex:commandButton action="{!btnAction}"/>
+    </apex:form>
+</apex:page>

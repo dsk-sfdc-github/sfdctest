@@ -1,0 +1,21 @@
+<apex:page renderAs="pdf">
+	<head>
+        <style>
+            body { font-family: 'Arial Unicode MS'; }
+            .companyName { font: bold 30px; color: red; }
+        </style>
+    </head>
+    <body>
+        <center>
+        <h1>これはテストページです。</h1>
+		<h1 class="companyName">漢字を記入してみました。</h1>
+
+        </center>
+    </body>
+
+<!--
+    <apex:form rendered="{! if (renderVal = '', true, false)}">
+    	<apex:commandButton value="メール送信" action="{!sendMail}" />
+    </apex:form>
+ -->
+</apex:page>

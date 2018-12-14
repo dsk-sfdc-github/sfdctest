@@ -1,0 +1,24 @@
+<apex:page renderAs="pdf" controller="TestOutputPDFController">
+    <head>
+        <style>
+            body { font-family: Arial Unicode MS; font-size:10.5pt}
+            <!-- @pageで印刷時のサイズ決定。 -->
+            @page { 
+            //size: A4; 
+            size: 8.27in 11.69in;
+            }
+        </style>
+    </head>
+    <apex:pageBlock >
+        <apex:repeat value="{!pageData}" var="pageRec">
+            <div style="page-break-after:always; margin-top:0px;">
+                ヘッダー情報
+                <apex:pageBlockTable value="{!pageRec}" var="obj" border="1">
+                    <apex:column >
+                        <apex:outputText value="{!obj.Name}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </div>
+        </apex:repeat>
+    </apex:pageBlock>
+</apex:page>

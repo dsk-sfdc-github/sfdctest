@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- aaa --></label>
+        <name>aaaaa</name>
+    </fieldSets>
+    <fields>
+        <label><!-- 数式テスト --></label>
+        <name>Calctest__c</name>
+    </fields>
+    <fields>
+        <label><!-- カテゴリ大 --></label>
+        <name>CategoryL__c</name>
+        <picklistValues>
+            <masterLabel>あ</masterLabel>
+            <translation><!-- あ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>か</masterLabel>
+            <translation><!-- か --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>さ</masterLabel>
+            <translation><!-- さ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>た</masterLabel>
+            <translation><!-- た --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>な</masterLabel>
+            <translation><!-- な --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- カテゴリ中 --></label>
+        <name>CategoryM__c</name>
+        <picklistValues>
+            <masterLabel>い</masterLabel>
+            <translation><!-- い --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>き</masterLabel>
+            <translation><!-- き --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>し</masterLabel>
+            <translation><!-- し --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ち</masterLabel>
+            <translation><!-- ち --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>に</masterLabel>
+            <translation><!-- に --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- テキスト項目１ --></label>
+        <name>Field1__c</name>
+    </fields>
+    <fields>
+        <label><!-- 数値１ --></label>
+        <name>Field2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Languages --></label>
+        <name>Languages__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level --></label>
+        <name>Level__c</name>
+        <picklistValues>
+            <masterLabel>Primary</masterLabel>
+            <translation><!-- Primary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary</masterLabel>
+            <translation><!-- Secondary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tertiary</masterLabel>
+            <translation><!-- Tertiary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact Source --></label>
+        <name>sf4twitter__Contact_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Facebook Image Url --></label>
+        <name>sf4twitter__Fcbk_Image_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Facebook Picture --></label>
+        <name>sf4twitter__Fcbk_Picture__c</name>
+    </fields>
+    <fields>
+        <label><!-- Facebook Profile Url --></label>
+        <name>sf4twitter__Fcbk_Profile_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Facebook User Id --></label>
+        <name>sf4twitter__Fcbk_User_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Facebook Username --></label>
+        <name>sf4twitter__Fcbk_Username__c</name>
+    </fields>
+    <fields>
+        <help>Fare clic sul link per modificare lo stato Following</help>
+        <label><!-- Following On Twitter --></label>
+        <name>sf4twitter__Follow_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Influencer Type --></label>
+        <name>sf4twitter__Influencer_Type__c</name>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporter</masterLabel>
+            <translation><!-- Reporter --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this Contact an Influencer (ie Reporter?) --></help>
+        <label><!-- Influencer --></label>
+        <name>sf4twitter__Influencer__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Klout Number --></label>
+        <name>sf4twitter__Klout_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Klout Score --></label>
+        <name>sf4twitter__Klout_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Languages --></label>
+        <name>sf4twitter__Languages__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level --></label>
+        <name>sf4twitter__Level__c</name>
+        <picklistValues>
+            <masterLabel>Primary</masterLabel>
+            <translation><!-- Primary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary</masterLabel>
+            <translation><!-- Secondary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tertiary</masterLabel>
+            <translation><!-- Tertiary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Origin --></label>
+        <name>sf4twitter__Origin__c</name>
+        <picklistValues>
+            <masterLabel>Facebook</masterLabel>
+            <translation>Facebook</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twitter</masterLabel>
+            <translation>Twitter</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Research This Contact --></label>
+        <name>sf4twitter__Research_this_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Bio --></label>
+        <name>sf4twitter__Twitter_Bio__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Creation Date --></label>
+        <name>sf4twitter__Twitter_Creation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Follower Count --></label>
+        <name>sf4twitter__Twitter_Follower_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Following Count --></label>
+        <name>sf4twitter__Twitter_Following_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Image Url --></label>
+        <name>sf4twitter__Twitter_Image_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Last Tweet --></label>
+        <name>sf4twitter__Twitter_Last_Tweet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Location --></label>
+        <name>sf4twitter__Twitter_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Picture --></label>
+        <name>sf4twitter__Twitter_Picture__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Status Count --></label>
+        <name>sf4twitter__Twitter_Status_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter User Id --></label>
+        <name>sf4twitter__Twitter_User_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Username --></label>
+        <name>sf4twitter__Twitter_Username__c</name>
+    </fields>
+    <fields>
+        <label><!-- Followed --></label>
+        <name>sf4twitter__followed__c</name>
+    </fields>
+    <layouts>
+        <layout>Contact Layout</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label><!-- Get_Author_Info --></label>
+        <name>sf4twitter__Get_Author_Info</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Author_Info_Massive --></label>
+        <name>sf4twitter__Get_Author_Info_Massive</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Klout_Score --></label>
+        <name>sf4twitter__Get_Klout_Score</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Klout_Score_Massive --></label>
+        <name>sf4twitter__Get_Klout_Score_Massive</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Twitter_Username --></label>
+        <name>sf4twitter__Get_Twitter_Username</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Search_Twitter_Username --></label>
+        <name>sf4twitter__Search_Twitter_Username</name>
+    </webLinks>
+</CustomObjectTranslation>

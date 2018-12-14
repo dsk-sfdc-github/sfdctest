@@ -1,0 +1,30 @@
+<apex:page controller="ToDoScreenCheck">
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations</h1>
+This is your new Page
+<!-- End Default Content REMOVE THIS -->
+
+<apex:form >
+	<apex:pageBlock title="ToDo" id="mainPageBlock1">
+		<apex:dataTable border="1" id="theTable" value="{!taskList}" var="tList" width="100%" align="center" rowClasses="odd,even" styleClass="tableClass">
+			<apex:column style="vertical-align:middle;" styleClass="columnClass" >
+				<apex:facet name="header" ><div class="facet">Subject</div></apex:facet>
+				<div align="center">
+					<apex:outputText value="{!tList.Subject}" />
+				</div>
+			</apex:column>
+		</apex:dataTable>
+	</apex:pageBlock>
+
+	<apex:pageBlock title="Event" id="mainPageBlock2">
+		<apex:dataTable border="1" id="theTable2" value="{!eventList}" var="evList" width="100%" align="center" rowClasses="odd,even" styleClass="tableClass">
+			<apex:column style="vertical-align:middle;" styleClass="columnClass" >
+				<apex:facet name="header" ><div class="facet">Subject</div></apex:facet>
+				<div align="center">
+					<apex:outputText value="{!evList.Subject}" />
+				</div>
+			</apex:column>
+		</apex:dataTable>
+	</apex:pageBlock>
+</apex:form>
+</apex:page>

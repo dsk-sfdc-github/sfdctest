@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>出金</value>
+    </caseValues>
+    <fields>
+        <label><!-- 登録外注 --></label>
+        <name>gaichu__c</name>
+        <relationshipLabel><!-- 出金 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 備考 --></label>
+        <name>memo__c</name>
+    </fields>
+    <fields>
+        <label><!-- 未登録外注先名 --></label>
+        <name>mitorokugaichu__c</name>
+    </fields>
+    <fields>
+        <label><!-- 出金日 --></label>
+        <name>syukkinbi__c</name>
+    </fields>
+    <fields>
+        <label><!-- 出金額（税抜） --></label>
+        <name>syukkingaku__c</name>
+    </fields>
+    <fields>
+        <label><!-- 出金方法 --></label>
+        <name>syukkinhouhou__c</name>
+        <picklistValues>
+            <masterLabel>小切手</masterLabel>
+            <translation><!-- 小切手 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>手形</masterLabel>
+            <translation><!-- 手形 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>振込</masterLabel>
+            <translation><!-- 振込 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>現金</masterLabel>
+            <translation><!-- 現金 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 出金先区分 --></label>
+        <name>syukkinsaki__c</name>
+        <picklistValues>
+            <masterLabel>未登録外注</masterLabel>
+            <translation><!-- 未登録外注 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>登録外注</masterLabel>
+            <translation><!-- 登録外注 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>社員</masterLabel>
+            <translation><!-- 社員 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 手形満期日 --></label>
+        <name>tegatamanki__c</name>
+    </fields>
+    <layouts>
+        <layout>出金レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション --></label>
+            <section>新規セクション</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

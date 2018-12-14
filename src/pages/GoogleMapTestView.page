@@ -1,0 +1,74 @@
+<apex:page id="page" controller="GoogleMapTest" >
+
+	<head>
+		<!-- スクリプトの読み込み -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+		<script type="text/javascript">
+
+
+
+			//(function($jq) {
+				//jQuery mobileのページ初期表示時のイベント
+				//$jq(document).on("pageinit", "#form1", function(){
+					//処理中のイメージを表示
+					//$jq.mobile.loading("show");
+					if (navigator.geolocation) {
+						//現在地点の緯度、経度を取得
+						navigator.geolocation.getCurrentPosition(
+							function (pos) {
+								//$jq("#page:form1:latitude").val(pos.coords.latitude);
+								//$jq("#page:form1:longitude").val(pos.coords.longitude);
+								//$jq.mobile.loading("hide");
+								//alert(pos.coords.latitude);
+								//alert(pos.coords.longitude);
+								document.getElementById('page:form1:latitude').value = pos.coords.latitude;
+								document.getElementById('page:form1:longitude').value = pos.coords.longitude;
+							},
+							function (error) {
+								alert("位置情報が取得できませんでした。" + error);
+								//$jq.mobile.loading("hide");
+							}
+						);
+					}
+					else {
+						alert("このブラウザは位置情報を取得できません。");
+						//$jq.mobile.loading("hide");
+					}
+				//});
+
+			//});
+	    </script>
+	</head>
+
+	<body>
+		<apex:form id="form1">
+			<apex:sectionHeader title="取引先検索"/>
+			<apex:inputHidden value="{!latitude}" id="latitude"/>
+			<apex:inputHidden value="{!longitude}" id="longitude"/>
+			<apex:outputpanel id="searchInfo">
+				<apex:pageBlock mode="edit" id="pageBlock1" >
+					<apex:pageBlockSection id="pageBlockSection1" columns="2" title="検索条件" collapsible="false">
+						<apex:pageBlockSectionItem >
+							<apex:outputText value="中心地点" />
+	                        <apex:panelGroup >
+	                            <apex:selectList value="{!fieldCenter}" multiselect="false" size="1">
+	                                <apex:selectOptions value="{!fieldCenterSelected}" />
+	                            </apex:selectList>
+	                        </apex:panelGroup>
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+
+					<apex:commandButton value="　検索　" action="{!searchAction}" style="position:relative; left:80%;" />
+
+				</apex:pageBlock>
+			</apex:outputpanel>
+
+			<apex:outputPanel id="searchResultPanel" >
+				<div id="gmap" style="height:800px;width: 1000px;"></div>
+			</apex:outputPanel>
+		</apex:form>
+	</body>
+
+</apex:page>

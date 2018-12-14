@@ -1,0 +1,9 @@
+<messaging:emailTemplate subject="{!relatedTo.Name} 件名" recipientType="User" relatedToType="pjmng__c">
+<messaging:plainTextEmailBody >
+
+{!relatedTo.Name}
+
+本文
+{!$Label.aaa}/{!relatedTo.Id}
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

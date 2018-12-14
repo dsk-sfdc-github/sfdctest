@@ -1,0 +1,47 @@
+<apex:page controller="TestToDoListController" id="page">
+<apex:includeScript value="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"/>
+<script type="text/javascript" language="javascript">
+        //var jq$ = jQuery.noConflict();
+        function escapeVisualforceId(vfid) {
+            //alert(vfid.replace(/:/g,'\\:'));
+          return vfid.replace(/:/g,'\\:');
+        }
+        //jq$(document).ready(function() {
+          //jq$('#' + escapeVisualforceId('page:form:block:panel')).text("Hello World");
+        //});
+        function jsCallChgToDoList() {
+            alert("osita");
+            //var jq$ = jQuery.noConflict();
+            //jq$('#' + escapeVisualforceId('page:form:block:panel')).text("Hello World");
+            //jq$('#' + escapeVisualforceId('page:form:block:section:toName')).text("aa");
+            //alert(jq$('#' + escapeVisualforceId('page:form:block:section:toDoList')).val());
+            document.getElementById("hid_div").style.display = 'none';
+            //document.getElementById("hid_div2").style.display = "none";
+            //alert("{!$Component.page.form.block.section.toDoList}");
+            document.getElementById("{!$Component.page.form.block.section2.toName2}").style.display = 'none';
+            //alert(document.getElementById("{!$Component.page.form.block.section.toName}").value);
+            alert("end");
+        }
+      </script>
+<apex:form id="form">
+    <apex:pageBlock id="block">
+        <apex:pageBlockSection title="サーバでの通信により切替" columns="2" id="section">
+            <apex:inputField value="{!toDoRec.Name}"/>
+            <apex:inputField id="toDoList" value="{!toDoRec.TodoList__c}" onchange="callJsChgToDoList()"/>
+                <apex:inputField id="toName" value="{!toDoRec.ToName__c}" rendered="{!renderedVal}"/>
+                <apex:actionFunction name="callJsChgToDoList" action="{!chgToDoList}">
+                </apex:actionFunction>
+            </apex:pageBlockSection>
+        <apex:pageBlockSection title="クライアント側で切替" columns="2" id="section2">
+            <apex:inputField value="{!toDoRec.Name}"/>
+            <apex:inputField id="toDoList2" value="{!toDoRec.TodoList__c}" onchange="jsCallChgToDoList()"/>
+            <div id="hid_div">
+                <apex:inputField id="toName2" value="{!toDoRec.ToName__c}"/>
+            </div>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <div id="hid_div2">
+        aaa
+    </div>
+</apex:form>
+</apex:page>

@@ -1,0 +1,15 @@
+<!--<apex:page standardController="Account" extensions="SampleApexDetailController" showHeader="false">-->
+<apex:page standardController="Account" showHeader="false">
+    <head>
+        <!--<meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN" />-->
+    </head>
+    <apex:form >
+    <!--<apex:detail relatedList="false"/>-->
+<!--<apex:iframe src="https://na7.salesforce.com/001A0000014oRt7"></apex:iframe>-->
+<apex:iframe src="https://na7.salesforce.com/003/o"/>
+
+    <div>
+        ここは親フレーム
+    </div>
+    </apex:form>
+</apex:page>

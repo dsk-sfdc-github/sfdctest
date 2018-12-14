@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>掲示板</value>
+    </caseValues>
+    <fields>
+        <label><!-- コメント数 --></label>
+        <name>cmnt_cnt__c</name>
+    </fields>
+    <fields>
+        <label><!-- 内容 --></label>
+        <name>content__c</name>
+    </fields>
+    <fields>
+        <label><!-- 関連課題 --></label>
+        <name>kadai__c</name>
+        <relationshipLabel><!-- 掲示板 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 区分 --></label>
+        <name>kbn__c</name>
+        <picklistValues>
+            <masterLabel>その他</masterLabel>
+            <translation><!-- その他 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>質問</masterLabel>
+            <translation><!-- 質問 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>連絡</masterLabel>
+            <translation><!-- 連絡 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>掲示板レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 関連情報 --></label>
+            <section>関連情報</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

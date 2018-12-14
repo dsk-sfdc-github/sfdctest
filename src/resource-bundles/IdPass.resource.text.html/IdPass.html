@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>�^�X�N�ꊇ�ҏW</title>
+	<base target="_self" />
+
+	<script type="text/javascript">
+		var seq = 0;										// �t���[�����ʗp��ID
+		function initPage() {
+			var frm = document.createElement("form");		// POST�p�̃t�H�[���𐶐�
+			//frm.action = "https://c.na7.visual.force.com/apex/AccounTestPage";
+			frm.action = "https://c.na7.visual.force.com/apex/paramDummy";
+			frm.method = "POST";
+			frm.target = "pfr" + seq;
+
+			var hiddenField = document.createElement("input");
+			hiddenField.setAttribute("type", "hidden");
+			hiddenField.setAttribute("name", "ids");
+			var objIds = window.dialogArguments;
+			hiddenField.setAttribute("value", objIds);
+			frm.appendChild(hiddenField);
+
+			document.body.appendChild(frm);
+
+			var pfr = document.createElement("iframe");		// form��target�ƂȂ�iframe�𐶐�
+			pfr.name = "pfr" + (seq++);
+
+			pfr.frameBorder="0";
+			pfr.width="100%";
+			pfr.height="100%";
+
+			pfr.src = "about:blank";						// �����about:blank��\������
+			var cnt = 0;									// ���̃N���[�W����Ŏg���J�E���^
+			var onload = pfr.onload = function(){
+				if (cnt++ == 0)
+					setTimeout(function(){ frm.submit(); }, 0);		// iframe�������ł�����t�H�[���𑗐M
+				else {
+					//frm.parentNode.removeChild(frm);		// �t�H�[����M��Aform,iframe��폜
+					//pfr.parentNode.removeChild(pfr);
+				}
+			};
+
+			if (document.all) pfr.onreadystatechange = function(){	/* for IE */
+				if (this.readyState == "complete") {		// onload�����삵�Ȃ��̂ő�p
+					pfr.contentWindow.name = pfr.name;		// ������ɖ��O��set���Ȃ���target�����삵�Ȃ�
+					onload();
+				}
+			};
+			document.body.appendChild(pfr);
+		}
+	</script>
+</head>
+<body onLoad="initPage()">
+</body>
+<!--<iframe src="https://c.cs6.visual.force.com/apex/Page_TaskBulkUpdate" width="90%" security="restricted" />-->
+<!--<iframe src="https://c.cs6.visual.force.com/apex/Page_TaskBulkUpdate" width="90%" height="90%" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts" />-->
+</html>

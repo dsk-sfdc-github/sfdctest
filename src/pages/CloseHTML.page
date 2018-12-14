@@ -1,0 +1,10 @@
+<apex:page >
+<html>
+<script language="JavaScript"> 
+
+    //このままCloseすると、IE7で確認MSGが表示されるため、ここからCloseするVisualforceを呼び出す
+    window.parent.open("/apex/CloseHTML_2","_self");
+
+</script>
+</html>
+</apex:page>

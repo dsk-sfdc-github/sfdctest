@@ -1,0 +1,302 @@
+<apex:page id="Page" showHeader="false" Controller="Invoice01Ctrl" >
+    <head>
+    <meta http-equiv="Content-Type" content="charset=UTF-8"/>
+    <style media="all">
+	
+	@page { size: A4; }
+    
+    div.PreviewCenter
+    {
+        width: 750px;
+    }
+    
+    div
+    {
+        /*font-size: 8px;*/
+    }
+  
+    span.inline
+    {
+        display: inline-block;
+        _display: inline;
+        float: left;
+        overflow: hidden;
+    }
+    
+    div.Company div
+    {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+    
+    table.LineItem
+    {
+        /*width: 100%;
+        border-color: black;
+        border-style: solid;
+        border-width: 2px 2px 1px 2px;
+        page-break-after: always;*/
+    }
+        
+    table.LineItem th
+    {
+        padding: 2px 0px;
+        text-align: center;
+        border-color: black;
+        border-style: solid;
+        border-width: 0px 1px 1px 0px;
+        font-weight: normal;
+    }
+    
+    table.LineItem th.Last
+    {
+        border-width: 0px 0px 1px 0px;
+    }
+    
+    table.LineItem td
+    {
+        /*padding: 2px 5px;
+        border-color: Red;
+        border-style: solid;
+        border-width: 0px 1px 1px 0px;*/
+    }
+    
+    table.LineItem td.Last
+    {
+        border-width: 0px 0px 1px 0px;
+    }
+    
+    table.LineItem tr
+    {
+        height: 20px;
+    }
+    
+    table.LineItem td.Date div
+    {
+        width: 47px;
+    }
+    
+    table.LineItem td.Name div
+    {
+        /*white-space: pre;*/
+        /*overflow: hidden;
+        width: 412px;*/
+    }
+    
+    table.LineItem td.Unit div
+    {
+        /*width: 32px;*/
+    }
+    
+    table.LineItem td.Quantity div
+    {
+        /*width: 45px;*/
+    }
+    
+    table.LineItem td.Quantity
+    {
+        /*text-align: right;*/
+    }
+    
+    table.LineItem td.UnitPrice div
+    {
+        /*width: 55px;*/
+    }
+    
+    table.LineItem td.UnitPrice
+    {
+        /*text-align: right;*/
+    }
+    
+    table.LineItem td.TotalPrice div
+    {
+        /*width: 80px;*/
+    }
+    
+    table.LineItem td.TotalPrice
+    {
+        /*text-align: right;*/
+    }
+    
+    table.LineItem tfoot td
+    {
+        /*border-color: black;
+        border-style: solid;
+        border-width: 2px 1px 0px 0px;
+        height: 25px;*/
+    }
+    
+    table.LineItem tfoot td.TotalLabel
+    {
+        /*text-align: center;*/
+    }
+    
+    table.LineItem tfoot td.Total
+    {
+        /*padding-left: 5px;
+        padding-right: 5px;
+        text-align: right;*/
+    }
+    
+    table.LineItem tfoot td.Last
+    {
+        /*border-width: 2px 0px 0px 0px;*/
+    }
+
+    </style>
+    </head>
+	<apex:form id="InfoView" >
+		<apex:repeat value="{!TableList}" var="table">
+		    <apex:outputPanel layout="block" styleclass="PreviewCenter" style="font-size: 13px; margin: auto; font-family: Arial Unicode MS !important;">
+		        <apex:outputPanel layout="block" style=""/>
+		        <apex:outputPanel Id="Infomation" layout="block" style="height: 285px;">
+		            <apex:outputPanel layout="block" style="height: 63%;">
+		
+		                <apex:outputPanel Id="Contact" layout="block" style="float: right; margin-top: 3px;">
+		                    <apex:outputPanel layout="block" style="">
+		                        <apex:outputPanel Id="OpportunityTitle" style="width: 370px;" layout="block">
+		                            <apex:outputPanel Id="Title" layout="block">
+		                                <apex:outputText style="font-size: 22px; border: 1px solid black; padding: 2px 28px 2px 28px;" value="請　　求　　書" />
+		                            </apex:outputPanel>
+		                        </apex:outputPanel>
+		                        <apex:outputPanel Id="OpportunityNumber" layout="block" style="margin-top: 5px; float: left;">
+		                            <apex:outputText id="QuotationNo" style="" value="2011年12月31日 締切分"/>
+		                            <apex:outputText id="PageLabel" style="margin-left: 60px;" value="PAGE "/>
+		                            <apex:outputPanel Id="PageNo">1</apex:outputPanel>
+		                        </apex:outputPanel>
+		                    </apex:outputPanel>
+		                    <apex:outputPanel layout="block"><br/><br/><br/></apex:outputPanel>
+		
+		                    <apex:outputPanel layout="block" style="clear: both;" styleclass="Contact">
+		                        <apex:outputPanel style="" layout="block">
+		                            <apex:outputPanel layout="block"><apex:outputText value="460-0022　愛知県名古屋市中区栄1丁目24-27"/></apex:outputPanel>
+		                            <apex:outputPanel layout="block" style="margin-left:65px;"><apex:outputText value="クマダ第2ビル"/></apex:outputPanel>
+		                        </apex:outputPanel>
+		                        <apex:outputPanel style="margin-top: 5px;" layout="block">
+		                            <apex:outputPanel layout="block"><apex:outputText value="株式会社インターブレインズ"/></apex:outputPanel>
+		                        </apex:outputPanel>
+		                        <apex:outputPanel style="" layout="block"><apex:outputText value="TEL 052-332-6191 FAX 052-332-6196"/></apex:outputPanel>
+			                    <apex:outputPanel layout="block"><br/></apex:outputPanel>
+		                        <apex:outputPanel layout="block">
+		                            <apex:outputPanel layout="block"><apex:outputText value="振込先　三菱UFJ銀行　金山支店"/></apex:outputPanel>
+		                            <apex:outputPanel layout="block" style="margin-left: 55px;"><apex:outputText value="普通　1887182"/></apex:outputPanel>
+		                        </apex:outputPanel>
+		                    </apex:outputPanel>
+		                </apex:outputPanel>
+		
+		                <apex:outputPanel Id="Company" layout="block" style="float: left; margin-top: 10px;">
+		                    <apex:outputPanel layout="block" styleclass="Company">
+		                        <apex:outputPanel style="margin-top: 5px;" layout="block">
+		                            <apex:outputPanel layout="block"><apex:outputText value="460-0008"/></apex:outputPanel>
+		                            <apex:outputPanel layout="block"><apex:outputText value="愛知県名古屋市中区金山1-14-18"/></apex:outputPanel>
+		                            <apex:outputPanel layout="block" style=""><apex:outputText value="金山センタープレイス4階"/></apex:outputPanel>
+		                        </apex:outputPanel>
+		                        <apex:outputPanel style="margin-top: 15px;" layout="block">
+		                            <apex:outputPanel layout="block"><apex:outputText value="株式会社レッティ"/></apex:outputPanel>
+		                            <apex:outputPanel layout="block"><apex:outputText value="部署表示"/></apex:outputPanel>
+		                            <apex:outputPanel layout="block"><apex:outputText value="代表取締役社長　倉内勝広　様"/></apex:outputPanel>
+			                        <apex:outputPanel style="margin-left: 30px;" layout="block"><apex:outputText value="TEL 052-220-3815"/></apex:outputPanel>
+			                        <apex:outputPanel style="margin-left: 30px;" layout="block"><apex:outputText value="FAX 052-220-3816"/></apex:outputPanel>
+		                        </apex:outputPanel>
+		                    </apex:outputPanel>
+		                </apex:outputPanel>
+		            </apex:outputPanel>
+		
+					<apex:outputPanel layout="block" style="clear: both; width: 680px;" styleclass="">
+		
+			            <apex:outputPanel style="float: left; text-align: left; margin-top: 10px;" layout="block">
+			                <apex:outputPanel styleclass="" style="height: 100%; vertical-align: bottom;" layout="block" >
+			                	<apex:outputText value="毎度ありがとうございます。"/>
+			                </apex:outputPanel>
+			                <apex:outputPanel styleclass="" style="height: 100%; vertical-align: bottom;" layout="block" >
+			                	<apex:outputText value="下記の通り御請求申し上げます。"/>
+			                </apex:outputPanel>
+			                <apex:outputPanel style="border: 2px solid black; text-align: center;" layout="block">
+			                    <table class="LineItem" cellpadding="0" cellSpacing="0">
+			                        <tr>
+			                            <th style="width: 120px; border-right: 1px solid black;"><apex:outputText value="今回御買上額"/></th>
+			                            <th style="width: 120px; border-right: 1px solid black;"><apex:outputText value="消費税等"/></th>
+			                            <th style="width: 120px;" class="Last"><apex:outputText value="今回御請求額"/></th>
+			                        </tr>
+			                        <tr>
+			                            <td style="width: 120px; border-right: 1px solid black;">
+			                                <apex:outputText value="35,000"/>
+			                            </td>
+			                            <td style="width: 120px; border-right: 1px solid black;">
+			                                <apex:outputText value="1,750"/>
+			                            </td>
+			                            <td style="width: 120px;">
+			                                <apex:outputText value="36,750"/>
+			                            </td>
+			                        </tr>
+			                    </table>
+			                </apex:outputPanel>
+			                <apex:outputPanel styleclass="" style="height: 100%; vertical-align: bottom;" layout="block" ><apex:outputText value="2011/12/31　までにご入金願います。"/></apex:outputPanel>
+			            </apex:outputPanel>
+			            <apex:outputPanel styleclass="" Id="Stamp" style="float: right; border: 1px solid black; margin-top: 12px; width: 156px; height: 78px" layout="block">
+			                <apex:outputPanel styleclass="" style="border-right: 1px solid black; width: 78px; height: 78px;" layout="block"><br/></apex:outputPanel>
+			                <apex:outputPanel styleclass="" style="" layout="block"><br/></apex:outputPanel>
+			            </apex:outputPanel>
+		            </apex:outputPanel>
+		
+		        </apex:outputPanel>
+		
+		        <apex:outputPanel Id="LineItemTable" layout="block" style="margin-top: 20px; clear:both;"/>
+		
+				<table cellpadding='0' cellspacing='0' style="border:1px solid #000000; border-collapse:collapse; font-size:10pt; width: 680px;">
+					<tr>           
+						<td style="border:1px solid #000000;border-collapse:collapse;background:#BBBBBB;font color:#000000; font-size: 13px; width:80px; text-align:center;">
+							<apex:outputText value="伝票日付" escape="false"/>
+						</td>
+						<td style="border:1px solid #000000;border-collapse:collapse;background:#BBBBBB;font color:#000000; font-size: 13px; width:80px; text-align:center;">
+							<apex:outputText value="伝票No." escape="false"/>
+						</td>
+						<td style="border:1px solid #000000;border-collapse:collapse;background:#BBBBBB;font color:#000000; font-size: 13px; width:280px; text-align:center;">
+							<apex:outputText value="品　　　名" escape="false"/>
+						</td>
+						<td style="border:1px solid #000000;border-collapse:collapse;background:#BBBBBB;font color:#000000; font-size: 13px; width:80px; text-align:center;">
+							<apex:outputText value="数　量" escape="false"/>
+						</td>
+						<td style="border:1px solid #000000;border-collapse:collapse;background:#BBBBBB;font color:#000000; font-size: 13px; width:80px; text-align:center;">
+							<apex:outputText value="単　価" escape="false"/>
+						</td>
+						<td style="border:1px solid #000000;border-collapse:collapse;background:#BBBBBB;font color:#000000; font-size: 13px; width:80px; text-align:center;">
+							<apex:outputText value="金　額" escape="false"/>
+						</td>
+					</tr>
+					<apex:repeat value="{!table.rowList}" var="row">
+						<tr>
+							<apex:repeat value="{!row.columnList}" var="column">
+								<td style="{!column.style}">
+									<apex:outputText value="{!column.value}" escape="false"/>
+								</td>
+							</apex:repeat>
+						</tr>
+					</apex:repeat>
+					<apex:outputText value="{!table.campMemoLabel}" escape="false"/>
+					<apex:outputText value="{!table.campMemoInfo}" escape="false"/>					
+				</table>
+	    	</apex:outputPanel>
+	    	<apex:outputText value="{!table.pageBreakInfo}" escape="false"/>    		
+	    </apex:repeat>
+	   	<apex:actionFunction name="setQueryWhere" action="{!setQueryWhere}" rerender="InfoView" oncomplete="return false;">
+			<apex:param name="campWhere" value="" />
+			<apex:param name="contactId" value="" />
+			<apex:param name="projectFlg" value="" />
+		</apex:actionFunction>
+	</apex:form>
+    <script type="text/javascript">
+    	window.onload = function() {
+			/*
+			if(window.opener != null){
+		    	var strCampWhere = window.opener.campWhere;
+				var strContactId = window.opener.contactId;
+				var strProjectFlg = window.opener.projectFlg;
+
+				setQueryWhere(strCampWhere, strContactId, strProjectFlg);
+			}
+			*/
+			setQueryWhere("", "003A000000oj7mWIAQ,003A000000qYZBCIA4", "1,1");
+		}
+    </script>
+</apex:page>

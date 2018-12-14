@@ -1,0 +1,11 @@
+<apex:page controller="MapParamTest">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText value="{!str1}"/>
+<!--                <apex:inputText value="{!mapParam['2-1']}"/> -->
+                <apex:commandButton value="ログ出力" action="{!registaa}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

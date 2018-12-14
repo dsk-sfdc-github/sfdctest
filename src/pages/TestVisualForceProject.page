@@ -1,0 +1,18 @@
+<apex:page standardController="TestProjectMst__c">
+    <apex:sectionHeader title="プロジェクト登録画面" subtitle="プロジェクト新規登録" />
+    <apex:form >
+        <apex:pageBlock title="プロジェクト登録画面" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="登録"/>
+                <apex:commandButton action="{!cancel}" value="キャンセル"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="下記の項目を入力し「登録」ボタンを」押下して下さい" columns="3">
+                <apex:inputField value="{!TestProjectMst__c.TestProjectName__c}"/>
+                <apex:inputField value="{!TestProjectMst__c.Status__c}"/>
+                <apex:inputField value="{!TestProjectMst__c.Manager__c}"/>
+                <apex:inputField value="{!TestProjectMst__c.StartDate__c}"/>
+                <apex:inputField value="{!TestProjectMst__c.EndDate__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

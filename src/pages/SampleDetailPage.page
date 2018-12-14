@@ -1,0 +1,10 @@
+<apex:page standardController="Account" extensions="SampleApexDetailController" showHeader="false">
+	<!--<apex:detail relatedList="false"/>-->
+	<apex:form >
+		<apex:actionFunction name="execChgScreen" action="{!execBtn}"></apex:actionFunction>
+	</apex:form>
+	<script>
+		alert('処理開始');
+		execChgScreen();
+	</script>
+</apex:page>

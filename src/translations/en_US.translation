@@ -1,0 +1,2529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- 愛知県プロジェクト管理 --></label>
+        <name>Aichi_PJ_App</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- 郵便番号検索 --></label>
+        <name>CustomApplication</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- 開発検証用 --></label>
+        <name>DevlopperCheckApp</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- 封筒印刷アプリ --></label>
+        <name>EnvelopeApp</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Force.com --></label>
+        <name>Force_com</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- お知らせ事項 --></label>
+        <name>NotifierManagement</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- 設定取得 --></label>
+        <name>SetupCheckAppli</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- タイムカード --></label>
+        <name>Timecard</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Warehouse --></label>
+        <name>Warehouse</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- 商談一括更新 --></label>
+        <name>sfdcjoppupdate</name>
+    </customApplications>
+    <customLabels>
+        <label><!-- ボタン名称 --></label>
+        <name>LBL_PHT_BUTTONNAME01</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- 保存 --></label>
+        <name>LBL_PHT_BUTTONNAME02</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- 写真添付 --></label>
+        <name>LBL_PHT_BUTTONNAME03</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- 保存していませんが宜しいですか？ --></label>
+        <name>LBL_PHT_DIALOGMESSAGE01</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- 文字テスト --></label>
+        <name>MOJITEST</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ファイル名エラー --></label>
+        <name>MSG_ERR_FILENAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ファイル未選択エラー --></label>
+        <name>MSG_ERR_NOFILE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ファイルエラー --></label>
+        <name>MSG_ERR_SELECTIONFILE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- システムエラー --></label>
+        <name>MSG_ERR_SYSTEM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ファイル数上限エラー --></label>
+        <name>MSG_ERR_TOOMANYFILES</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- aaa --></label>
+        <name>aaa</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACCEPT --></label>
+        <name>sf4twitter__ACCEPT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Public Knowledge Site URL not specified. Please go to setup and set one. --></label>
+        <name>sf4twitter__ARTICLE_URL_SITE_NEEDED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AUTHORIZE_KEYWORD_SEARCH_FRIENDLY --></label>
+        <name>sf4twitter__AUTHORIZE_KEYWORD_SEARCH_FRIENDLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Account Already Validated --></label>
+        <name>sf4twitter__Account_Already_Validated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please choose at least one Account or Keyword Search. --></label>
+        <name>sf4twitter__Account_Keyword_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Selected Accounts are currently following the Twitter user. --></label>
+        <name>sf4twitter__Accounts_following_Twitter_user</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select the Accounts you want to follow --></label>
+        <name>sf4twitter__Accounts_wantto_follow</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Active --></label>
+        <name>sf4twitter__Active</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add Contributor Title --></label>
+        <name>sf4twitter__Add_Contributor_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add Members to Campaign --></label>
+        <name>sf4twitter__Add_Members_to_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add to Reply --></label>
+        <name>sf4twitter__Add_Shortened_Url</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add Leads and Contacts to a Campaign --></label>
+        <name>sf4twitter__Add_to_a_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Added --></label>
+        <name>sf4twitter__Added</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Added to --></label>
+        <name>sf4twitter__Added_to</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Administration --></label>
+        <name>sf4twitter__Administration</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Analytics --></label>
+        <name>sf4twitter__Analytics</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Answer_Integration_Title --></label>
+        <name>sf4twitter__Answer_Integration_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Appearance_Section_Title --></label>
+        <name>sf4twitter__Appearance_Section_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Article Detail --></label>
+        <name>sf4twitter__Article_Detail</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Article_Name --></label>
+        <name>sf4twitter__Article_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_PAGE_NOTVALIDATED --></label>
+        <name>sf4twitter__Associated_Facebook_Page_Not_Validated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BAD_REQUEST_MESSAGE --></label>
+        <name>sf4twitter__BAD_REQUEST_MESSAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BITLY_REQUIRED --></label>
+        <name>sf4twitter__BITLY_REQUIRED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- BROWSER NOT SUPPORT 50 --></label>
+        <name>sf4twitter__BROWSER_NOT_SUPPORT_50</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Body --></label>
+        <name>sf4twitter__Body</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CANNOT_REVOKE_PAGE --></label>
+        <name>sf4twitter__CANNOT_REVOKE_PAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CHATTER NOT ENABLED --></label>
+        <name>sf4twitter__CHATTER_NOT_ENABLED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CHATTER_POST_EXCEPTION --></label>
+        <name>sf4twitter__CHATTER_POST_EXCEPTION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Close the associated case. --></label>
+        <name>sf4twitter__CLOSE_ASSOCIATED_CASE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- is not a valid ID --></label>
+        <name>sf4twitter__CMTY_errorMsg_invalidID</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- We&apos;ve Encountered a Problem --></label>
+        <name>sf4twitter__CMTY_errorPage_title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CONSOLE_VALIDATION_ERROR --></label>
+        <name>sf4twitter__CONSOLE_VALIDATION_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CONTACT_CREATED_FOR_USER_HTML --></label>
+        <name>sf4twitter__CONTACT_CREATED_FOR_USER_HTML</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The conversation is marked as deleted --></label>
+        <name>sf4twitter__CONVERSATION_IS_DELETED_GENERIC</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CONVERSATION_NOT_REPLY --></label>
+        <name>sf4twitter__CONVERSATION_NOT_REPLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create a new Case --></label>
+        <name>sf4twitter__CREATE_NEW_CASE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancel --></label>
+        <name>sf4twitter__Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Case Solutions --></label>
+        <name>sf4twitter__Case_Solutions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cases Created --></label>
+        <name>sf4twitter__Cases_Created</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Change follow Status --></label>
+        <name>sf4twitter__Change_follow_Status</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No changes were made to the Followers of --></label>
+        <name>sf4twitter__Changes_made_Followers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose search criteria --></label>
+        <name>sf4twitter__Choose_search_criteria</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Reply Detail --></label>
+        <name>sf4twitter__Comment_Detail</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please contact your System Administrator for assistance. --></label>
+        <name>sf4twitter__Contact_System_Administrator</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contacts --></label>
+        <name>sf4twitter__Contacts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contacts Created --></label>
+        <name>sf4twitter__Contacts_Created</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contacts/Leads already existed in the Campaign. --></label>
+        <name>sf4twitter__Contacts_Leads_already_existed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Content --></label>
+        <name>sf4twitter__Content</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Conversations --></label>
+        <name>sf4twitter__Conversations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Conversations Created --></label>
+        <name>sf4twitter__Conversations_Created</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Case - Results --></label>
+        <name>sf4twitter__Create_Case_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Cases --></label>
+        <name>sf4twitter__Create_Cases</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Contact - Results --></label>
+        <name>sf4twitter__Create_Contact_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Contacts --></label>
+        <name>sf4twitter__Create_Contacts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Lead Results --></label>
+        <name>sf4twitter__Create_Lead_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Leads --></label>
+        <name>sf4twitter__Create_Leads</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Solutions --></label>
+        <name>sf4twitter__Create_Solutions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Solutions - Results --></label>
+        <name>sf4twitter__Create_Solutions_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DUPLICATED EXTERNAL ID --></label>
+        <name>sf4twitter__DUPLICATED_EXTERNAL_ID</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete Ignored Twitter Conversations --></label>
+        <name>sf4twitter__Delete_Ignored</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Detail --></label>
+        <name>sf4twitter__Detail</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_FACEBOOK_RETURNED --></label>
+        <name>sf4twitter__ERROR_FACEBOOK_RETURNED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_VALIDATING_ACCESS_TOKEN_FRIENDLY --></label>
+        <name>sf4twitter__ERROR_VALIDATING_ACCESS_TOKEN_FRIENDLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit --></label>
+        <name>sf4twitter__Edit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Enable_Application_Button --></label>
+        <name>sf4twitter__Enable_Application_Button</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error: User Permissions. --></label>
+        <name>sf4twitter__Error_User_Permissions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Existing members from --></label>
+        <name>sf4twitter__Existing_members_from</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- @private --></label>
+        <name>sf4twitter__FACEBOOK_APP_ID_AND_SECRET_REQUIRED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_CASE_CANTCREATED --></label>
+        <name>sf4twitter__FACEBOOK_CASE_CANTCREATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TFACEBOOK_CHATTER_POST_WARNING --></label>
+        <name>sf4twitter__FACEBOOK_CHATTER_POST_WARNING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to complete. Conversation is deleted in Facebook --></label>
+        <name>sf4twitter__FACEBOOK_CONVERATION_IS_DELETED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Conversation Already Deleted from Facebook --></label>
+        <name>sf4twitter__FACEBOOK_CONVERSATION_ALREADY_DELETED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The conversation will be removed in Facebook and marked as &quot;Deleted&quot; in SFDC. --></label>
+        <name>sf4twitter__FACEBOOK_CONVERSATION_WILL_BE_REMOVED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK ERROR LOG --></label>
+        <name>sf4twitter__FACEBOOK_ERROR_LOG</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_ERROR_PAGE_EMPTY --></label>
+        <name>sf4twitter__FACEBOOK_ERROR_PAGE_EMPTY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_ERROR_PAGE_NOT_PUBLISHED --></label>
+        <name>sf4twitter__FACEBOOK_ERROR_PAGE_NOT_PUBLISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_EXTERNAL_ACCOUNT_SEARCH_FINISHED --></label>
+        <name>sf4twitter__FACEBOOK_EXTERNAL_ACCOUNT_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_FAN_PAGE_BUTTON --></label>
+        <name>sf4twitter__FACEBOOK_FAN_PAGE_BUTTON</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_FAN_PAGE_BUTTON_CONTINUE --></label>
+        <name>sf4twitter__FACEBOOK_FAN_PAGE_BUTTON_CONTINUE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK PAGE TITLE --></label>
+        <name>sf4twitter__FACEBOOK_FAN_PAGE_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_PAGE_TITLE_EXIST --></label>
+        <name>sf4twitter__FACEBOOK_FAN_PAGE_TITLE_EXIST</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_PAGE_TITLE_NEW --></label>
+        <name>sf4twitter__FACEBOOK_FAN_PAGE_TITLE_NEW</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_PAGE_TITLE_NOT_ADMIN --></label>
+        <name>sf4twitter__FACEBOOK_FAN_PAGE_TITLE_NOT_ADMIN</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Facebook Id repeated --></label>
+        <name>sf4twitter__FACEBOOK_ID_REPEATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_INBOUND_PM --></label>
+        <name>sf4twitter__FACEBOOK_INBOUND_PM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Lead already exist --></label>
+        <name>sf4twitter__FACEBOOK_LEAD_EXISTED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- A Lead for this Facebook User was not created --></label>
+        <name>sf4twitter__FACEBOOK_LEAD_HAS_CONTACT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_MANUAL_ACCOUNT_SEARCH_FINISHED --></label>
+        <name>sf4twitter__FACEBOOK_MANUAL_ACCOUNT_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Attachment --></label>
+        <name>sf4twitter__FACEBOOK_MESSAGE_ATTACHMENT_ONLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_OAUTH_DIFF_USERNAMES --></label>
+        <name>sf4twitter__FACEBOOK_OAUTH_DIFF_USERNAMES</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_OUTBOUND_PM --></label>
+        <name>sf4twitter__FACEBOOK_OUTBOUND_PM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_PAGE_ALREADY_VALIDATED --></label>
+        <name>sf4twitter__FACEBOOK_PAGE_ALREADY_VALIDATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_PAGE_NOTVALIDATED --></label>
+        <name>sf4twitter__FACEBOOK_PAGE_NOTVALIDATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_PAGE_NOT_ACCESSIBLE --></label>
+        <name>sf4twitter__FACEBOOK_PAGE_NOT_ACCESSIBLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_PAGE_TITLE --></label>
+        <name>sf4twitter__FACEBOOK_PAGE_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Private Message has attachment --></label>
+        <name>sf4twitter__FACEBOOK_PM_HAS_ATTACHMENT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Private Message has attachments --></label>
+        <name>sf4twitter__FACEBOOK_PM_HAS_ATTACHMENTS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Action for PMs --></label>
+        <name>sf4twitter__FACEBOOK_PM_ONLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- @private --></label>
+        <name>sf4twitter__FACEBOOK_PRIVATEMESSAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The action requested is unavailable for Facebook Private Messages. --></label>
+        <name>sf4twitter__FACEBOOK_PUBLIC_ONLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The action requested is available to Facebook conversations only. --></label>
+        <name>sf4twitter__FACEBOOK_RECORDS_ONLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- reply --></label>
+        <name>sf4twitter__FACEBOOK_REPLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_SCHEDULED_KEYWORD_SEARCH_FINISHED --></label>
+        <name>sf4twitter__FACEBOOK_SCHEDULED_KEYWORD_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- for this Facebook Screen Name --></label>
+        <name>sf4twitter__FACEBOOK_SCREENNAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Lead for this Facebook User --></label>
+        <name>sf4twitter__FACEBOOK_SCREENNAME_HREF</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_TASK_SUBJECT_PM --></label>
+        <name>sf4twitter__FACEBOOK_TASK_SUBJECT_PM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_USER_ALREADY_VALIDATED --></label>
+        <name>sf4twitter__FACEBOOK_USER_ALREADY_VALIDATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_USER_NOT_VALIDATED --></label>
+        <name>sf4twitter__FACEBOOK_USER_NOT_VALIDATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_USER_VALIDATED_AGAIAN --></label>
+        <name>sf4twitter__FACEBOOK_USER_VALIDATED_AGAIAN</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_USER_VALIDATED_ERROR --></label>
+        <name>sf4twitter__FACEBOOK_USER_VALIDATED_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FACEBOOK_WITH_USERNAME --></label>
+        <name>sf4twitter__FACEBOOK_WITH_USERNAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- FCBK_POST_NOT_ACCESSIBLE --></label>
+        <name>sf4twitter__FCBK_POST_NOT_ACCESSIBLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This functionality is applicable only to Twitter Conversations --></label>
+        <name>sf4twitter__FUNCTION_ONLY_FOR_TWITTER_CONVERSATION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Facebook Id --></label>
+        <name>sf4twitter__Facebook_Id</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Facebook Users --></label>
+        <name>sf4twitter__Facebook_Users</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Follow --></label>
+        <name>sf4twitter__Follow</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Follow - Results --></label>
+        <name>sf4twitter__Follow_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The following errors occurred --></label>
+        <name>sf4twitter__Following_errors_occurred</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The following errors occurred --></label>
+        <name>sf4twitter__Following_errors_ocurred</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- GET_COMMENTS_OVER_A_WALLPOST_FRIENDLY --></label>
+        <name>sf4twitter__GET_COMMENTS_OVER_A_WALLPOST_FRIENDLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Grant FB access not allowed --></label>
+        <name>sf4twitter__GRANT_FB_ACCESS_NOT_ALLOWED_FROM_PAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Get Author Info --></label>
+        <name>sf4twitter__Get_Author_Info</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Get Conversations --></label>
+        <name>sf4twitter__Get_Conversation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Get more tweets --></label>
+        <name>sf4twitter__Get_more_tweets</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go Back --></label>
+        <name>sf4twitter__Go_Back</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go To Campaign --></label>
+        <name>sf4twitter__Go_To_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- INSERT --></label>
+        <name>sf4twitter__INSERT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- INVALID_OR_EXPIRED_TOKEN_FRIENDLY --></label>
+        <name>sf4twitter__INVALID_OR_EXPIRED_TOKEN_FRIENDLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Ignore Conversations --></label>
+        <name>sf4twitter__Ignore_Conversations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Ignore Conversations - Results --></label>
+        <name>sf4twitter__Ignore_Conversations_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invalid return URL --></label>
+        <name>sf4twitter__Invalid_return_URL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- KLOUT_REQUIRED --></label>
+        <name>sf4twitter__KLOUT_REQUIRED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter Keyword Search must be unique. --></label>
+        <name>sf4twitter__Keyword_Search_unique</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Lead Status --></label>
+        <name>sf4twitter__Lead_Status</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Leads --></label>
+        <name>sf4twitter__Leads</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Leads Created --></label>
+        <name>sf4twitter__Leads_Created</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Leads will be created for this Conversations --></label>
+        <name>sf4twitter__Leads_created_for_Conversations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- like --></label>
+        <name>sf4twitter__Like</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This functionality is only available for Facebook Conversations --></label>
+        <name>sf4twitter__Like_Error_Message</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Limit exceeded --></label>
+        <name>sf4twitter__Limit_exceeded</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Setup --></label>
+        <name>sf4twitter__Link_To_Setup_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Loading --></label>
+        <name>sf4twitter__Loading</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Message Type --></label>
+        <name>sf4twitter__Message_Type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- {0} likes --></label>
+        <name>sf4twitter__Multiple_Likes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NO_VALID_TWITTER_ACCOUNT --></label>
+        <name>sf4twitter__NO_VALID_TWITTER_ACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Name --></label>
+        <name>sf4twitter__Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Name Search Unavailable --></label>
+        <name>sf4twitter__Name_Search_Unavailable</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Navigation --></label>
+        <name>sf4twitter__Navigation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New Conversations --></label>
+        <name>sf4twitter__New_Conversations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Next --></label>
+        <name>sf4twitter__Next</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No Result Search Username --></label>
+        <name>sf4twitter__No_Result_Search_Username</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There are no active campaigns --></label>
+        <name>sf4twitter__No_active_campaigns</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ORIGIN_TWITTER_TROUBLESHOOTING_LOG --></label>
+        <name>sf4twitter__ORIGIN_TWITTER_TROUBLESHOOTING_LOG</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ORIGIN_UNKNOWN_TROUBLESHOOTING_LOG --></label>
+        <name>sf4twitter__ORIGIN_UNKNOWN_TROUBLESHOOTING_LOG</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- 1 like --></label>
+        <name>sf4twitter__One_Like</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Origin Conversation --></label>
+        <name>sf4twitter__Origin_Conversation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PACKAGE_VERSION --></label>
+        <name>sf4twitter__PACKAGE_VERSION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PERSON ACCOUNTS NOT ENABLED --></label>
+        <name>sf4twitter__PERSON_ACCOUNTS_NOT_ENABLED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- PLEASE SELECT 1 --></label>
+        <name>sf4twitter__PLEASE_SELECT_1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER --></label>
+        <name>sf4twitter__POST_TO_CHATTER</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER_CONFIRM --></label>
+        <name>sf4twitter__POST_TO_CHATTER_CONFIRM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER_FORMAT --></label>
+        <name>sf4twitter__POST_TO_CHATTER_FORMAT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER_FORMAT_FCBK --></label>
+        <name>sf4twitter__POST_TO_CHATTER_FORMAT_FCBK</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER_TEXT1 --></label>
+        <name>sf4twitter__POST_TO_CHATTER_TEXT1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER_TEXT2 --></label>
+        <name>sf4twitter__POST_TO_CHATTER_TEXT2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER_TEXT3 --></label>
+        <name>sf4twitter__POST_TO_CHATTER_TEXT3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER_TEXT3b --></label>
+        <name>sf4twitter__POST_TO_CHATTER_TEXT3b</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- POST_TO_CHATTER_TITLE --></label>
+        <name>sf4twitter__POST_TO_CHATTER_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Pagination More --></label>
+        <name>sf4twitter__Pagination_More</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Pagination Previous --></label>
+        <name>sf4twitter__Pagination_Previous</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Password Not Required --></label>
+        <name>sf4twitter__Password_Not_Required</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Person Accounts Created --></label>
+        <name>sf4twitter__Person_Accounts_Created</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Preparing Search --></label>
+        <name>sf4twitter__Preparing_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Previous --></label>
+        <name>sf4twitter__Previous</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Processing Results --></label>
+        <name>sf4twitter__Processing_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RATE_LIMIT_EXCEEDED_FRIENDLY --></label>
+        <name>sf4twitter__RATE_LIMIT_EXCEEDED_FRIENDLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- REDIRECT_WARNING --></label>
+        <name>sf4twitter__REDIRECT_WARNING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Reply only from Twitter or Facebook case --></label>
+        <name>sf4twitter__REPLY_ONLY_FROM_FACEBOOK_TWITTER_CASE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Your request exceeded the maximum number (25) of Apex scheduled jobs --></label>
+        <name>sf4twitter__REQUEST_EXCEEDED_MAX_APEX_JOBS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You do not own an Account --></label>
+        <name>sf4twitter__REQUIRED_ACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select at least one channel. --></label>
+        <name>sf4twitter__REQUIRED_CHANNEL_SELECT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You do not own a Twitter Account --></label>
+        <name>sf4twitter__REQUIRED_FCBK_ACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Requires extended permission --></label>
+        <name>sf4twitter__REQUIRES_EXTENDED_PERMISSION_FRIENDLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Revoke_Facebook_Page_Access_Confirm --></label>
+        <name>sf4twitter__REVOKE_FACEBOOK_PAGE_ACCESS_CONFIRM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Revoke_Facebook_User_Access_Confirm --></label>
+        <name>sf4twitter__REVOKE_FACEBOOK_USER_ACCESS_CONFIRM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- REVOKE_PAGE_NOT_VALIDATED --></label>
+        <name>sf4twitter__REVOKE_PAGE_NOT_VALIDATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- REVOKE_USER_NOT_VALIDATED --></label>
+        <name>sf4twitter__REVOKE_USER_NOT_VALIDATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RSS not available --></label>
+        <name>sf4twitter__RSS_NOT_AVAILABLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- An access token is required --></label>
+        <name>sf4twitter__Required_Access_Token</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Authentication credentials are required --></label>
+        <name>sf4twitter__Required_Credentials</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Results --></label>
+        <name>sf4twitter__Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Revoke Access Confirm --></label>
+        <name>sf4twitter__Revoke_Access_Confirm</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Revoke not validated --></label>
+        <name>sf4twitter__Revoke_not_validated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please select which page you want to validate --></label>
+        <name>sf4twitter__SELECT_A_PAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SEND TWEET TITLE --></label>
+        <name>sf4twitter__SEND_TWEET_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_ARTICLE_SITE_URL --></label>
+        <name>sf4twitter__SETUP_ARTICLE_SITE_URL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_ARTICLE_TITLE --></label>
+        <name>sf4twitter__SETUP_ARTICLE_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_BITLY_KEY --></label>
+        <name>sf4twitter__SETUP_BITLY_KEY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_BITLY_TITLE --></label>
+        <name>sf4twitter__SETUP_BITLY_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_BITLY_USER --></label>
+        <name>sf4twitter__SETUP_BITLY_USER</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_FACEBOOK_ID --></label>
+        <name>sf4twitter__SETUP_FACEBOOK_ID</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_FACEBOOK_SECRET --></label>
+        <name>sf4twitter__SETUP_FACEBOOK_SECRET</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_FCBK_APP_TITLE --></label>
+        <name>sf4twitter__SETUP_FCBK_APP_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP KLOUT APP --></label>
+        <name>sf4twitter__SETUP_KLOUT_APP</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_KLOUT_ICON --></label>
+        <name>sf4twitter__SETUP_KLOUT_ICON</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP KLOUT KEY --></label>
+        <name>sf4twitter__SETUP_KLOUT_KEY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_KLOUT_TITLE --></label>
+        <name>sf4twitter__SETUP_KLOUT_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP SERVER NAME --></label>
+        <name>sf4twitter__SETUP_SERVER_NAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_SERVER_NAME_HELP --></label>
+        <name>sf4twitter__SETUP_SERVER_NAME_HELP</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP TITLE --></label>
+        <name>sf4twitter__SETUP_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SETUP_WARNING_MESSAGE --></label>
+        <name>sf4twitter__SETUP_WARNING_MESSAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_ABOUT --></label>
+        <name>sf4twitter__SOCIAL_SETUP_ABOUT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_ADVANCED --></label>
+        <name>sf4twitter__SOCIAL_SETUP_ADVANCED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_DESCRIPTION --></label>
+        <name>sf4twitter__SOCIAL_SETUP_DESCRIPTION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_ERROR --></label>
+        <name>sf4twitter__SOCIAL_SETUP_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_FACEBOOK_LOG --></label>
+        <name>sf4twitter__SOCIAL_SETUP_FACEBOOK_LOG</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_FACEBOOK_RSS --></label>
+        <name>sf4twitter__SOCIAL_SETUP_FACEBOOK_RSS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_LINK --></label>
+        <name>sf4twitter__SOCIAL_SETUP_LINK</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_LOG_DAY --></label>
+        <name>sf4twitter__SOCIAL_SETUP_LOG_DAY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_LOG_TIME --></label>
+        <name>sf4twitter__SOCIAL_SETUP_LOG_TIME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_RSS_DATE --></label>
+        <name>sf4twitter__SOCIAL_SETUP_RSS_DATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_RSS_NAME --></label>
+        <name>sf4twitter__SOCIAL_SETUP_RSS_NAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_TEXT --></label>
+        <name>sf4twitter__SOCIAL_SETUP_TEXT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_TITLE --></label>
+        <name>sf4twitter__SOCIAL_SETUP_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_TWITTER_KEYWORDS --></label>
+        <name>sf4twitter__SOCIAL_SETUP_TWITTER_KEYWORDS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_TWITTER_LOG --></label>
+        <name>sf4twitter__SOCIAL_SETUP_TWITTER_LOG</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_TWITTER_RSS --></label>
+        <name>sf4twitter__SOCIAL_SETUP_TWITTER_RSS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SOCIAL_SETUP_VERSION --></label>
+        <name>sf4twitter__SOCIAL_SETUP_VERSION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Change Status - Results --></label>
+        <name>sf4twitter__STATUS_CHANGED_RESULTS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- STORAGE_LIMIT_EXCEEDED_FRIENDLY --></label>
+        <name>sf4twitter__STORAGE_LIMIT_EXCEEDED_FRIENDLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- STORAGE_LIMIT_EXCEEDED_POPUP_FRIENDLY --></label>
+        <name>sf4twitter__STORAGE_LIMIT_EXCEEDED_POPUP_FRIENDLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save --></label>
+        <name>sf4twitter__Save</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save changes --></label>
+        <name>sf4twitter__Save_changes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Again --></label>
+        <name>sf4twitter__Search_Again</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Keywords --></label>
+        <name>sf4twitter__Search_Keywords</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Results --></label>
+        <name>sf4twitter__Search_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search more tweets --></label>
+        <name>sf4twitter__Search_more_tweets</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search text 1 --></label>
+        <name>sf4twitter__Search_text_1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search text 2 --></label>
+        <name>sf4twitter__Search_text_2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search text 3 --></label>
+        <name>sf4twitter__Search_text_3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search text 4 --></label>
+        <name>sf4twitter__Search_text_4</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select a Campaign --></label>
+        <name>sf4twitter__Select_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please select a Campaign first --></label>
+        <name>sf4twitter__Select_Campaign_first</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select the searches --></label>
+        <name>sf4twitter__Select_searches</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Selected --></label>
+        <name>sf4twitter__Selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send --></label>
+        <name>sf4twitter__Send</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Post to Facebook --></label>
+        <name>sf4twitter__Send_Facebook_As</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Post to Twitter As --></label>
+        <name>sf4twitter__Send_Tweet_As</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Reply --></label>
+        <name>sf4twitter__Send_a_Tweet</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send using username --></label>
+        <name>sf4twitter__Send_using_username</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Solution Detail --></label>
+        <name>sf4twitter__Solution_Detail</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Solution Name --></label>
+        <name>sf4twitter__Solution_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SplashPage_Characters --></label>
+        <name>sf4twitter__SplashPage_Characters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SplashPage_Title --></label>
+        <name>sf4twitter__SplashPage_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Start Search --></label>
+        <name>sf4twitter__Start_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Storage limit exceeded --></label>
+        <name>sf4twitter__Storage_limit_exceeded</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Subject --></label>
+        <name>sf4twitter__Subject</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The selected Conversation was not found --></label>
+        <name>sf4twitter__TARGET_CONVERSATION_NOT_FOUND</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TROUBLESHOOTING_LOG --></label>
+        <name>sf4twitter__TROUBLESHOOTING_LOG</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TS Choose search criteria --></label>
+        <name>sf4twitter__TS_Choose_search_criteria</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TS Search Results --></label>
+        <name>sf4twitter__TS_Search_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Accounts is required --></label>
+        <name>sf4twitter__TWITTER_ACCOUNT_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Accounts is required. --></label>
+        <name>sf4twitter__TWITTER_ACCOUNT_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_ACCOUNT_DUPLICATE_VALUE --></label>
+        <name>sf4twitter__TWITTER_ACCOUNT_DUPLICATE_VALUE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Social Account --></label>
+        <name>sf4twitter__TWITTER_ACCOUNT_NAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_ACCOUNT_NOT_VALIDATED --></label>
+        <name>sf4twitter__TWITTER_ACCOUNT_NOT_VALIDATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This account is currently suspended --></label>
+        <name>sf4twitter__TWITTER_ACCOUNT_SUSPENDED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Accounts is required. --></label>
+        <name>sf4twitter__TWITTER_ACCOUNT_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_ADDCONTRIBUTOR_ADDED --></label>
+        <name>sf4twitter__TWITTER_ADDCONTRIBUTOR_ADDED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_ADDCONTRIBUTOR_ERROR --></label>
+        <name>sf4twitter__TWITTER_ADDCONTRIBUTOR_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Added --></label>
+        <name>sf4twitter__TWITTER_ADDED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This URL has already been shortened. --></label>
+        <name>sf4twitter__TWITTER_ALREADY_BITLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Already followed --></label>
+        <name>sf4twitter__TWITTER_ALREADY_FOLLOWED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- is already on your list --></label>
+        <name>sf4twitter__TWITTER_ALREADY_IN_LIST</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- was assigned but it already existed --></label>
+        <name>sf4twitter__TWITTER_ASSIGNED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- was assigned to this Twitter Conversation. --></label>
+        <name>sf4twitter__TWITTER_ASSIGNED_CONVERSATION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- A --></label>
+        <name>sf4twitter__TWITTER_A_HREF</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Bring more tweets of this conversation. --></label>
+        <name>sf4twitter__TWITTER_BRING_MORE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Campaign Members is required. --></label>
+        <name>sf4twitter__TWITTER_CAMPAIGNMEMBER_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Campaign Members is required. --></label>
+        <name>sf4twitter__TWITTER_CAMPAIGNMEMBER_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Campaign Members is required. --></label>
+        <name>sf4twitter__TWITTER_CAMPAIGNMEMBER_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Campaigns is required. --></label>
+        <name>sf4twitter__TWITTER_CAMPAIGN_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Campaigns is required. --></label>
+        <name>sf4twitter__TWITTER_CAMPAIGN_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Campaigns is required. --></label>
+        <name>sf4twitter__TWITTER_CAMPAIGN_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Can&apos;t create a Solution for this Conversation. --></label>
+        <name>sf4twitter__TWITTER_CANCREATED_SOLUTION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cannot create an instance of an object --></label>
+        <name>sf4twitter__TWITTER_CANT_CREATE_OBJECT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Can&apos;t create a Case Comment for this Conversation. --></label>
+        <name>sf4twitter__TWITTER_CASECOMMENT_CANTCREATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Case Comment is required. --></label>
+        <name>sf4twitter__TWITTER_CASECOMMENT_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Case Comment Created --></label>
+        <name>sf4twitter__TWITTER_CASECOMMENT_CREATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Case Comment is required. --></label>
+        <name>sf4twitter__TWITTER_CASECOMMENT_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Case Comment is required. --></label>
+        <name>sf4twitter__TWITTER_CASECOMMENT_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Case Solution is required. --></label>
+        <name>sf4twitter__TWITTER_CASESOLUTION_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Case Solution is required. --></label>
+        <name>sf4twitter__TWITTER_CASESOLUTION_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Case Solution is required. --></label>
+        <name>sf4twitter__TWITTER_CASESOLUTION_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Can&apos;t create a Case for this Conversation. --></label>
+        <name>sf4twitter__TWITTER_CASE_CANTCREATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Closed --></label>
+        <name>sf4twitter__TWITTER_CASE_CLOSED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Cases is required. --></label>
+        <name>sf4twitter__TWITTER_CASE_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Cases is required. --></label>
+        <name>sf4twitter__TWITTER_CASE_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Cases is required. --></label>
+        <name>sf4twitter__TWITTER_CASE_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER CHATTER POST HEADER --></label>
+        <name>sf4twitter__TWITTER_CHATTER_POST_HEADER</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER CHATTER POST WARNING --></label>
+        <name>sf4twitter__TWITTER_CHATTER_POST_WARNING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Click here to Follow the User --></label>
+        <name>sf4twitter__TWITTER_CLICK_FOLLOW</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error connecting to Twitter --></label>
+        <name>sf4twitter__TWITTER_CONN_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You do no have permission to access this Contact. --></label>
+        <name>sf4twitter__TWITTER_CONTACT_ACCESS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contact already assigned --></label>
+        <name>sf4twitter__TWITTER_CONTACT_ASSIGNED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Contacts is required. --></label>
+        <name>sf4twitter__TWITTER_CONTACT_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Created --></label>
+        <name>sf4twitter__TWITTER_CONTACT_CREATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Contacts is required. --></label>
+        <name>sf4twitter__TWITTER_CONTACT_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER CONTACT/LEAD NOT FOUND --></label>
+        <name>sf4twitter__TWITTER_CONTACT_LEAD_NOT_FOUND</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Contacts is required. --></label>
+        <name>sf4twitter__TWITTER_CONTACT_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Warning: Contact already exists. --></label>
+        <name>sf4twitter__TWITTER_CONTACT_WARNING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Conversation --></label>
+        <name>sf4twitter__TWITTER_CONVERSATION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Twitter Conversations is required. --></label>
+        <name>sf4twitter__TWITTER_CONVERSATION_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Twitter Conversations is required. --></label>
+        <name>sf4twitter__TWITTER_CONVERSATION_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The conversation already exists --></label>
+        <name>sf4twitter__TWITTER_CONVERSATION_EXISTS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This conversation is not a reply to a tweet. --></label>
+        <name>sf4twitter__TWITTER_CONVERSATION_NOT_REPLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Twitter Conversations is required. --></label>
+        <name>sf4twitter__TWITTER_CONVERSATION_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Conversation Not Found --></label>
+        <name>sf4twitter__TWITTER_CONV_NOT_FOUND</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER CONV NOT FOUND TITLE --></label>
+        <name>sf4twitter__TWITTER_CONV_NOT_FOUND_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Created --></label>
+        <name>sf4twitter__TWITTER_CREATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- was created for this Twitter Conversation. --></label>
+        <name>sf4twitter__TWITTER_CREATED_CONVERSATION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- was created for --></label>
+        <name>sf4twitter__TWITTER_CREATED_FOR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Contact --></label>
+        <name>sf4twitter__TWITTER_CREATE_CONTACT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create Lead --></label>
+        <name>sf4twitter__TWITTER_CREATE_LEAD</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create new searches --></label>
+        <name>sf4twitter__TWITTER_CREATE_SEARCHES</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER DASHBOARD --></label>
+        <name>sf4twitter__TWITTER_DASHBOARD</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting ignored conversations --></label>
+        <name>sf4twitter__TWITTER_DELETED_RECORDS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete Ignored Conversations --></label>
+        <name>sf4twitter__TWITTER_DELETE_IGNORED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Ignored conversations have been deleted successfully --></label>
+        <name>sf4twitter__TWITTER_DELETE_IGNORED_SUCCESSFULLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting ignored conversations --></label>
+        <name>sf4twitter__TWITTER_DELETING_IGNORED_CONVERSATIONS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Direct Message --></label>
+        <name>sf4twitter__TWITTER_DIRECTMESSAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error --></label>
+        <name>sf4twitter__TWITTER_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- An error occurred while connecting to Twitter --></label>
+        <name>sf4twitter__TWITTER_ERROR_CONNECT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_ERROR_FOLLOW_YOURSELF --></label>
+        <name>sf4twitter__TWITTER_ERROR_FOLLOW_YOURSELF</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invalid conversation Id --></label>
+        <name>sf4twitter__TWITTER_ERROR_INVALID_ID</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER ERROR LOG --></label>
+        <name>sf4twitter__TWITTER_ERROR_LOG</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- An unexpected error occurred, please try again. --></label>
+        <name>sf4twitter__TWITTER_ERROR_OCCURRED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- remaining --></label>
+        <name>sf4twitter__TWITTER_ERROR_OCCURRED_ON_ACTION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CaseComment without parent --></label>
+        <name>sf4twitter__TWITTER_EXCEPTION_CASECOMMENT_WO_PARENT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Case created without contact for this screen name --></label>
+        <name>sf4twitter__TWITTER_EXCEPTION_CASE_WO_CONTACT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Case has no conversation --></label>
+        <name>sf4twitter__TWITTER_EXCEPTION_CASE_WO_CONVERSATION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Conversation cannot be null --></label>
+        <name>sf4twitter__TWITTER_EXCEPTION_CONVERSATION_CANNOT_BE_NULL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Conversation already has a case --></label>
+        <name>sf4twitter__TWITTER_EXCEPTION_CONVERSATION_HAS_CASE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter Id not specified --></label>
+        <name>sf4twitter__TWITTER_EXCEPTION_ID_NOT_SPECIFIED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates that a external executed search has finished --></label>
+        <name>sf4twitter__TWITTER_EXTERNAL_ACCOUNT_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates that a external executed search has finished --></label>
+        <name>sf4twitter__TWITTER_EXTERNAL_KEYWORD_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The user cannot access some of the fields. --></label>
+        <name>sf4twitter__TWITTER_FIELD_NOT_ACCESSIBLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The user cannot create some of the fields. --></label>
+        <name>sf4twitter__TWITTER_FIELD_NOT_CREATEABLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The user cannot update some of the fields. --></label>
+        <name>sf4twitter__TWITTER_FIELD_NOT_UPDATEABLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Now following  ({0}). --></label>
+        <name>sf4twitter__TWITTER_FOLLOWS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Follow restored --></label>
+        <name>sf4twitter__TWITTER_FOLLOW_RESTORED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_GET_AUTHOR_INFO_ERROR --></label>
+        <name>sf4twitter__TWITTER_GET_AUTHOR_INFO_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Get Conversations --></label>
+        <name>sf4twitter__TWITTER_GET_TWEETS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Link --></label>
+        <name>sf4twitter__TWITTER_GET_USERNAME_LINK</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter Get Username --></label>
+        <name>sf4twitter__TWITTER_GET_USERNAME_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Only Ignored Conversations are deleted --></label>
+        <name>sf4twitter__TWITTER_IGNORED_DELETED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- InboundDM: --></label>
+        <name>sf4twitter__TWITTER_INBOUND_DM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Inbound Tweet --></label>
+        <name>sf4twitter__TWITTER_INBOUND_TWEET</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- An error occurred: The supplied Id is incorrect. --></label>
+        <name>sf4twitter__TWITTER_INCORRECT_ID</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_INSERT_MSG --></label>
+        <name>sf4twitter__TWITTER_INSERT_MSG</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Insufficient Privileges --></label>
+        <name>sf4twitter__TWITTER_INSUFFICIENT_PRIVILEGES</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Internal Error. Please try again. --></label>
+        <name>sf4twitter__TWITTER_INTERNAL_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Lead --></label>
+        <name>sf4twitter__TWITTER_LEAD</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You do no have permission to access this Lead. --></label>
+        <name>sf4twitter__TWITTER_LEAD_ACCESS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- An existing Lead was assigned --></label>
+        <name>sf4twitter__TWITTER_LEAD_ASSIGNED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Leads is required. --></label>
+        <name>sf4twitter__TWITTER_LEAD_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Lead Created --></label>
+        <name>sf4twitter__TWITTER_LEAD_CREATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Leads is required. --></label>
+        <name>sf4twitter__TWITTER_LEAD_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Can&apos;t create a Lead for this Conversation --></label>
+        <name>sf4twitter__TWITTER_LEAD_EXIST</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Lead already exist --></label>
+        <name>sf4twitter__TWITTER_LEAD_EXISTED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- A Lead for this Twitter Username was not created --></label>
+        <name>sf4twitter__TWITTER_LEAD_HAS_CONTACT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Leads is required. --></label>
+        <name>sf4twitter__TWITTER_LEAD_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Warning: Lead already exists. --></label>
+        <name>sf4twitter__TWITTER_LEAD_WARNING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates that a folder must exist ({0} is the folder name) --></label>
+        <name>sf4twitter__TWITTER_LOGGER_MISSING_FOLDER_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates that a manually executed search has finished --></label>
+        <name>sf4twitter__TWITTER_MANUAL_ACCOUNT_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates that a manually executed search has finished --></label>
+        <name>sf4twitter__TWITTER_MANUAL_KEYWORD_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_MARK_AT_LEAST_ONE --></label>
+        <name>sf4twitter__TWITTER_MARK_AT_LEAST_ONE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please enter a maximum of 140 characters. --></label>
+        <name>sf4twitter__TWITTER_MAXIMUM_SIZE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The message was sent. --></label>
+        <name>sf4twitter__TWITTER_MESSAGE_SENT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please enter a minimum of 1 character. --></label>
+        <name>sf4twitter__TWITTER_MINIMUM_SIZE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label of button that creates a twitter account --></label>
+        <name>sf4twitter__TWITTER_NEW_TWITTER_ACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label of button that creates a twitter search --></label>
+        <name>sf4twitter__TWITTER_NEW_TWITTER_SEARCH</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER NOT FOLLOWING --></label>
+        <name>sf4twitter__TWITTER_NOT_FOLLOWING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Not Found --></label>
+        <name>sf4twitter__TWITTER_NOT_FOUND</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER NO CONTACT/LEAD FOUND --></label>
+        <name>sf4twitter__TWITTER_NO_CONTACT_LEAD_FOUND</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER NO CONVERSATION FOUND --></label>
+        <name>sf4twitter__TWITTER_NO_CONVERSATION_FOUND</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error that describes that the system has ran out of callouts --></label>
+        <name>sf4twitter__TWITTER_NO_MORE_CALLOUTS_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_NO_MORE_CALLOUTS_WARNING --></label>
+        <name>sf4twitter__TWITTER_NO_MORE_CALLOUTS_WARNING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_OAUTH_DIFF_USERNAMES --></label>
+        <name>sf4twitter__TWITTER_OAUTH_DIFF_USERNAMES</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The user does not have access to a set of objects. --></label>
+        <name>sf4twitter__TWITTER_OBJECT_NOT_ACCESSIBLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The user does not have permission to create to a set of objects. --></label>
+        <name>sf4twitter__TWITTER_OBJECT_NOT_CREATEABLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The user does not have permission to delete to a set of objects. --></label>
+        <name>sf4twitter__TWITTER_OBJECT_NOT_DELETABLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The user does not have permission to update to a set of objects. --></label>
+        <name>sf4twitter__TWITTER_OBJECT_NOT_UPDATEABLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Too many Accounts, only 10 Accounts can follow a Contact/Lead --></label>
+        <name>sf4twitter__TWITTER_ONLY10_ACCOUNTS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- on Twitter. --></label>
+        <name>sf4twitter__TWITTER_ON_TWITTER</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Outbound Direct Message --></label>
+        <name>sf4twitter__TWITTER_OUTBOUND_DIRECTMESSAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- OutboundDM: --></label>
+        <name>sf4twitter__TWITTER_OUTBOUND_DM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Outbound reply --></label>
+        <name>sf4twitter__TWITTER_OUTBOUND_REPLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_PACCOUNT_ASSIGNED --></label>
+        <name>sf4twitter__TWITTER_PACCOUNT_ASSIGNED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER PASSWORDS DEPRECATED --></label>
+        <name>sf4twitter__TWITTER_PASSWORDS_DEPRECATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER POST TO MY FEED --></label>
+        <name>sf4twitter__TWITTER_POST_TO_MY_FEED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Post a Tweet --></label>
+        <name>sf4twitter__TWITTER_POST_TWEET</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Links --></label>
+        <name>sf4twitter__TWITTER_QUICK_LINKS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Removed from followers list. --></label>
+        <name>sf4twitter__TWITTER_REMOVED_FOLLOWERS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- @reply --></label>
+        <name>sf4twitter__TWITTER_REPLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates an error occurred when making a requesting to twitter --></label>
+        <name>sf4twitter__TWITTER_REQUEST_CONNECTION_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You do not own a Twitter Account --></label>
+        <name>sf4twitter__TWITTER_REQUIRED_ACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter Username is required to send messages. --></label>
+        <name>sf4twitter__TWITTER_REQUIRED_USERNAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Result --></label>
+        <name>sf4twitter__TWITTER_RESULT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Return to previous page --></label>
+        <name>sf4twitter__TWITTER_RETURN</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates that a manually executed search has finished --></label>
+        <name>sf4twitter__TWITTER_SCHEDULED_ACCOUNT_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates that a manually executed search has finished --></label>
+        <name>sf4twitter__TWITTER_SCHEDULED_KEYWORD_SEARCH_FINISHED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label of button that activates a scheduled task --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_ACTIVATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_SCHEDULER_PAGE_COLUMN_LAST_TIME_RUN --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_COLUMN_LAST_TIME_RUN</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Table column title --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_COLUMN_NAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Table column title --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_COLUMN_REQUESTS_USED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Table column title --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_COLUMN_SEARCH_TERM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Table column title --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_COLUMN_TIME_INTERVAL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label of button that deactivates a scheduled task --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_DEACTIVATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scheduled Searches --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_SCHEDULER_PAGE_TITLE_ACCOUNT --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_TITLE_ACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_SCHEDULER_PAGE_TITLE_IGNORE --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_TITLE_IGNORE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_SCHEDULER_PAGE_TITLE_KEY --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_TITLE_KEY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_SCHEDULER_PAGE_TITLE_UNCOLLECTED --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_PAGE_TITLE_UNCOLLECTED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Displays the current of tasks used (the {0} is where the number will be placed) --></label>
+        <name>sf4twitter__TWITTER_SCHEDULER_USED_TASKS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Schedule searches --></label>
+        <name>sf4twitter__TWITTER_SCHEDULE_SEARCHES</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- for this Twitter Screen Name --></label>
+        <name>sf4twitter__TWITTER_SCREENNAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Lead for this Twitter Screen Name --></label>
+        <name>sf4twitter__TWITTER_SCREENNAME_HREF</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicates an error occurred requesting a page ({0} is the search description) --></label>
+        <name>sf4twitter__TWITTER_SEARCH_CONNECTION_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The search was NOT scheduled because an error occurred: --></label>
+        <name>sf4twitter__TWITTER_SEARCH_NOT_SCHEDULED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The search was NOT unscheduled because an error occurred: --></label>
+        <name>sf4twitter__TWITTER_SEARCH_NOT_UNSCHEDULED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter search operators --></label>
+        <name>sf4twitter__TWITTER_SEARCH_OPERATORS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The search was scheduled: --></label>
+        <name>sf4twitter__TWITTER_SEARCH_SCHEDULED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The search was unscheduled: --></label>
+        <name>sf4twitter__TWITTER_SEARCH_UNSCHEDULED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- - -  Select - -  --></label>
+        <name>sf4twitter__TWITTER_SELECT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_SELECT_A_RECORD --></label>
+        <name>sf4twitter__TWITTER_SELECT_A_RECORD</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER SELECT LESS RECORD --></label>
+        <name>sf4twitter__TWITTER_SELECT_LESS_RECORD</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TWITTER_SELECT_ONLY_RECORD --></label>
+        <name>sf4twitter__TWITTER_SELECT_ONLY_RECORD</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sent Direct Message to --></label>
+        <name>sf4twitter__TWITTER_SEND_DM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Manage Twitter accounts --></label>
+        <name>sf4twitter__TWITTER_SETUP_ACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Setup guide --></label>
+        <name>sf4twitter__TWITTER_SETUP_GUIDE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- URL you tried to shorten was invalid --></label>
+        <name>sf4twitter__TWITTER_SHORTEN_URL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Solutions is required. --></label>
+        <name>sf4twitter__TWITTER_SOLUTION_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Solution Created --></label>
+        <name>sf4twitter__TWITTER_SOLUTION_CREATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Solutions is required. --></label>
+        <name>sf4twitter__TWITTER_SOLUTION_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Solutions is required. --></label>
+        <name>sf4twitter__TWITTER_SOLUTION_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Get Started --></label>
+        <name>sf4twitter__TWITTER_START_NOW</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Start page introductory text --></label>
+        <name>sf4twitter__TWITTER_START_PAGE_TEXT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Salesforce for Twitter --></label>
+        <name>sf4twitter__TWITTER_START_PAGE_TITLE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter status --></label>
+        <name>sf4twitter__TWITTER_STATUS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You are not authorized to see this previous status. --></label>
+        <name>sf4twitter__TWITTER_STATUSES_NOT_AUTHORIZED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Actioned --></label>
+        <name>sf4twitter__TWITTER_STATUS_ACTIONED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Changed Status Succesfully --></label>
+        <name>sf4twitter__TWITTER_STATUS_CHANGED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Changed this Conversation&apos;s Status to &quot;Ignored&quot; --></label>
+        <name>sf4twitter__TWITTER_STATUS_CHANGED_IGNORED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Changed this Conversation&apos;s Status to &quot;Solved By Community&quot; --></label>
+        <name>sf4twitter__TWITTER_STATUS_CHANGED_SOLVED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Ignored --></label>
+        <name>sf4twitter__TWITTER_STATUS_IGNORED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New --></label>
+        <name>sf4twitter__TWITTER_STATUS_NEW</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This conversation has already been marked as solved by the community. --></label>
+        <name>sf4twitter__TWITTER_STATUS_NOT_CHANGED_SOLVED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mark as reviewed --></label>
+        <name>sf4twitter__TWITTER_STATUS_REVIEWED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Solved By Community --></label>
+        <name>sf4twitter__TWITTER_STATUS_SOLVED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Status updated successfully --></label>
+        <name>sf4twitter__TWITTER_STATUS_UPDATED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Stop Deleting --></label>
+        <name>sf4twitter__TWITTER_STOP_DELETING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Stop Search --></label>
+        <name>sf4twitter__TWITTER_STOP_SEARCH</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Success --></label>
+        <name>sf4twitter__TWITTER_SUCCESS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Target Account is currently suspended --></label>
+        <name>sf4twitter__TWITTER_TARGETACCOUNT_SUSPENDED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Campaign Member --></label>
+        <name>sf4twitter__TWITTER_TARGET_CAMPAIGNMEMBER</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Case --></label>
+        <name>sf4twitter__TWITTER_TARGET_CASE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Case Comment --></label>
+        <name>sf4twitter__TWITTER_TARGET_CASECOMMENT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contact --></label>
+        <name>sf4twitter__TWITTER_TARGET_CONTACT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Conversation --></label>
+        <name>sf4twitter__TWITTER_TARGET_CONVERSATION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Solution --></label>
+        <name>sf4twitter__TWITTER_TARGET_SOLUTION</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter Account --></label>
+        <name>sf4twitter__TWITTER_TARGET_TWITTERACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Completed --></label>
+        <name>sf4twitter__TWITTER_TASK_COMPLETED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Tasks is required. --></label>
+        <name>sf4twitter__TWITTER_TASK_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Tasks is required. --></label>
+        <name>sf4twitter__TWITTER_TASK_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sent a comment to --></label>
+        <name>sf4twitter__TWITTER_TASK_FCBK_COMMENT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The task was NOT scheduled because an error occurred: --></label>
+        <name>sf4twitter__TWITTER_TASK_NOT_SCHEDULED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The task was NOT unscheduled because an error occurred: --></label>
+        <name>sf4twitter__TWITTER_TASK_NOT_UNSCHEDULED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The task was scheduled --></label>
+        <name>sf4twitter__TWITTER_TASK_SCHEDULED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sent Direct Message to --></label>
+        <name>sf4twitter__TWITTER_TASK_SUBJECT_DM</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sent @Reply Tweet to --></label>
+        <name>sf4twitter__TWITTER_TASK_SUBJECT_REPLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The task was unscheduled: --></label>
+        <name>sf4twitter__TWITTER_TASK_UNSCHEDULED</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Tasks is required. --></label>
+        <name>sf4twitter__TWITTER_TASK_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter --></label>
+        <name>sf4twitter__TWITTER_TEXT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This text will be sent, as a public reply or direct message --></label>
+        <name>sf4twitter__TWITTER_TEXT_SENT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Twitter Accounts is required. --></label>
+        <name>sf4twitter__TWITTER_TWITACCOUNT_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Twitter Accounts is required. --></label>
+        <name>sf4twitter__TWITTER_TWITACCOUNT_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Twitter Accounts is required. --></label>
+        <name>sf4twitter__TWITTER_TWITACCOUNT_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Create permission on Twitter Searches is required. --></label>
+        <name>sf4twitter__TWITTER_TWITSEARCH_CREATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete permission on Twitter Searches is required. --></label>
+        <name>sf4twitter__TWITTER_TWITSEARCH_DELETE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Update permission on Twitter Searches is required. --></label>
+        <name>sf4twitter__TWITTER_TWITSEARCH_UPDATE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Direct Message --></label>
+        <name>sf4twitter__TWITTER_TYPE_DIRECT_MESSAGE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Registered Account --></label>
+        <name>sf4twitter__TWITTER_TYPE_REGISTERED_ACCOUNT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- @Replies --></label>
+        <name>sf4twitter__TWITTER_TYPE_REPLIES</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search --></label>
+        <name>sf4twitter__TWITTER_TYPE_SEARCH</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unknown --></label>
+        <name>sf4twitter__TWITTER_UNKNOWN</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter Username --></label>
+        <name>sf4twitter__TWITTER_USERNAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Twitter Username does not have a Lead or Contact related to it. --></label>
+        <name>sf4twitter__TWITTER_USERNAME_NOT_CONTACTLEAD</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Twitter Account must have a valid Bit.ly Username and Api Key. --></label>
+        <name>sf4twitter__TWITTER_VALID_BITLY</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please enter a valid url. --></label>
+        <name>sf4twitter__TWITTER_VALID_URL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Warning --></label>
+        <name>sf4twitter__TWITTER_WARNING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- What is happening label --></label>
+        <name>sf4twitter__TWITTER_WHAT_IS_HAPPENING</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- with a --></label>
+        <name>sf4twitter__TWITTER_WITH_A</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- was created for user id --></label>
+        <name>sf4twitter__TWITTER_WITH_USERNAME</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Title --></label>
+        <name>sf4twitter__Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Title Search Username --></label>
+        <name>sf4twitter__Title_Search_Username</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total Results --></label>
+        <name>sf4twitter__Total_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter_Account_PageSize --></label>
+        <name>sf4twitter__Twitter_Account_PageSize</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter Accounts --></label>
+        <name>sf4twitter__Twitter_Accounts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter Accounts following --></label>
+        <name>sf4twitter__Twitter_Accounts_following</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send a new message or a Case Solution --></label>
+        <name>sf4twitter__Twitter_Case_Solution</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter_Error_Returned --></label>
+        <name>sf4twitter__Twitter_Error_Returned</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Twitter ID --></label>
+        <name>sf4twitter__Twitter_ID</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Type --></label>
+        <name>sf4twitter__Type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- UNABLE_CONNECT_FACEBOOK --></label>
+        <name>sf4twitter__UNABLE_CONNECT_FACEBOOK</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- UNABLE_TO_LOAD_LOG_FILE --></label>
+        <name>sf4twitter__UNABLE_TO_LOAD_LOG_FILE</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to retrieve all comments for this post --></label>
+        <name>sf4twitter__UNABLE_TO_RETRIEVE_ALL_COMMENTS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to send a comment to this object --></label>
+        <name>sf4twitter__UNABLE_TO_SEND_COMMENT</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Person Account is not enabled in your org --></label>
+        <name>sf4twitter__UNKNOWN_TWITTER_USERNAMES_ERROR</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- To unfollow a user deselect the desired Accounts and click &quot;Save changes&quot; --></label>
+        <name>sf4twitter__Unfollow_user_deselect</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- unlike --></label>
+        <name>sf4twitter__Unlike</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Username --></label>
+        <name>sf4twitter__Username</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Username must be unique. --></label>
+        <name>sf4twitter__Username_unique</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validated --></label>
+        <name>sf4twitter__Validated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validated Twitter Account --></label>
+        <name>sf4twitter__Validated_Twitter_Account</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You can only send replies to Contacts, Leads or Person Accounts --></label>
+        <name>sf4twitter__YOU_CAN_ONLY_REPLY_TO_CNCT_LEAD_PA</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- you and 1 other like this --></label>
+        <name>sf4twitter__You_And_1_Like_This</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- you and {0} others like this --></label>
+        <name>sf4twitter__You_And_Others_Like_This</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- you like this --></label>
+        <name>sf4twitter__You_Like_This</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- hours --></label>
+        <name>sf4twitter__hours</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- minutes --></label>
+        <name>sf4twitter__minutes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- new Members --></label>
+        <name>sf4twitter__new_Members</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- of 10 --></label>
+        <name>sf4twitter__of_10</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- on Twitter. --></label>
+        <name>sf4twitter__on_Twitter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- remaining --></label>
+        <name>sf4twitter__remaining</name>
+    </customLabels>
+    <customPageWebLinks>
+        <label><!-- 出社 --></label>
+        <name>Syussya</name>
+    </customPageWebLinks>
+    <customPageWebLinks>
+        <label><!-- 退社 --></label>
+        <name>Taisya2</name>
+    </customPageWebLinks>
+    <customTabs>
+        <label><!-- タイムカードについて --></label>
+        <name>AboutSFDCJTimecard</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 外注・仕入先用 請求書発行 --></label>
+        <name>OutputInvoice4SupplierTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 請求書発行 --></label>
+        <name>OutputInvoiceTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 写真添付検証 --></label>
+        <name>PhotoAttTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- QRコード --></label>
+        <name>QR</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 地理情報デモ --></label>
+        <name>RocationDemoTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- テーブル＆タブ設定取得 --></label>
+        <name>SetupCheckTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Start Here --></label>
+        <name>Start_Here</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 取引先権限テスト --></label>
+        <name>Tab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 行動切替テスト --></label>
+        <name>TabChgTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 冠婚アンケート --></label>
+        <name>Tabtest</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- プロジェクトページテスト --></label>
+        <name>TestProjectTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- プロジェクト一覧 --></label>
+        <name>TestRegistProjectTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 更新処理テスト画面 --></label>
+        <name>TestSearchProjectTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- プロジェクト新規登録 --></label>
+        <name>VisualForceTest</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- ドキュメントテスト --></label>
+        <name>documentTest</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- javascriptTest --></label>
+        <name>javascriptTest</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- レポート遷移テスト --></label>
+        <name>rpTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- メール添付送信 --></label>
+        <name>sendMailTab</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 商談一括更新 --></label>
+        <name>sfdcjoppupdate</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 商談一括更新について --></label>
+        <name>whatissfdcjoppupdate</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- 郵便番号検索について --></label>
+        <name>zipSearchReadMe</name>
+    </customTabs>
+    <flowDefinitions>
+        <flows>
+            <fullName>test-1</fullName>
+        </flows>
+        <fullName>test</fullName>
+    </flowDefinitions>
+    <quickActions>
+        <label><!-- ブラウザ --></label>
+        <name>Blowser</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- ScribblePad --></label>
+        <name>ScribblePad</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <reportTypes>
+        <description><!-- User-Feed-Commnet --></description>
+        <label><!-- User-Feed-Commnet --></label>
+        <name>Chatter</name>
+        <sections>
+            <label><!-- Comments --></label>
+            <name>Comments</name>
+        </sections>
+        <sections>
+            <label><!-- ユーザ --></label>
+            <name>ユーザ</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- いいね! --></label>
+                <name>いいね!</name>
+            </columns>
+            <columns>
+                <label><!-- 名前 --></label>
+                <name>名前</name>
+            </columns>
+            <label><!-- ユーザフィード --></label>
+            <name>ユーザフィード</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- ChatterGroup-GroupFeed --></description>
+        <label><!-- ChatterGroup-GroupFeed --></label>
+        <name>ChatterGroup_GroupFeed</name>
+        <sections>
+            <label><!-- Chatter グループ --></label>
+            <name>Chatter グループ</name>
+        </sections>
+        <sections>
+            <label><!-- Chatter グループフィード --></label>
+            <name>Chatter グループフィード</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- ChatterGroup-GroupFeed-Comments --></description>
+        <label><!-- ChatterGroup-GroupFeed-Comments --></label>
+        <name>ChatterGroup_GroupFeed_Comments</name>
+        <sections>
+            <label><!-- Chatter グループ --></label>
+            <name>Chatter グループ</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- いいね! --></label>
+                <name>いいね!</name>
+            </columns>
+            <columns>
+                <label><!-- 名前 --></label>
+                <name>名前</name>
+            </columns>
+            <label><!-- Chatter グループフィード --></label>
+            <name>Chatter グループフィード</name>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <name>Comments</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- ChatterGroup-GroupMembers --></description>
+        <label><!-- ChatterGroup-GroupMembers --></label>
+        <name>ChatterGroup_GroupMembers</name>
+        <sections>
+            <label><!-- Chatter グループ --></label>
+            <name>Chatter グループ</name>
+        </sections>
+        <sections>
+            <label><!-- Chatter グループメンバー --></label>
+            <name>Chatter グループメンバー</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Chatterコメントなしレポート --></description>
+        <label><!-- Chatterコメントなしレポート --></label>
+        <name>ChatterNon</name>
+        <sections>
+            <label><!-- Comments --></label>
+            <name>Comments</name>
+        </sections>
+        <sections>
+            <label><!-- ユーザ --></label>
+            <name>ユーザ</name>
+        </sections>
+        <sections>
+            <label><!-- ユーザフィード --></label>
+            <name>ユーザフィード</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- 履歴トレンドを使用する プロジェクト管理 --></description>
+        <label><!-- 履歴トレンドを使用する プロジェクト管理 --></label>
+        <name>CustomReportType</name>
+        <sections>
+            <label><!-- プロジェクト管理 --></label>
+            <name>プロジェクト管理</name>
+        </sections>
+        <sections>
+            <label><!-- プロジェクト管理 (履歴) --></label>
+            <name>プロジェクト管理 (履歴)</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- User-Feed --></description>
+        <label><!-- User-Feed --></label>
+        <name>User_Feed</name>
+        <sections>
+            <label><!-- ユーザ --></label>
+            <name>ユーザ</name>
+        </sections>
+        <sections>
+            <label><!-- ユーザフィード --></label>
+            <name>ユーザフィード</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- User-Follower --></description>
+        <label><!-- User-Follower --></label>
+        <name>User_Follower</name>
+        <sections>
+            <label><!-- フォローされている --></label>
+            <name>フォローされている</name>
+        </sections>
+        <sections>
+            <label><!-- ユーザ --></label>
+            <name>ユーザ</name>
+        </sections>
+    </reportTypes>
+    <scontrols>
+        <label><!-- 設定情報取得 --></label>
+        <name>SetupCheck</name>
+    </scontrols>
+    <scontrols>
+        <label><!-- 出社 --></label>
+        <name>Syussya</name>
+    </scontrols>
+    <scontrols>
+        <label><!-- 退社 --></label>
+        <name>Taisya2</name>
+    </scontrols>
+    <scontrols>
+        <label><!-- タイムカード管理について --></label>
+        <name>about_timecardmgmt</name>
+    </scontrols>
+</Translations>

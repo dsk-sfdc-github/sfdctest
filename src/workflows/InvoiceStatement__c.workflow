@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>SetFinalApprovalStatus</fullName>
+        <field>Status__c</field>
+        <literalValue>クローズ</literalValue>
+        <name>SetFinalApprovalStatus</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SetFinalRejectionStatus</fullName>
+        <field>Status__c</field>
+        <literalValue>オープン</literalValue>
+        <name>SetFinalRejectionStatus</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SetInitialApprovalStatus</fullName>
+        <field>Status__c</field>
+        <literalValue>ペンディング</literalValue>
+        <name>SetInitialApprovalStatus</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+</Workflow>

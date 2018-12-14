@@ -1,0 +1,7 @@
+<apex:page controller="MailAndPDFTestController">
+
+    <apex:form >
+    	<apex:commandButton value="メール送信" action="{!sendMail}" />
+    </apex:form>
+
+</apex:page>

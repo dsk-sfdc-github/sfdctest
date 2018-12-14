@@ -1,0 +1,100 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" cache="false">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Appirio Tech Blog Demo App</title>
+
+<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+<script type="text/javascript">
+
+    (function($jq) {
+
+        //jQuery mobileのページ初期表示時のイベント
+        $jq(document).on("pageinit", "#mainPage", function(){
+            //処理中のイメージを表示
+            $jq.mobile.loading("show");
+            if (navigator.geolocation) {
+                //緯度、経度を取得
+                navigator.geolocation.getCurrentPosition(
+                    function (pos) {
+                        $jq("#latitude").val(pos.coords.latitude);
+                        $jq("#longitude").val(pos.coords.longitude);
+                        $jq.mobile.loading("hide");
+                    },
+                    function (error) {
+                        alert("位置情報が取得できませんでした。" + error);
+                        $jq.mobile.loading("hide");
+                    }
+                );
+            }
+            else {
+                alert("このブラウザは位置情報を取得できません。");
+                $jq.mobile.loading("hide");
+            }
+        });
+
+        $jq(function(){
+            //チェックインボタンのイベント
+            $jq(document).on("click", "#checkinBtn", function(){
+                //緯度、経度をパラメータに付加して遷移
+                window.location="Checkin?latitude=" + $jq("#latitude").val() + "&longitude=" + $jq("#longitude").val();
+                return false;
+            });
+            //検索ボタンのイベント
+            $jq(document).on("click", "#searchBtn", function(){
+                //緯度、経度、距離をパラメータに付加して遷移
+                window.location="SearchCheckins?latitude=" + $jq("#latitude").val() + "&longitude=" + $jq("#longitude").val() + "&distance=" + $jq("#distance").val();
+                return false;
+            });
+        });
+
+    })(jQuery.noConflict());
+
+</script>
+
+</head>
+
+<body>
+<div data-role="page" id="mainPage">
+    <div data-role="header">
+        <h1>地理位置情報デモ</h1>
+    </div>
+    <div data-role="content">
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">現在の位置</li>
+            <li data-role="fieldcontain">
+                <label for="latitude">緯度</label>
+                <input type="text" name="name" id="latitude" value=""  />
+            </li>
+            <li data-role="fieldcontain">
+                <label for="longitude">経度</label>
+                <input type="text" name="name" id="longitude" value=""  />
+            </li>
+        </ul>
+
+        <a href="#" id="checkinBtn" data-role="button" data-inline="true" data-icon="check" >チェックインする</a>
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">検索範囲</li>
+            <li data-role="fieldcontain">
+                <select id="distance" data-mini="true">
+                    <option value="1">半径1km以内</option>
+                    <option value="5">半径5km以内</option>
+                    <option value="10">半径10km以内</option>
+                    <option value="25">半径25km以内</option>
+                </select>
+            </li>
+        </ul>
+
+        <a href="#" id="searchBtn" data-role="button" data-inline="true" data-icon="search" >近くのチェックインを検索する</a>
+
+    </div>
+</div>
+</body>
+</apex:page>

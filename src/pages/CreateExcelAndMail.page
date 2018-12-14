@@ -1,0 +1,33 @@
+<apex:page id="page" controller="CreateExcelAndMailController" contentType="charset=Windows-31J;">
+<!-- Begin Default Content REMOVE THIS -->
+<head>
+
+</head>
+<apex:form >
+	<apex:outputLabel value="Please Wait..." />
+    <apex:inputHidden value="{!sjisStr}"/>
+    <apex:ActionFunction id="af" name="sendMailExec" action="{!sendMailExec}" />
+</apex:form>
+    <script type="text/javascript">
+        var flg = "{!sendFlg}";
+        //if (flg == "true") {
+            //alert('send');
+            //sendMailExec('id');
+            //window.close();
+        //} else {
+            //alert('init');
+            //sendMail('id');
+        //}
+        window.onload = initExe();
+        function initExe() {
+            //alert('send');
+            var retFlg = false;
+            sendMailExec();
+            if (flg == "true") {
+                window.close();
+            }
+
+        }
+    </script>
+<!-- End Default Content REMOVE THIS -->
+</apex:page>

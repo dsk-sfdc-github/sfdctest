@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>タスク</value>
+    </caseValues>
+    <fields>
+        <label><!-- 対応内容 --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- 優先度 --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>中</masterLabel>
+            <translation><!-- 中 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>低</masterLabel>
+            <translation><!-- 低 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>高</masterLabel>
+            <translation><!-- 高 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- タスク状況 --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>完了</masterLabel>
+            <translation><!-- 完了 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>未完了</masterLabel>
+            <translation><!-- 未完了 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>タスクレイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション --></label>
+            <section>新規セクション</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション２ --></label>
+            <section>新規セクション２</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション３ --></label>
+            <section>新規セクション３</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- RT1 --></label>
+        <name>RT1</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- RT2 --></label>
+        <name>RT2</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- CustomLink1 --></label>
+        <name>CustomLink1</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- TaskBulkUpdate --></label>
+        <name>TaskBulkUpdate</name>
+    </webLinks>
+</CustomObjectTranslation>

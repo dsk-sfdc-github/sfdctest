@@ -1,0 +1,29 @@
+<apex:page standardController="Account">
+    <apex:stylesheet value="{!URLFOR($Resource.styles, 'styles.css')}"/>
+    <h1>スタイルシート取込</h1>
+    <apex:outputPanel styleClass="myStyle" layout="block">スタイルシートで書きました。(画像がないんだけど…)</apex:outputPanel>
+    <c:TestCompornent text="コンポ表示" />
+    <br />
+    <apex:form > 
+        <apex:pageBlock id="in" title="現在、書き込んでいる人 {!$User.LastName} {!$User.FirstName} "> 
+            <apex:pageMessages /> 
+            <apex:pageBlockButtons > 
+                <apex:commandButton value="Save" action="{!quickSave}" rerender="out, in" status="status"/> 
+            </apex:pageBlockButtons> 
+            <apex:pageBlockSection > 
+                <apex:inputField value="{!account.name}"/> 
+                <apex:inputField value="{!account.industry}"/> 
+            </apex:pageBlockSection> 
+        </apex:pageBlock> 
+    </apex:form>
+    <apex:pageBlock id="out" title="読み込み専用">              
+        <apex:actionStatus startText="更新中です..." id="status"/> 
+        <apex:pageBlockSection > 
+            <apex:outputField value="{!account.name}"/> 
+            <apex:outputField value="{!account.industry}"/> 
+        </apex:pageBlockSection> 
+    </apex:pageBlock> 
+    <h>enhancedListを使用します。enhancedListSt</h>
+    <apex:enhancedList type="Contact" height="350"/> 
+    <h>enhancedListを使用します。enhancedListEnd</h>
+</apex:page>

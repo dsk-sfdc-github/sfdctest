@@ -1,0 +1,36 @@
+<apex:page tabStyle="TestProjectTab__tab">
+<script type="text/javascript">
+<!-- javascript記述  -->
+    window.sfdcPage.appendToOnloadQueue(init());
+    function openNewRecord() {
+        //document.getElementById("upd").disabled = true;
+        //document.getElementById("ins").disabled = false;
+        //document.getElementById("upd").value = "新規レコード";
+        document.getElementById("upd").rendered = false;
+    }
+
+    function init() {
+        //alert("onLoad");
+        //document.getElementById("upd").value = "既存レコード";
+        document.getElementById("upd").rendered = true;
+        //document.getElementById("ins").disabled = true;
+    }
+</script>
+<body onload="init()">
+<apex:form >
+    <table>
+        <tr>
+            <td>
+                <apex:commandButton onclick="openNewRecord()" value="新規作成" />
+            </td>
+        </tr>
+    </table>
+    <apex:outputPanel id="upd" rendered="true">
+        既存レコード
+    </apex:outputPanel>
+    <apex:outputPanel id="ins" rendered="false">
+        新規レコード
+    </apex:outputPanel>
+</apex:form>
+</body>
+</apex:page>

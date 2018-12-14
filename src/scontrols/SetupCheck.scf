@@ -1,0 +1,1175 @@
+<html>
+<head>
+<script src="/soap/ajax/16.0/connection.js" type="text/javascript"></script>
+ 
+<script language="JavaScript"> 
+<!-- 
+//設定確認（SetupCheck）
+
+//列リスト
+var arrayDisplayCol = new Array("NO","表示ラベル","API参照名","データ型","文字数","選択リスト値","必須","カスタム");
+//列ソートフラグとNo
+var sortColflg = new Array("",1,2,3,4,"","","");
+//列API名リスト
+var ColAPI = new Array("","label","name","type","length","picklistValues","nillable","custom");
+//列センター表示リスト
+var ColCenter = new Array(true,false,false,false,false,false,true,true);
+
+//オブジェクト
+var pubGlobalResult;
+
+//データ型表示用
+var lblResult;
+
+//テーブル取得ループ用
+var loopCount;
+var loopNO;
+var pubSearchFlag = false;
+
+//レイアウト表示用
+var pudLayoutFlag;
+
+//結果表示フレームオブジェクト用
+var objframe;
+
+//ソート用
+var sortKey = new Array();
+var sortStatus = new Array();
+//ソート項目を取得
+for (var sortNo=0; sortNo<arrayDisplayCol.length; sortNo++) {
+	if (sortColflg[sortNo] != "") {
+		//ソート用のAPI名を取得
+		sortKey.push(ColAPI[sortNo]);
+		//ソートのステータスを初期化
+		sortStatus.push(0);
+	}
+
+}
+
+//メッセージリスト（テーブル）
+var Message0 = "設定情報の取得に失敗しました。";
+var Message1 = "設定取得を開始しますか？\n\n";
+var Message2 = "全テーブル情報取得中　～しばらくお待ちください～";
+var Message3 = "全テーブル情報取得終了";
+var Message4 = "テーブルを選択してください";
+var Message5 = "フィールド情報表示完了";
+var Message6 = "ソート開始";
+var Message7 = "ソート完了";
+var Message8 = "表示列は必ず１つ以上チェックしてください。";
+var Message9 = "レイアウト情報の取得に失敗しました。";
+
+//初期処理
+function fncSetupPage() {
+
+	if (pubSearchFlag) {return;}
+	
+	//処理開始確認
+	if (confirm(Message1) == false) {
+		return false;
+	}
+
+	//処理中表示
+	fncShowPopup();
+	
+	pubSearchFlag = true;
+
+	//設定表示エリアを非表示
+	document.getElementById("ResultArea").style.display = "none";
+	document.getElementById("TabResultArea").style.display = "none";
+	document.getElementById("OutFrame").style.display = "none";
+	document.getElementById("Datefield").style.display = "none";
+	objframe.document.getElementById("outfield").innerHTML = "";
+
+	window.status = Message2;
+
+	//現在時刻取得処理を呼び出し
+	document.getElementById("Datefield").innerHTML = fncNowDate();
+	document.getElementById("Datefield").innerHTML += "の一覧";
+
+ try {
+	//全テーブル情報を取得
+	sforce.connection.describeGlobal({
+		onSuccess : fncDescTabs,
+		onFailure : fncDescFailed
+	});
+ }catch(e){
+	fncDescFailed(e);
+ }
+}
+
+
+
+//初期オブジェクト取得エラー処理
+function fncDescTabs(Globalresult) {
+
+	//テーブル情報保持
+	pubGlobalResult = Globalresult;
+
+ try {
+	//全テーブル情報を取得
+	sforce.connection.describeTabs({
+		onSuccess : fncResultSet,
+		onFailure : fncDescFailed
+	});
+ }catch(e){
+	fncDescFailed(e);
+ }
+}
+
+//初期オブジェクト取得エラー処理
+function fncDescFailed(result) {
+	//全テーブル情報を保持
+	//設定表示エリアを非表示
+	document.getElementById("ResultArea").style.display = "none";
+	document.getElementById("OutFrame").style.display = "none";
+	//処理中非表示
+	fncHidePopup();
+	//現在時刻取得をNULL
+	document.getElementById("Datefield").innerHTML = "";
+	alert(Message0);
+	alert(result);
+	pubSearchFlag = false;
+}
+
+//オブジェクト取得成功処理
+function fncResultSet(Tabsresult) {
+
+	//列リスト表示処理
+	fncDisplayCol();
+
+	var docBody = "";
+	//テーブル選択リストを作成
+	docBody += "<select name='Objecttype' onchange='javascript:fncFirstSet()'>";
+	docBody += "<option value=Nonselect >－－選択してください－－</option>";
+
+	//テーブル選択リストをオブジェクト分設定
+	for (var i=0; i<pubGlobalResult.types.length; i++) {
+		var TabFlag = false;
+		//「value」を番号で指定
+		docBody += "<option value=" + pubGlobalResult.types[i] + ">";
+		
+		//タブ情報から日本語名取得
+		for (var j=0; j<Tabsresult.length; j++) {
+			for (var k=0; k<Tabsresult[j].tabs.length; k++){
+				if (Tabsresult[j].tabs[k].sobjectName == pubGlobalResult.types[i]) {
+					docBody += Tabsresult[j].tabs[k].label;
+					docBody += "</option>";
+					TabFlag = true;
+					break;
+				}
+			}
+			if (TabFlag) {break;}
+		}
+		if (TabFlag) {continue;}
+		docBody += pubGlobalResult.types[i];
+		docBody += "</option>";
+	}
+
+	docBody += "</select>";
+
+	//HTMLを表示
+	document.getElementById("listfield").innerHTML = docBody;
+
+	//設定表示エリアを表示
+	document.getElementById("ResultArea").style.display = "";
+
+	document.getElementById("Datefield").style.display = "";
+
+	//処理中非表示
+	fncHidePopup();
+
+	window.status = Message3;
+
+	pubSearchFlag = false;
+}
+
+//列のリスト表示処理
+function fncDisplayCol(){
+	var returnValue = "";
+	
+	//列を設定
+	for (var i=0; i<arrayDisplayCol.length; i++) {
+		returnValue += "<input type=checkbox id='cbDpcl" + i + "' name='DisplayCol' ";
+		returnValue += "checked=ture title='表示する列を選択します' >";
+		returnValue += "<label for='cbDpcl" + i + "'>";
+		returnValue += arrayDisplayCol[i];
+		returnValue += "</label>";
+	}
+	//HTMLを表示
+	document.getElementById("DisplayColArea").innerHTML = returnValue;
+
+}
+
+//設定取得時刻を設定
+function fncNowDate(){
+	var returnValue;
+
+	//曜日テーブル
+	myTbl = new Array("日","月","火","水","木","金","土");
+
+/*　－－サーバ時間を利用する場合（日本時間-9時間です）－－　Start　
+	//現在日時取得（SFDC組織の日時）
+	nowDate = sforce.connection.getServerTimestamp();
+	
+	var DateTime = nowDate.timestamp.substr(0,4) + "/" + nowDate.timestamp.substr(5,2) + "/" + nowDate.timestamp.substr(8,2);
+	DateTime += " " + nowDate.timestamp.substr(11,8);
+	nowDate = new Date(DateTime);
+
+	//nowDate正しく取得できなかった時ローカル時間（実行PCの時間）
+	if (isNaN(nowDate)) {
+		nowDate = new Date();
+	}
+	
+　－－サーバ時間を利用する場合（日本時間-9時間です）－－　End　*/
+
+	//ローカル時間（実行PCの時間）
+	var nowDate = new Date();
+	
+	//年、月、日
+	nowYear = nowDate.getYear();
+	nowYear = (nowYear < 2000) ? nowYear+1900 : nowYear;
+	nowMonth = nowDate.getMonth() + 1;
+	nowDay = nowDate.getDate();
+	//曜日
+	nowWeek = nowDate.getDay();
+	//時、分、秒
+	nowHours = nowDate.getHours();
+	nowMinutes = nowDate.getMinutes();
+	nowSeconds = nowDate.getSeconds();
+
+	//表示用に成型
+	returnValue = nowYear + "年" + nowMonth + "月" + nowDay + "日";
+	returnValue += " " + myTbl[nowWeek] + "曜日";
+	returnValue += " " + nowHours + "時" + nowMinutes + "分" + nowSeconds + "秒";
+	returnValue += " 時点";
+
+	return returnValue;
+
+}
+
+//選択テーブルの情報を保持
+function fncFirstSet(){
+	//NULLを選択時、表示部分を初期化し処理を抜ける
+	if (document.actionForm.Objecttype.value == "Nonselect"){
+		document.getElementById("OutFrame").style.display = "none";
+		objframe.document.getElementById("outfield").innerHTML = "";
+		window.status = Message4;
+		return;
+	}
+	
+	var colCheckFLG = false;
+
+	//列表示チェック確認
+	var DisplayElement = document.getElementsByName("DisplayCol");
+	for (var i=0; i<DisplayElement.length; i++) {
+		//チェックがあるときTrue
+		if (DisplayElement.item(i).checked) {
+			colCheckFLG = true;
+			break;
+		}
+	}
+	//列にひとつもチェックが無いとき処理終了
+	if (!colCheckFLG) {
+		alert(Message8);
+		objframe.document.getElementById("outfield").innerHTML = "";
+		return colCheckFLG;
+	}
+	
+	if (pubSearchFlag) {return;}
+	
+	//処理中表示
+	fncShowPopup();
+	
+ try {
+	sforce.connection.describeSObject(document.actionForm.Objecttype.value, {
+		onSuccess : fncGetTable,
+		onFailure : fncDescFailed
+	});
+ }catch(e){
+	fncDescFailed(e);
+	//処理中非表示
+	fncHidePopup();
+	
+	return;
+ }
+
+
+}
+//テーブル情報取得
+function fncGetTable(result) {
+	//グローバル保持
+	lblResult = result;
+	
+	//レイアウト値初期化（選択テーブル変更時）
+	if (lblResult.name != document.getElementById("LayoutObj").value) {
+		document.getElementById("LayoutObj").value = "";
+	}
+	//レイアウトエリアの表示切替
+	fncChangeLayoutArea(lblResult.layoutable);
+
+	//設定取得処理呼び出し
+	fncFieldSetup(false);
+	
+	//処理中非表示
+	fncHidePopup();
+	
+
+}
+
+//表示処理開始
+function fncFieldSetup(sortFlag) {
+	//Field表示の値を初期化
+	var fieldBody = "";
+
+	//表示オブジェクト設定
+	var DisplayElementItem = document.getElementsByName("DisplayItem");
+	var LayoutElement = document.getElementsByName("LayoutItem");
+	
+	//レイアウト情報の取得確認
+	if (LayoutElement.item(1).checked && document.getElementById("LayoutObj").value != lblResult.name) {
+		try {
+			//レイアウト配列作成
+			pudLayoutFlag = new Array(lblResult.fields.length);
+			//レイアウト情報取得オブジェクト名保持
+			document.getElementById("LayoutObj").value = lblResult.name;
+			//レイアウト情報を取得
+			var LayoutResult = sforce.connection.describeLayout(lblResult.name);
+			var layouts = LayoutResult.getArray("layouts");
+			
+			//レイアウト値保持
+			for (var lrg=0; lrg<lblResult.fields.length; lrg++) {
+				//レイアウト表示用に保持
+				pudLayoutFlag[lrg] = fncGetLayout(layouts,lrg);
+			}
+		} catch(e) {
+			//エラーメッセージ表示
+			alert(Message9);
+			return;
+		}
+	}
+	
+	//現在時刻取得処理を呼び出し
+	fieldBody += fncNowDate();
+	fieldBody += "の設定内容<br>";
+
+	//ヘッダー表示処理呼び出し
+	fieldBody += fncHeaderOut(LayoutElement.item(1).checked);
+
+	//Field数分処理
+	//表示フィールド数用
+	var countField = 0;
+	for (var lfl=0; lfl<lblResult.fields.length; lfl++) {
+
+		//必須項目か確認
+		if (lblResult.fields[lfl].nillable == "true") {
+			lblResult.fields[lfl].nillable = "&nbsp;";
+		} else if(lblResult.fields[lfl].nillable == "false") {
+			lblResult.fields[lfl].nillable = "○";
+		}
+
+		//カスタム項目か確認
+		if (lblResult.fields[lfl].custom == "true" || lblResult.fields[lfl].custom == "○") {
+			Customflg = "○";
+			//表示項目が標準のみの時次の項目へ
+			if (DisplayElementItem.item(1).checked) {continue;}
+		} else {
+			Customflg = "&nbsp;";
+			//表示項目がカスタムのみの時次の項目へ
+			if (DisplayElementItem.item(2).checked) {continue;}
+		}
+		
+		//レイアウト表示確認
+		if (LayoutElement.item(1).checked) {
+			//レイアウトに無ければ次の項目へ
+			if (!pudLayoutFlag[lfl]) {continue;}
+		}
+		
+		//値を保持
+		//ソート用に値を渡す
+		//フィールドタイプ変換処理呼び出し
+		lblResult.fields[lfl].type = fncTypeChange(lfl);
+		lblResult.fields[lfl].custom = Customflg;
+
+		//表示フィールド数をカウント
+		countField += 1;
+		//設定内容を表示
+		fieldBody += fncValueOut(lfl, countField);
+
+		//Field取得件数をステータスバーに表示
+		window.status = "フィールド情報表示処理" + (lfl+1) + "件終了";
+	}
+
+	//表示項目数が「0」の時、該当項目無しメッセージ表示
+	if (countField == 0) {
+		countField = 1;
+
+		//列表示のチェック確認
+		var DisplayColElement = document.getElementsByName("DisplayCol");
+		for (var dce=0; dce<DisplayColElement.length; dce++) {
+			//チェックがあるとき横の列を結合する数をカウント
+			if (DisplayColElement.item(dce).checked) {
+				countField += 1;
+			}
+		}
+		//結合列数確認
+		if (countField > 1) {
+			fieldBody += "<tr><td colspan=" + countField + ">該当項目無し</td></tr>";
+		} else {
+			fieldBody += "<tr><td>該当項目無し</td></tr>";
+		}
+	}
+
+	fieldBody += "</table>";
+
+	//HTMLを表示
+	objframe.document.getElementById("outfield").innerHTML = fieldBody;
+
+	document.getElementById("OutFrame").style.display = "";
+	
+	window.status = Message5;
+
+}
+
+//レイアウト表示・非表示切り替え
+function fncGetLayout(layouts,lno) {
+	//レイアウト表示確認
+	var LayoutFLG = false;
+	//レイアウト
+	for (var j=0; j<layouts.length; j++) {
+		//セクション
+		var sections = layouts[j].detailLayoutSections;
+		if (sections == undefined) {continue;}
+		for (var k=0; k<sections.length; k++) {
+			//列
+			var rows = sections[k].getArray("layoutRows");
+			if (rows == undefined) {continue;}
+			for (var m=0; m<rows.length; m++) {
+				//項目
+				var items = rows[m].getArray("layoutItems");
+				if (items == undefined) {continue;}
+				for (var n=0; n<items.length; n++) {
+					//コンポーネント
+					var Components = items[n].getArray("layoutComponents");
+					if (Components == undefined) {continue;}
+					for (var p=0; p<Components.length; p++) {
+						//レイアウトにあればTrueを返す
+						if (Components[p].value == lblResult.fields[lno].name) {
+							LayoutFLG = true;
+							break;
+						}
+					}
+				}
+				if (LayoutFLG) {break;}
+			}
+			if (LayoutFLG) {break;}
+		}
+		if (LayoutFLG) {break;}
+	}
+	//戻り値を返す
+	return LayoutFLG;
+}
+
+//レイアウト表示・非表示切り替え
+function fncChangeLayoutArea(HyoujiFlag) {
+	//レイアウト取得可否フラグによってチェックを切り替え
+	if (HyoujiFlag != "true") {
+		document.getElementsByName('LayoutItem').item(0).checked = true;
+	}
+}
+
+//ヘッダー表示
+function fncHeaderOut(LayoutFlag) {
+	var returnValue = "";
+
+	//追加情報
+	returnValue += "<br>";
+	//カスタムオブジェクト
+	if (lblResult.custom == "true") {
+		returnValue += "カスタムオブジェクト　：　○<br>";
+	}
+
+	//ヘッダーの内容
+	returnValue += "<table id='fieldtable' border=1 cellspacing=0 cellpadding=3 bordercolor='#F4A460' class='list' style='font-size: 10pt;'>";
+	returnValue += "<caption>【テーブル名　：　"+ lblResult.label;
+	returnValue += "（" + lblResult.name + "）】</caption>";
+	returnValue += "<tr bgcolor='#f9d9c3'>";
+
+	//列表示にチェック確認
+	var DisplayElement = document.getElementsByName('DisplayCol');
+	for (var i=0; i<DisplayElement.length; i++) {
+		//チェックがあるとき表示
+		if (DisplayElement.item(i).checked) {
+			returnValue += "<th class='actionColumn'>";
+			
+			//ソート可能の時リンク表示
+			if (sortColflg[i] != "") {
+				returnValue += "<a href='javascript:parent.sortData(" + (sortColflg[i]-1) + "," + LayoutFlag +")'";
+				returnValue += " title='並び替えを行います' >";
+			}
+			//列名を表示
+			returnValue += arrayDisplayCol[i];
+			
+			if (sortColflg[i] != "") {returnValue += "</a>";}
+
+			returnValue += "</th>";
+		}
+	}
+
+	returnValue += "</tr>";
+
+	//戻り値を格納
+	return returnValue;
+}
+
+//設定内容表示
+function fncValueOut(lno,CountField) {
+	var returnValue = "";
+	//値を表示
+	returnValue = "<tr class='dataRow'>";
+
+	//列表示にチェック確認
+	//NO列は別
+	var DisplayElement = document.getElementsByName('DisplayCol');
+	if (DisplayElement.item(0).checked) {
+		returnValue += "<td align='center' class='dataCell'>" + CountField + "</td>";
+	}
+	for (var i=1; i<DisplayElement.length; i++) {
+		//チェックがあるとき表示
+		if (DisplayElement.item(i).checked) {
+			returnValue += "<td class='dataCell' ";
+			if (ColCenter[i]) {returnValue += " style='text-align: center; '"}
+			returnValue += ">";
+			returnValue += lblResult.fields[lno].get(ColAPI[i]);
+			returnValue += "</td>";
+		}
+	}
+
+	returnValue += "</tr>";
+
+	//戻り値を格納
+	return returnValue;
+}
+
+//フィールドタイプ日本語変換
+function fncTypeChange(lno){
+	var RetFieldType;
+
+	//名称変換のみのタイプ
+	var orgNormalType = new Array();
+	orgNormalType["id"] = "ID";
+	orgNormalType["url"] = "URL";
+	orgNormalType["string"] = "テキスト";
+	orgNormalType["textarea"] = "テキストエリア";
+	orgNormalType["combobox"] = "テキスト（＋選択リスト）";
+	orgNormalType["base64"] = "Base64";
+
+	//文字数をNULLにするタイプ
+	var orgLenNullType = new Array();
+	orgLenNullType["boolean"] = "チェックボックス";
+	orgLenNullType["phone"] = "電話";
+	orgLenNullType["email"] = "電子メール";
+	orgLenNullType["date"] = "日付";
+	orgLenNullType["datetime"] = "日付/時間";
+	
+	//文字数を作成するタイプ（少数点以下無し）
+	var orgLenIntType = new Array();
+	orgLenIntType["int"] = "数値";
+
+	//文字数を作成するタイプ（少数点以下有り）
+	var orgLenDblType = new Array();
+	orgLenDblType["double"] = "数値";
+	orgLenDblType["percent"] = "パーセント";
+	orgLenDblType["currency"] = "通貨";
+
+	//選択リスト値を取得するタイプ
+	var orgPicklistType = new Array();
+	orgPicklistType["picklist"] = "選択リスト";
+	orgPicklistType["multipicklist"] = "複数選択リスト";
+
+	//ルックアップ先を取得するタイプ
+	var orgReferenceType = new Array();
+	orgReferenceType["reference"] = "ルックアップ";
+
+	//フィールドタイプを格納
+	var fieldtype = lblResult.fields[lno].type;
+
+	//数式表示用
+	if (lblResult.fields[lno].calculated == "true") {
+		RetFieldType = "数式（";
+		calculatedend = "）";
+		//ソート用に修正
+		lblResult.fields[lno].calculated = "false";
+	} else {
+		RetFieldType = "";
+		calculatedend = "";
+	}
+
+	//タイプによって処理を分ける
+	if (fieldtype in orgNormalType) {
+		//名称変換のみ
+		RetFieldType += orgNormalType[fieldtype];
+		
+	} else if (fieldtype in orgLenNullType) {
+		//名称変換＆文字数列をNULL
+		RetFieldType += orgLenNullType[fieldtype];
+		//文字数をNULLにする
+		lblResult.fields[lno].length = "&nbsp;";
+		
+	} else if (fieldtype in orgLenIntType) {
+		//名称変換＆文字数作成（少数点以下無し）
+		RetFieldType += orgLenIntType[fieldtype];
+		//文字数を作成（少数点以下０）
+		lblResult.fields[lno].length = lblResult.fields[lno].digits + ",0";
+		
+	} else if (fieldtype in orgLenDblType) {
+		//名称変換＆文字数作成（少数点以下有り）
+		RetFieldType += orgLenDblType[fieldtype];
+		//文字数を作成
+		lblResult.fields[lno].precision = lblResult.fields[lno].precision - lblResult.fields[lno].scale;
+		lblResult.fields[lno].length = lblResult.fields[lno].precision + "," + lblResult.fields[lno].scale;
+		
+	} else if (fieldtype in orgPicklistType) {
+		//名称変換＆選択リスト値取得
+		RetFieldType += orgPicklistType[fieldtype];
+		//選択リスト値取得処理呼び出し
+		fncPicklist(lno);
+		//文字数をNULLにする
+		lblResult.fields[lno].length = "&nbsp;";
+		
+	} else if (fieldtype in orgReferenceType) {
+		//名称変換＆ルックアップ先取得
+		RetFieldType += orgReferenceType[fieldtype];
+		//ルックアップ先取得処理呼び出し
+		RetFieldType += fncReference(lno);
+		//文字数をNULLにする
+		lblResult.fields[lno].length = "&nbsp;";
+		
+	} else {
+		//一致するものが無いときはそのまま表示
+		RetFieldType += fieldtype;
+	}
+
+	if (fieldtype!="picklist" && fieldtype!="multipicklist" && fieldtype!="選択リスト" && fieldtype!="複数選択リスト") {
+		//選択リスト値をブランクにする
+		lblResult.fields[lno].picklistValues = "&nbsp;";
+	}
+
+	//数式表示用
+	RetFieldType += calculatedend;
+
+	return RetFieldType;
+
+}
+
+//選択リスト値取得処理
+function fncPicklist(lno){
+	//picklistを取得
+	var pklResult = lblResult.fields[lno].picklistValues;
+	var strPickValue = "";
+
+	//連動項目か判定
+	if (lblResult.fields[lno].dependentPicklist == "true") {
+		//制御項目を取得
+		var gcpName = "";
+		var gdpValues = new Array();
+
+		gcpName = lblResult.fields[lno].controllerName;
+		gdpValues = lblResult.fields[lno].picklistValues;
+
+		//制御項目の値を取得
+		for (var j=0; j<lblResult.fields.length; j++){
+			if (lblResult.fields[j].name == gcpName){
+				strPickValue += "制御項目　：　" + lblResult.fields[j].label + "（" + gcpName + "）<br>";
+			}
+		}
+	}
+
+	//選択リストの値を取得
+	//値が0個の時エラーになるので空白で表示し処理を抜ける
+	if (pklResult == undefined) {
+		lblResult.fields[lno].picklistValues = "&nbsp;";
+		return;
+	}
+	//値が1個の時エラーになるので直接値を取得し表示
+	if (pklResult.length > 1){
+		//値を取得
+		for (var j=0; j<pklResult.length; j++) {
+			strPickValue += pklResult[j].value ;
+
+			//デフォルト値かチェック
+			if (pklResult[j].defaultValue == "true"){
+				strPickValue += "（デフォルト）";
+			}
+
+			//改行を挿入
+			strPickValue += "<br>";
+		}
+	} else {
+		strPickValue += pklResult.value;
+	}
+
+	//選択リスト値を渡す
+	lblResult.fields[lno].picklistValues = strPickValue;
+
+}
+
+//ルックアップ先取得
+function fncReference(lno){
+	var strReturn = "";
+	var strRefValue = lblResult.fields[lno].referenceTo;
+
+	//関連先の値を取得
+	//値が1個の時Lengthが文字数を取得するのでundefinedで判断
+	//１個の時は直接値を取得し表示
+	if (strRefValue[1] != undefined && strRefValue[1].length != 1){
+		for (var k=0; k<strRefValue.length; k++) {
+			//参照先を表示
+			strReturn += "<br>　" + strRefValue[k];
+		}
+	} else {
+		//オブジェクト名日本語変換
+		strReturn += "（" + strRefValue + "）";
+	}
+
+	return strReturn;
+}
+
+
+//sort機能　ここから
+
+//ソート後の表示処理
+function fncOutputSort(LayFlag) {
+
+	window.status = Message6;
+
+	//表示処理呼び出し
+	fncFieldSetup(true);
+
+	window.status = Message7;
+
+}
+
+function sortData(colIdx ,Layflg ) {
+	objframe.document.getElementById("outfield").innerHTML ="";
+	start = -1;
+	end = lblResult.fields.length;
+	flag = 0;
+	while (start < end)
+	{
+		start++;
+		end--;
+		for (i=start; i<end;  i++) flag |= swap(i, colIdx, Layflg);
+		if (!flag) {
+			fncOutputSort(Layflg);
+			setSortType( colIdx );
+			return;
+		} else {
+			flag = 0;
+		}
+		for (i=end; i>=start; i--) flag |= swap(i, colIdx, Layflg);
+		if (!flag) {
+			fncOutputSort(Layflg);
+			setSortType( colIdx );
+			return;
+		} else {
+			flag = 0;
+		}
+	}
+}
+
+function setSortType( colIdx ) {
+	var tempIdx = sortStatus[colIdx];
+	if (tempIdx){
+		 tempIdx=0; 
+	}else {
+		 tempIdx=1;
+	}
+
+	for(j=0; j<sortStatus.length; j++){
+		sortStatus[j] = 0;
+	}
+	sortStatus[colIdx] = tempIdx;
+}
+
+function swap(p, q, Layflg) {
+	if((p+1 > lblResult.fields.length-1) || (p < 0) ){
+		return 0;
+	}
+	var tempField1 = lblResult.fields[p].get(sortKey[q]);
+	var tempField2 = lblResult.fields[p+1].get(sortKey[q]);
+
+	if (!sortStatus[q]) {
+		if (tempField1 > tempField2) {
+			//項目の値
+			n = lblResult.fields[p];
+			lblResult.fields[p] = lblResult.fields[p+1];
+			lblResult.fields[p+1] = n;
+			//レイアウトの値
+			if (Layflg) {
+				n = pudLayoutFlag[p];
+				pudLayoutFlag[p] = pudLayoutFlag[p+1];
+				pudLayoutFlag[p+1] = n;
+			}
+			return 1;
+		}
+	} else {
+		if (tempField2 > tempField1) {
+			//項目の値
+			n = lblResult.fields[p+1];
+			lblResult.fields[p+1] = lblResult.fields[p];
+			lblResult.fields[p] = n;
+			if (Layflg) {
+				n = pudLayoutFlag[p+1];
+				pudLayoutFlag[p+1] = pudLayoutFlag[p];
+				pudLayoutFlag[p] = n;
+			}
+			return 1;
+		}
+	}
+	return 0;
+}
+//sort機能　ここまで
+
+
+//タブ情報取得処理
+
+//タブ取得結果
+var TabResult;
+
+//メッセージ（タブ）
+var tMessage0 = "タブ設定情報の取得に失敗しました。";
+var tMessage1 = "タブ情報を取得しますか？\n\n";
+var tMessage2 = "全タブ情報取得中　～しばらくお待ちください～";
+var tMessage3 = "全タブ情報取得終了";
+var tMessage4 = "アプリケーションを選択してください";
+
+//タブ初期処理
+function fncTabPageSetup() {
+	if (pubSearchFlag) {return;}
+	
+	//処理開始確認
+	if (confirm(tMessage1) == false) {
+		return false;
+	}
+
+	pubSearchFlag = true;
+
+	//処理中画面表示
+	fncShowPopup();
+
+	//設定表示エリアを非表示
+	document.getElementById("ResultArea").style.display = "none";
+	document.getElementById("TabResultArea").style.display = "none";
+	document.getElementById("OutFrame").style.display = "none";
+	document.getElementById("Datefield").style.display = "none";
+	objframe.document.getElementById("outfield").innerHTML = "";
+
+	window.status = tMessage2;
+	
+ try {
+	//全テーブル情報を取得
+	sforce.connection.describeTabs({
+		onSuccess : fncTabResultSet,
+		onFailure : fncDescTabFailed
+	});
+ }catch(e){
+	fncDescTabFailed(e);
+ }
+
+}
+
+//初期オブジェクト取得エラー処理
+function fncDescTabFailed(result) {
+
+	//設定表示エリアを非表示
+	document.getElementById("ResultArea").style.display = "none";
+	//タブ設定表示エリアを非表示
+	document.getElementById("TabResultArea").style.display = "none";
+	document.getElementById("OutFrame").style.display = "none";
+	//処理中画面非表示
+	fncHidePopup();
+	//現在時刻取得をNULL
+	document.getElementById("Datefield").innerHTML = "";
+	alert(tMessage0);
+	alert(result);
+	pubSearchFlag = false;
+}
+
+//タブ情報表示処理
+function fncTabResultSet(result) {
+	var docBody = "";
+
+	TabResult = result;
+	
+	//選択リストを作成
+	docBody += "<select name='Apptype' onchange='javascript:fncdisplayTabs()'>";
+	docBody += "<option value=Nonselect >－－選択してください－－</option>";
+
+	//選択リストをアプリケーション分設定
+	for (var i=0; i<TabResult.length; i++) {
+		//「value」を番号で指定
+		docBody += "<option value=" + i + ">";
+		docBody += TabResult[i].label;
+		docBody += "</option>";
+	}
+
+	docBody += "</select>";
+
+	//現在時刻取得処理を呼び出し
+	document.getElementById("Datefield").innerHTML = fncNowDate();
+	document.getElementById("Datefield").innerHTML += "の一覧";
+	document.getElementById("Datefield").style.display = "";
+
+	//HTMLを表示
+	document.getElementById("applistfield").innerHTML = docBody;
+
+	//処理中画面非表示
+	fncHidePopup();
+	//タブ設定表示エリアを表示
+	document.getElementById("TabResultArea").style.display = "";
+
+	window.status = tMessage3;
+
+	pubSearchFlag = false;
+
+}
+
+
+function fncdisplayTabs() {
+	//NULLを選択時、表示部分を初期化し処理を抜ける
+	if (document.actionForm.Apptype.value == "Nonselect"){
+		document.getElementById("OutFrame").style.display = "none";
+		objframe.document.getElementById("outfield").innerHTML = "";
+		window.status = tMessage4;
+		return;
+	}
+	
+	var docBody = "";
+	
+	//選択アプリケーション番号
+	var localNO = document.actionForm.Apptype.value - 0;
+
+	//現在時刻取得処理を呼び出し
+	docBody += fncNowDate();
+	docBody += "の設定内容<br><br>";
+
+	//ヘッダーの内容
+	docBody += "<table id='tabtable' border=1 cellspacing=0 cellpadding=3 bordercolor='#F4A460' class='list' style='font-size: 10pt;'>";
+	docBody += "<caption>【アプリケーション名　：　"+ TabResult[localNO].label + "】</caption>";
+	docBody += "<tr bgcolor='#f9d9c3'>";
+	docBody += "<th>NO</th>";
+	docBody += "<th>表示ラベル</th>";
+	docBody += "<th>オブジェクト</th>";
+	docBody += "<th>URL</th>";
+	docBody += "<th>カスタム</th>";
+	docBody += "</tr>";
+
+	//タブ毎の設定内容表示
+	var tabs = TabResult[localNO].tabs;
+	for( var i=0; i<tabs.length; i++) {
+		var tab = tabs[i];
+		docBody += "<tr>";
+		//No
+		docBody += "<td>" + (i+1) + "</td>";
+		//タブ表示ラベル
+		docBody += "<td>" + tab.label + "</td>";
+		docBody += "<td>";
+		
+		//オブジェクト名
+		if (tab.sobjectName != "") {
+			docBody += tab.sobjectName;
+		} else {
+			docBody += "&nbsp;";
+		}
+		docBody += "</td>";
+		//タブURL
+		docBody += "<td>" + tab.url + "</td>";
+		//カスタムタブ
+		docBody += "<td style='text-align: center;'>";
+		if (tab.custom == "true") {
+			docBody += "○";
+		} else {
+			docBody += "&nbsp;";
+		}
+		docBody += "</td>";
+		docBody += "</tr>";
+	}
+	docBody += "</table>";
+
+	//HTMLを表示
+	objframe.document.getElementById("outfield").innerHTML = docBody;
+	
+	document.getElementById("OutFrame").style.display = "";
+
+}
+
+//タブ情報取得処理　ここまで
+
+//検索中表示処理
+function fncShowPopup() {
+	// ブラウザのチェック用
+	var myN6 = document.getElementById;
+	var myIE = document.all;
+	var myN4 = document.layers;
+	var myObj = "";
+	
+	//メッセージ大きさ
+	var myObjX = 250;
+	var myObjY = 30;
+
+	if (myIE){
+		myObj = document.all["popup"];
+		myXs = top.document.documentElement.scrollLeft;
+		myYs = top.document.documentElement.scrollTop;
+		myX = top.document.documentElement.clientWidth;
+		myY = top.document.documentElement.clientHeight;
+		mypx = "px";
+	}else if (myN6){
+		myObj=document.getElementById("popup");
+		myXs = top.pageXOffset;
+		myYs = top.pageYOffset;
+		myX = top.innerWidth;
+		myY = top.innerHeight;
+		mypx = "px";
+	}else if (myN4){
+		myObj = document["popup"];
+		myXs = top.pageXOffset;
+		myYs = top.pageYOffset;
+		myX = top.innerWidth;
+		myY = top.innerHeight;
+		mypx = "";
+	}
+
+	myX = myXs + (myX - myObjX)/2;
+	myY = myYs + (myY - myObjY)/2 - 100;
+
+	myObj.style.left = myX + mypx;
+	myObj.style.top  = myY + mypx;
+
+	myObj.innerHTML = "処理中... お待ちください";
+
+	myObj.style.visibility = "visible";
+	return;
+}
+//検索中非表示処理
+function fncHidePopup() {
+	var o = document.getElementById("popup");
+	o.style.visibility = "hidden";
+	return;
+}
+
+//ロード時処理
+function fncOnload() {
+	//結果表示フレームを取得
+	objframe = frames["OutFrame"];
+	//フレーム内HTML出力
+	objframe.document.writeln("<html>");
+	objframe.document.writeln("<body>");
+	objframe.document.writeln("<form id='OutForm' name='OutForm'>");
+	objframe.document.writeln("<div id='outfield' style='font-size:10pt;'><\/div>");
+	objframe.document.writeln("<\/form>");
+	objframe.document.writeln("<\/body><\/html>");
+	objframe.document.close();
+
+	//ロード後ボタン表示
+	document.getElementById("btnStp").style.display = "";
+	document.getElementById("btnTps").style.display = "";
+}
+
+//-->
+
+</script>
+<style>
+<!--
+.ItemLabel {
+	text-align: center;
+	background-color: #f9d9c3;
+	font-weight: bold;
+}
+body, table{
+	font-size: 10pt;
+}
+#popup {
+	background-color: #ccccff;
+	display: block;
+	position: absolute;
+	opacity: 20;
+	width: 250px;
+	font-size: 14pt;
+	font-weight: bold;
+	padding: 10px 3px 3px 3px;
+	text-align : center;
+	border-width: thin;
+	border-style: solid;
+	visibility: hidden;
+}
+
+//-->
+</style>
+</head>
+
+<body onload="javascript:fncOnload()">
+<div id="popup"></div>
+<form name="actionForm" id="actionForm">
+	<input type=button id="btnStp" onclick="javascript:fncSetupPage()" value=" 設 定 情 報 取 得 " title="現時点の設定情報取得" style="display:none;">
+	<input type=button id="btnTps" onclick="javascript:fncTabPageSetup()" value=" タ ブ 情 報 取 得 " title="現時点のタブの設定情報取得" style="display:none;">
+	<br><br>
+	<table id="ResultArea" style="display:none;">
+		<tr>
+			<td class="ItemLabel">
+				<label for="DisplayCol">表示列</label>
+			</td>
+			<td>
+				<span id="DisplayColArea"></span>
+			</td>
+		</tr>
+		<tr>
+			<td class="ItemLabel">
+				<label for="DisplayItem">表示項目</label>
+			</td>
+			<td>
+				<input type=radio name="DisplayItem" id="rbDisp0" value="" title="すべての項目を表示します" checked><label for="rbDisp0">両方</label>
+				<input type=radio name="DisplayItem" id="rbDisp1" value="StandardItem" title="標準項目のみ表示します"><label for="rbDisp1">標準</label>
+				<input type=radio name="DisplayItem" id="rbDisp2" value="customItem" title="カスタム項目のみ表示します"><label for="rbDisp2">カスタム</label>
+			</td>
+		</tr>
+		<tr id="LayoutArea">
+			<td class="ItemLabel">
+				<label for="LayoutItem">ページレイアウト</label>
+			</td>
+			<td>
+				<input type=radio name="LayoutItem" id="rbLyot0" value="AllLayoutItem" title="すべての項目を表示します" checked><label for="rbLyot0">すべて</label>
+				<input type=radio name="LayoutItem" id="rbLyot1" value="LayoutItem" title="ページレイアウト上に存在する項目のみ表示します"><label for="rbLyot1">有り</label>
+				<input type=hidden id="LayoutObj" value="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>
+				<label for="Objecttype">テーブル　：</label>
+				<span id="listfield"></span>
+				<input type="button" onclick="javascript:fncFirstSet()" title="設定内容を表示します" value=" 表示 ">
+			</td>
+		</tr>
+	</table>
+	<table id="TabResultArea" style="display:none;">
+		<tr>
+			<td>
+				<label for="Objecttype">アプリケーション　：</label>
+				<span id="applistfield"></span>
+				<input type="button" onclick="javascript:fncdisplayTabs()" title="アプリケーション毎のタブ一覧を表示します" value=" 表示 ">
+			</td>
+		</tr>
+	</table>
+	<div id="Datefield"></div>
+	<br>
+</form>
+<iframe id="OutFrame" name="OutFrame" src="_blank" height=600 width=100% style="display:none;">
+iframe 対応のブラウザで見てください。
+</iframe>
+</body>
+</html>

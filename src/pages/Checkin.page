@@ -1,0 +1,96 @@
+<apex:page controller="CheckinCtrl" showHeader="false" sidebar="false" standardStylesheets="false" action="{!init}" >
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>チェックイン</title>
+
+<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+
+    (function($jq) {
+
+        //jQuery mobileのページ初期表示時のイベント
+        $jq(document).on("pageinit", "#mainPage", function(){
+            var geocoder = new google.maps.Geocoder();
+            //入力フィールドの緯度、経度から位置情報を生成
+            var latlng = new google.maps.LatLng($jq(":input[id$='latitude']").val(), $jq(":input[id$='longitude']").val());
+
+            //Google Geocoderを使い緯度、経度から住所を求める
+            geocoder.geocode({
+                latLng: latlng
+            }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0].geometry) {
+                        //住所入力フィールドに取得した値を設定（＊国名はいらないので除去）
+                        $jq(":input[id$='address']").val(results[0].formatted_address.replace(/^日本, /, ''));
+                    }
+                }
+            });
+        });
+
+        $jq(function(){
+            //保存ボタンのイベント
+            $jq(document).on("click", "#saveBtn", function(){
+                //処理中のイメージを表示
+                $jq.mobile.loading("show");
+                //SalesforceのActionFunction
+                saveInternal();
+            });
+        });
+    })(jQuery.noConflict());
+
+</script>
+</head>
+<body>
+<apex:form >
+<apex:actionFunction name="saveInternal" action="{!save}" oncomplete="history.back();" />
+<div data-role="page" id="mainPage">
+
+    <div data-role="header">
+        <h1>チェックイン</h1>
+    </div>
+
+    <div data-role="content">
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">チェックイン情報</li>
+            <li >
+                <apex:outputLabel value="ニックネーム" for="nickName"/>
+                <apex:inputText id="nickName" value="{!checkin.NickName__c}" />
+            </li>
+            <li >
+                <apex:outputLabel value="場所" for="locationName"/>
+                <apex:inputText id="locationName" value="{!checkin.LocationName__c}" />
+            </li>
+        </ul>
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">位置情報</li>
+            <li >
+                <apex:outputLabel value="緯度" for="latitude"/>
+                <apex:inputText id="latitude" value="{!checkin.Location__Latitude__s}" size="10" />
+            </li>
+            <li >
+                <apex:outputLabel value="経度" for="longitude"/>
+                <apex:inputText id="longitude" value="{!checkin.Location__Longitude__s}" size="10" />
+            </li>
+            <li >
+                <apex:outputLabel value="住所" for="address"/>
+                <apex:inputText id="address" value="{!checkin.Address__c}" />
+            </li>
+        </ul>
+
+        <a href="#" id="saveBtn" data-role="button" data-inline="true" rel="external" data-theme="e" >チェックイン</a>
+        <a href="#" data-role="button" data-inline="true" data-rel="back">キャンセル</a>
+
+    </div>
+
+</div>
+</apex:form>
+</body>
+</apex:page>

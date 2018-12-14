@@ -1,0 +1,199 @@
+<apex:page sidebar="false" controller="GanttChartTestController">
+    <!-- StyleSheetの読み込み -->
+    <apex:styleSheet value="{!$Resource.GantChartCss}"/>
+    <!-- javascriptの読み込み -->
+    <apex:includeScript value="{!$Resource.GantChartJs}" />
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <script src="/soap/ajax/17.0/connection.js"></script>
+    <script src="/soap/ajax/17.0/apex.js" type="text/javascript"></script>
+<body>
+<apex:sectionHeader id="sectionHeader" title="{!headerTitle}" subtitle="タスク管理" />
+<apex:form >
+<apex:pageBlock title="タスク管理" mode="edit">
+<apex:pageBlockSection >
+<div style="position:relative" class="gantt" id="GanttChartDIV"></div>
+<script>
+function getTaskList(whereId) {
+    var getId = null;
+    <!-- connection作成 -->
+    sforce.connection.init("{!$API.Session_ID}", "{!$Api.Partner_Server_URL_140}");
+    <!-- SQL生成 -->
+    //var qStr = "select Name, TestTaskMsg__c,StartDate__c,EndDate__c,Progress__c from TestTask__c ";
+    var qStr = "Select t.tanto__c, t.tanto__r.Name, t.statsu__c, t.result_startdate__c, t.result_enddate__c, t.plan_startdate__c, t.plan_enddate__c, t.pjname__c, t.parent_task__c, t.parent_task__r.Id, t.Name, t.Id From task__c t ";
+    if (whereId != null) {
+        getId = "where t.pjname__r.Id = '"+getRequest()+"'";
+    //} elseIf (whereId != null) {
+        //getId = "where t.pjname__r.Id = '"+getRequest()+"' and t.parent_task__r.Id = '" + whereId + "'";
+    } else {
+        getId = "where t.pjname__r.Id = '"+getRequest()+"' and t.parent_task__r.Id = null";
+    }
+    
+    try{ 
+        <!-- クエリを実行し結果を取得 -->
+        var queryResults = sforce.connection.query(qStr+getId);
+        <!-- 1件以上取得できたら'records'レコード情報を -->
+        <!-- 配列として取得 -->
+        if (queryResults != null){
+            if (queryResults.size > 0){ 
+                var records = queryResults.getArray('records'); 
+            }
+        }
+    <!-- 例外発生時処理 -->
+    } catch (e){
+        <!-- Salesforceデバッグログへ例外情報を書き込む -->
+        sforce.debug.open();
+        sforce.debug.log(e);
+    }
+    return records;
+}
+  // here's all the html code neccessary to display the chart object
+
+  // Future idea would be to allow XML file name to be passed in and chart tasks built from file.
+
+  var g = new JSGantt.GanttChart('g',document.getElementById('GanttChartDIV'), 'day');
+
+    g.setShowRes(1); // Show/Hide Responsible (0/1)
+    g.setShowDur(1); // Show/Hide Duration (0/1)
+    g.setShowComp(1); // Show/Hide % Complete(0/1)
+    g.setCaptionType('Resource');  // Set to Show Caption (None,Caption,Resource,Duration,Complete)
+    g.setFormatArr("day","hours")
+
+  //var gr = new Graphics();
+
+  if( g ) {
+
+    // Parameters (pID, pName, pStart, pEnd, pColor, pLink, pMile, pRes, pComp, pGroup, pParent, pOpen)
+    
+    // You can also use the XML file parser JSGantt.parseXML('project.xml',g)
+
+    //レコードを親フォルダから取得
+    var parentId = null;
+    var taskList = new Array();
+    var childTask = new Array();
+    
+    //taskList = getTaskList();
+    taskList = getTaskList('test');
+    //alert(taskList[0]);
+    //taskList = getTaskList(parentId);
+    //alert(taskList);
+    /**for (i = 0; i < taskList.length; i++) {
+        childTask = new Array();
+        childTask = getTaskList(taskList[i].parent_task__r.Id);
+        alert(childTask);
+        if (childTask.length == 0) {
+            continue;
+        } else {
+            taskList.push(childTask);
+            alert(taskList);
+        }   
+    }*/
+    //alert(taskList);
+    for (i = 0; i < taskList.length; i++) {
+        if (i == 0) {
+            //groupFlg = 1;
+            //parentFlg = 0;
+            //taskList[i].StartDate__c = "";
+            //taskList[i].EndDate__c = "";
+            //taskList[i].Progress__c = 0;
+            //g.AddTaskItem(new JSGantt.TaskItem(taskList[i].Name, taskList[i].TestTaskMsg__c, taskList[i].StartDate__c, taskList[i].EndDate__c, 'ff0000', 'http://help.com', 0, '濱野', parseInt(taskList[i].Progress__c), groupFlg, parentFlg, 1));
+            g.AddTaskItem(new JSGantt.TaskItem(1, '親タスク', '', '', 'ff0000', 'http://help.com', 0, '濱野', 0, 1, 0, 1));
+        } else {
+            //groupFlg = 0;
+            //parentFlg = taskList[0].Name;
+            //var stDate = new Date();
+            //alert(stDate);
+            //var stDate = new Date(taskList[i].StartDate__c);
+            //alert(stDate);
+            //taskList[i].StartDate__c = "7/1/2011 10:00";
+            //taskList[i].EndDate__c = "7/19/2011 10:00";
+        }
+            var stDate = getDate(taskList[i].plan_startdate__c);
+            //alert(stDate);
+            //taskList[i].StartDate__c = "7/1/2011 10:00";
+            taskList[i].plan_startdate__c = getDate(taskList[i].plan_startdate__c) + " 14:00";
+            //alert(taskList[i].plan_startdate__c);
+            //taskList[i].EndDate__c = "7/19/2011 10:00";
+            taskList[i].plan_enddate__c = getDate(taskList[i].plan_enddate__c) + " 15:00";
+            //alert(taskList[i].plan_enddate__c);
+        // Parameters (pID, pName, pStart, pEnd, pColor, pLink, pMile, pRes, pComp, pGroup, pParent, pOpen)
+        //g.AddTaskItem(new JSGantt.TaskItem(taskList[i].Name, taskList[i].TestTaskMsg__c, taskList[i].StartDate__c, taskList[i].EndDate__c, 'ff0000', 'http://help.com', 0, '濱野', parseInt(taskList[i].Progress__c), groupFlg, parentFlg, 1));
+        //g.AddTaskItem(new JSGantt.TaskItem(taskList[i].Id, taskList[i].Name, taskList[i].plan_startdate__c, taskList[i].plan_enddate__c, 'ff0000', 'http://help.com', 0, '濱野', 50, 0, 1, 1));
+        g.AddTaskItem(new JSGantt.TaskItem(taskList[i].Id, taskList[i].Name, taskList[i].plan_startdate__c, taskList[i].plan_enddate__c, 'ff0000', 'https://na7.salesforce.com/a0AA0000007zwJj?what_id='+taskList[i].Id , 0, '濱野', 50, 0, 1, 1));
+    }
+        
+    //g.AddTaskItem(new JSGantt.TaskItem(1, '親タスク１', '', '', 'ff0000', 'http://help.com', 0, '濱野', 0, 1, 0, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(11, '子タスク１', '7/1/2010 10:00', '7/1/2011 10:00', 'ff00ff', 'http://www.jsgantt.com', 0, '濱野', 100, 0, 1, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(12, '子タスク２', '9/1/2010 10:00', '9/30/2010 10:00', '00ff00', '', 0, '山田', 40, 0, 1, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(13, '子タスク３', '7/1/2011 10:00', '7/19/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '濱野', 60, 0, 1, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(14, '親タスク２', '', '', '00ffff', 'http://www.yahoo.com', 0, '', 60, 1, 0, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(15, '子タスク１', '6/1/2011 10:00', '7/7/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 10, 0, 14, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(16, '子タスク２', '7/1/2011 10:00', '7/15/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 60, 0, 14, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(17, '子タスク３', '7/1/2011 10:00', '7/15/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 100, 0, 14, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(18, '子タスク４', '7/1/2011 10:00', '7/15/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 0, 0, 14, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(19, '親タスク３', '', '', '00ffff', 'http://www.yahoo.com', 0, '', 60, 1, 0, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(20, '子タスク１', '6/1/2011 10:00', '7/7/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 10, 0, 19, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(21, '子タスク２', '7/1/2011 10:00', '7/15/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 60, 0, 19, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(22, '子タスク３', '7/1/2011 10:00', '7/15/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 100, 0, 19, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(23, '子タスク４', '7/1/2011 10:00', '7/15/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 0, 0, 19, 1));
+    //g.AddTaskItem(new JSGantt.TaskItem(24, '子タスク５', '6/1/2011 10:00', '7/7/2011 10:00', '00ffff', 'http://www.yahoo.com', 0, '山田', 10, 0, 19, 1));
+
+    g.Draw();   
+    g.DrawDependencies();
+
+  } else {
+    alert("not defined");
+  }
+  
+  function getRequest(){
+  if(location.search.length > 1) {
+    var get = new Object();
+    var ret = location.search.substr(1).split("&");
+    //var ret = location.search
+    //alert(ret);
+    //alert("{!projectId}");
+    for(var i = 0; i < ret.length; i++) {
+      var r = ret[i].split("=");
+      get[r[0]] = r[1];
+    }
+    return get["selectId"];
+    //return get;
+  } else {
+    return null;
+  }
+  }
+  
+  function getDate(strDate){
+  //if(location.search.length > 1) {
+    //var get = new Object();
+    var retStr = null;
+    //alert("stGetDate");
+    //alert(strDate)
+    var ret = strDate.split("-");
+    //var ret = location.search
+    //alert(ret);
+    //alert("{!projectId}");
+    //for(var i = 0; i < ret.length; i++) {
+      //var r = ret[i].split("=");
+      //get[r[0]] = r[1];
+    //}
+    if (ret[1].substr(0,1) == 0) {
+        ret[1] = ret[1].substr(1,2);
+    }
+    if (ret[2].substr(0,1) == 0) {
+        ret[2] = ret[2].substr(1,2);
+    }
+    retStr = ret[1] + '/'+ ret[2]+ '/' + ret[0]
+    //alert(retStr);
+    //return get["selectId"];
+    return retStr;
+  //} else {
+    //return null;
+  //}
+}
+
+</script>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</body>
+</apex:page>

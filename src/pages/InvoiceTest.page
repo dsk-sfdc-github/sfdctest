@@ -1,0 +1,28 @@
+<apex:page id="Page" Controller="Invoice01Ctrl" showHeader="false" >
+    <head>
+        <meta http-equiv="Content-Type" content="charset=UTF-8"/>
+    </head>
+    <apex:form >
+        <apex:commandButton value=" OPENER確認" onclick="opnerCheck();"/>
+    </apex:form>
+    <script type="text/javascript">
+        alert('start');
+        alert(window.opener);
+        
+        function opnerCheck() {
+            alert(window.opener);
+        }
+    
+        window.onload = function() {
+            alert(window.opener);            
+            
+            if(window.opener != null){
+                var strCampWhere = window.opener.campWhere;
+                var strContactId = window.opener.contactId;
+                var strProjectFlg = window.opener.projectFlg;
+
+                setQueryWhere(strCampWhere, strContactId, strProjectFlg);
+            }
+        }   
+        </script>
+</apex:page>

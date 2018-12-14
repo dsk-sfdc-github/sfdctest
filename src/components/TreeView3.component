@@ -1,0 +1,18 @@
+<apex:component >
+
+    <apex:attribute name="childTreeList" description="" type="ObjectDTO" />
+
+    <apex:repeat value="{!childTreeList.underDto}" var="obj2">
+    <ul>
+        <li>
+            <tr>
+                <td>
+                    {!obj2.mainObj.Name}
+                </td>
+            </tr>
+            <c:TreeView2 childTreeList="{!obj2}" />
+        </li>
+    </ul>
+    </apex:repeat>
+
+</apex:component>

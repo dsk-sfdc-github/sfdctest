@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <narrowComponents>standard-CreateNew</narrowComponents>
+    <narrowComponents>standard-Tags</narrowComponents>
+    <narrowComponents>standard-RecentItems</narrowComponents>
+    <narrowComponents>出退勤</narrowComponents>
+    <narrowComponents>standard-DocumentSearch</narrowComponents>
+    <narrowComponents>standard-ProductSearch</narrowComponents>
+    <narrowComponents>standard-SolutionSearch</narrowComponents>
+    <narrowComponents>standard-StandardSearch</narrowComponents>
+    <narrowComponents>standard-MessagesAndAlerts</narrowComponents>
+    <wideComponents>CTI連携接続部品</wideComponents>
+    <wideComponents>standard-Calendar</wideComponents>
+    <wideComponents>standard-Tasks</wideComponents>
+    <wideComponents>standard-ProcessWorkitems</wideComponents>
+</HomePageLayout>

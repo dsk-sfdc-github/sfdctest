@@ -1,0 +1,50 @@
+<apex:page controller="SearchCheckinsCtrl" showHeader="false" sidebar="false" standardStylesheets="false" action="{!init}" cache="false">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>チェックイン履歴</title>
+
+<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+</head>
+
+<body>
+<apex:form >
+<div data-role="page" id="mainPage">
+  <div data-role="header" data-position="fixed">
+        <a href="Top" data-icon="back" rel="external">Back</a>
+        <h1>チェックイン履歴</h1>
+    </div>
+    <div data-role="content">
+
+        <apex:outputText rendered="{!hasCheckins}" >
+        <ul data-role="listview" >
+            <li data-role="list-divider">半径{!distance}km以内のチェックイン履歴</li>
+            <apex:repeat value="{!checkins}" var="checkin">
+            <li>
+                <a href="Map?id={!checkin.Id}" rel="external">
+                    <p><br/><br/><strong>{!checkin.NickName__c}さん</strong></p>
+                    <p>{!checkin.LocationName__c}へのチェックイン</p>
+                    <p>{!checkin.Address__c}</p>
+                    <p class="ui-li-aside">
+                        <apex:outputField value="{!checkin.CreatedDate}" />
+                    </p>
+                </a>
+            </li>
+            </apex:repeat>
+        </ul>
+        </apex:outputText>
+        <apex:outputText rendered="{!NOT(hasCheckins)}" >
+            <div>この近辺ではチェックインされていません。</div>
+        </apex:outputText>
+
+    </div>
+
+</div>
+</apex:form>
+</body>
+</apex:page>

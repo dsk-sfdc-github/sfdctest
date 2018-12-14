@@ -1,0 +1,5 @@
+<apex:page contentType="text/csv;charset=Shift_JIS;#fileName.csv" standardController="Contact" recordSetVar="contacts">Id,Name
+    <apex:repeat value="{!contacts}" var="con">
+"{!con.Id}","{!con.Name}"
+    </apex:repeat>
+</apex:page>

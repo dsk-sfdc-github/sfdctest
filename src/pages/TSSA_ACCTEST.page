@@ -1,0 +1,35 @@
+<apex:page standardController="Account" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0" showHeader="false" showQuickActionVfHeader="true" sidebar="false" standardStylesheets="false">
+<html>    
+    <!--
+    <apex:include pageName="TSSA_TEST_OutputPDF" />
+    -->
+    <!--
+    <apex:iframe src="/apex/TSSA_TEST_OutputPDF" scrolling="true" id="theIframe"/>
+    -->
+<head>
+    <apex:stylesheet value="{!URLFOR($Resource.sweetalert, 'sweetalert/sweet-alert.css')}"/>
+    <script src="{!URLFOR($Resource.sweetalert, 'sweetalert/sweet-alert.min.js')}"></script>
+
+    <script type="text/javascript">
+        //alert('msg');
+        console.log("{!URLFOR($Resource.sweetalert, '/sweetalert-master/dist/sweetalert.min.js')}");
+        swal({
+            title: " success!",
+            text: "",
+            type: "success",
+            timer: 3000,
+        });
+        //swal("message");
+    </script>
+</head>
+<body>
+<div class="components">
+</div>
+    <script type="text/javascript">
+        alert('msg');
+    </script>
+
+</body>
+
+</html>
+</apex:page>

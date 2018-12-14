@@ -1,0 +1,24 @@
+{!Connection_ExternalContactFirstName}様
+
+{!Organization.Name}の大切なパートナーとして、Salesforce.com の Force.com プラットフォーム上にあります弊社との接続にご招待します。
+
+両組織の接続は、我々のビジネス関係を次の段階へと進め、両社にとってこれまで以上の協力関係と成功を促進させることになると信じております。
+
+この招待を受けていただくには、貴社の salesforce.com 組織で「Salesforce to Salesforce」が有効になっていることと、手続き完了に必要な権限を持っていることが必要になります。まだ salesforce.com をご利用でない場合は、株式会社セールスフォースドットコムのサイト (https://www.salesforce.com/jp/form/trial/freetrial.jsp) からトライアルアカウントをお申し込みいただけます (Professional Edition を選択してください)。
+
+このメールを組織のシステム管理者に転送して、上記条件を満たしているかどうかご確認ください。
+
+次のリンクをクリックして、この招待を受け入れてくださることをお待ちしております。
+{!Connection_InvitationURL}
+
+両組織が接続されると、レコードの共有が開始され、以降さまざまな情報をリアルタイムで共有できます。
+
+貴社との連携による両社のますますの発展を楽しみにしております。
+
+
+株式会社セールスフォース・ドットコム
+
+
+{!User.FirstName} {!User.LastName}
+
+{!Organization.Name}

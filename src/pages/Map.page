@@ -1,0 +1,68 @@
+<apex:page controller="MapCtrl" showHeader="false" sidebar="false" standardStylesheets="false" action="{!init}" >
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>チェックイン詳細</title>
+
+<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+
+    (function($jq) {
+
+        //jQuery mobileのページ初期表示時のイベント
+        $jq(document).on("pageinit", "#mainPage", function(){
+            //チェックイン情報の緯度、経度から位置情報を生成
+            var latlng = new google.maps.LatLng({!checkin.Location__Latitude__s}, {!checkin.Location__Longitude__s});
+            //地図表示用のオプションを生成
+            var opts = {
+                zoom:16,
+                center:latlng,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            //Google Mapの生成
+            var map = new google.maps.Map($jq("#gMap").get(0), opts);
+
+            //Map上のチェックイン位置にマーカーを生成
+            var marker = new google.maps.Marker({
+                position:latlng,
+                title:"{!checkin.NickName__c}"
+            });
+            marker.setMap(map);
+        });
+
+    })(jQuery.noConflict());
+
+</script>
+</head>
+
+<body>
+<apex:form >
+<div data-role="page" id="mainPage">
+    <div data-role="header">
+        <a href="#" data-icon="back" data-rel="back">Back</a>
+        <h1>チェックイン詳細</h1>
+    </div>
+    <div data-role="content">
+
+        <ul data-role="listview" data-inset="true">
+            <li >
+                <p><br/><br/><strong>{!checkin.NickName__c}さん</strong></p>
+                <p>{!checkin.LocationName__c}へのチェックイン</p>
+                <p>{!checkin.Address__c}</p>
+                <p class="ui-li-aside"><apex:outputField value="{!checkin.CreatedDate}" /></p>
+            </li>
+        </ul>
+
+        <div id="gMap" style="width:250px; height:250px; "></div>
+
+    </div>
+</div>
+</apex:form>
+</body>
+</apex:page>

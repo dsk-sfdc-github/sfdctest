@@ -1,0 +1,5 @@
+<apex:page controller="documentReadTest">
+	<apex:form >
+		<apex:outputLabel value="{!documentValueTxt}" />
+	</apex:form>
+</apex:page>

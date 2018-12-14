@@ -1,0 +1,104 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0" id="page" controller="CaseAndTaskList2Controller">
+	<head>
+		<meta charset="utf-8" />
+		<title>ケース・タスク一覧</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN" />
+
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"></apex:stylesheet>
+		<!--<apex:stylesheet value="{!URLFOR($Resource.TreeViewJS, 'maxazan-jquery-treegrid-898df7d/css/jquery.treegrid.css')}"></apex:stylesheet>-->
+		<apex:stylesheet value="{!URLFOR($Resource.TreeView, 'jquery.treeview.css')}"></apex:stylesheet>
+
+		<apex:includeScript value="{!$Resource.jQuery}" />
+		<apex:includeScript value="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.min.js')}"></apex:includeScript>
+		<!--
+		<apex:includeScript value="{!URLFOR($Resource.TreeViewJS, 'maxazan-jquery-treegrid-898df7d/js/jquery.treegrid.js')}"></apex:includeScript>
+		<apex:includeScript value="{!URLFOR($Resource.TreeViewJS, 'maxazan-jquery-treegrid-898df7d/js/jquery.treegrid.bootstrap2.js')}"></apex:includeScript>
+		-->
+		<apex:includeScript value="{!URLFOR($Resource.TreeView, 'jquery.treeview.js')}"></apex:includeScript>
+
+		<apex:includeScript value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"></apex:includeScript>
+		<apex:includeScript value="{!URLFOR($Resource.readmoreJS, 'Readmore.js-master/readmore.min.js')}"></apex:includeScript>
+
+		<style>
+			a { text-decoration: underline }
+		</style>
+	</head>
+<apex:form >
+	<body style='font-size: 12px;'>
+		<div class="container contop" style='width: 35%; float: left;'>
+			<div class="row">
+				<div class="span1" style='width: 95%;'>
+					<div class="well well-large" id="divTopArea" style='margin: 5px; background-color: rgb(255, 255, 255); border-width: 3px; border-color: #8370c2; padding: 0px;'>
+						<div class="row" style='margin-left: 15px; margin-top: 5px;'>
+							<p>
+								<input type="checkbox" name="riyu" value="1" checked="checked" style='margin-top: 0px;' />ケース
+								<input type="checkbox" name="riyu" value="2" checked="checked" style='margin-top: 0px;' />タスク
+								<input type="checkbox" name="riyu" value="3" checked="checked" style='margin-top: 0px;' />ｱｯﾌﾟｾﾙ
+								<input type="checkbox" name="riyu" value="3" checked="checked" style='margin-top: 0px;' />後確
+								<input type="checkbox" name="riyu" value="3" checked="checked" style='margin-top: 0px;' />申告
+								<input type='button' value='再表示' onClick="alert('1つ以上のチェックを入れてください。');" />
+							</p>
+						</div>
+						<div class="container contop" style='width: 100%;'>
+							<div class="tabbable" style='margin: 0px;'>
+								<ul class="nav nav-tabs" style='width: 100%; margin-bottom: 5px;'>
+									<li class="active" style='width: 33%;'>
+										<a href="#home" data-toggle="tab" style='height: 20px; white-space: nowrap;'><i class="icon-calendar"></i>&nbsp;問合せ・対応</a>
+									</li>
+									<li  style='width: 33%;'>
+										<a href="#tab1" data-toggle="tab" style='height: 20px; white-space: nowrap;'><i class="icon-calendar"></i>&nbsp;日付</a>
+									</li>
+									<li  style='width: 33%;'>
+										<a href="#tab2" data-toggle="tab" style='height: 20px; white-space: nowrap;'><i class="icon-comment"></i>&nbsp;対応内容</a>
+									</li>
+								</ul>
+								<div id="my-tab-content" class="tab-content" style='margin: 5px; background-color: #FFFFFF; overflow-y: scroll; height: 620px;'>
+									<div class="tab-pane active" id="home">
+							            <ul id="tree">
+							            	<apex:repeat value="{!objList}" var="obj" id="theRepeat">
+											<li>
+												<tr>
+													<td>
+														{!obj.mainObj.Name}
+													</td>
+												</tr>
+												<c:TreeView3 childTreeList="{!obj}"/>
+											</li>
+											</apex:repeat>
+							            </ul>
+									</div>
+									<div class="tab-pane" id="tab1">
+
+									</div>
+									<div class="tab-pane" id="tab2">
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</apex:form>
+	<script type='text/javascript'>
+		var JJ = jQuery.noConflict();
+
+	    JJ(function() {
+			JJ("#tree").treeview({
+				collapsed: true,
+				animated: "nomal"
+			});
+		});
+
+	</script>
+
+</apex:page>

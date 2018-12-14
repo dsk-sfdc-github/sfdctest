@@ -1,0 +1,7 @@
+<apex:page controller="MainController" showHeader="false" standardStylesheets="false" >
+<head> 
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /> 
+<title>スケジュール画面</title>
+</head>
+<c:Component02 dtoData="{!dto}" />
+</apex:page>

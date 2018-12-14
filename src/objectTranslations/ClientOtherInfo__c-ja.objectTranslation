@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>顧客付属情報</value>
+    </caseValues>
+    <fields>
+        <label><!-- 顧客基本情報 --></label>
+        <name>ClientBaseInfo__c</name>
+        <relationshipLabel><!-- 顧客付属情報 --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

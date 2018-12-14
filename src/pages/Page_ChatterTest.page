@@ -1,0 +1,11 @@
+<apex:page controller="ChatterMentionTest">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+  
+  <apex:form >
+      <apex:commandButton action="{!chatterAction}" title="Chatter投稿"/>
+  </apex:form>
+  
+</apex:page>

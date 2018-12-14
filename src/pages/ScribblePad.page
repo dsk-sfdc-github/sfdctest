@@ -1,0 +1,111 @@
+<apex:page showheader="false" sidebar="false" docType="html-5.0"  standardStylesheets="false" controller="ScribblePadController" applyBodyTag="false"  applyHtmlTag="false">
+<html>
+<head>
+    <meta name="viewport" content="width=device-height, height =device-width, initial-scale=1.0, user-scalable=no" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <apex:stylesheet value="{!URLFOR($Resource.SignaturePadForScribblePad, 'Mobile_Design_Templates_common/css/app.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.SignaturePadForScribblePad, 'signaturepad/jquery.signaturepad.css')}"/>
+</head>
+
+<style>
+    .sigPad{ margin: 0; padding: 0;}
+    .sigWrapper{ clear: both; border: 2px solid #ccc;}
+    .sigPad button{ width:100%; text-align:center; margin:5px 0 0 0;}
+</style>
+
+<!-- <body id="sigpadBody"  ontouchmove="event.preventDefault()" > -->
+<body id="sigpadBody"  ontouchmove="event.preventDefault()" >
+    <div id="mainContainer">
+        <form method="post" action="" class="sigPad">
+            <div class="sig sigWrapper">
+                <canvas  class="pad"/>
+                <input type="hidden" name="output" class="output"/>
+            </div>
+            <div><button class="clearButton">Clear</button></div>
+        </form>
+        <apex:form >
+            <apex:actionFunction action="{!saveScribblePad}" name="saveScribblePad" rerender="_dummy" oncomplete="closeDialog();">
+                <apex:param value="" assignTo="{!sigData}" name="sigData"/>
+            </apex:actionFunction> 
+        </apex:form>
+    </div>
+</body>
+
+<apex:includeScript value="{!URLFOR($Resource.SignaturePadForScribblePad, 'Mobile_Design_Templates_common/js/jQuery2.0.2.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SignaturePadForScribblePad, 'Mobile_Design_Templates_common/js/jquery.touchwipe.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SignaturePadForScribblePad, 'Mobile_Design_Templates_common/js/main.min.js')}"/>
+
+<script type='text/javascript' src='/canvas/sdk/js/publisher.js'></script>
+<apex:includeScript value="{!URLFOR($Resource.SignaturePadForScribblePad, 'signaturepad/jquery.signaturepad.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SignaturePadForScribblePad, 'fastclick/fastclick.js')}"/>
+
+<script>
+    var signaturePadApi, padWidth, padHeight;    
+    var windowSize;
+
+    $(function(){
+        //fastclick
+        FastClick.attach(document.body);
+        $(window).on('touchmove.noScroll', function(e) {
+            e.preventDefault();
+        });
+        var ua = {};
+        ua.name = window.navigator.userAgent.toLowerCase();
+        ua.isiPhone = ua.name.indexOf('iphone') >= 0;
+        ua.isiPad = ua.name.indexOf('ipad') >= 0;
+
+        if (ua.isiPad){
+            windowSize = window.screen.height - 400;
+        }else if (ua.isiPhone){
+            windowSize = window.screen.height;
+        }else{
+            //temp
+            windowSize = window.screen.height;
+        }
+
+        $('body').height(windowSize - 70);
+
+        setTimeout(function(){
+        　Sfdc.canvas.publisher.publish({name:　'publisher.setValidForSubmit', payload:'true'});
+        　initSigpad();
+        },2000);         
+                
+        Sfdc.canvas.publisher.subscribe({name: "publisher.post", 
+            onData:function(e) {
+                saveScribblePadJS();
+            }
+        });
+    });
+    
+    function closeDialog() {
+        Sfdc.canvas.publisher.publish({name: "publisher.close", payload:{ refresh:"true"}});
+    }
+    
+    function saveScribblePadJS(){
+        Sfdc.canvas.publisher.publish({name:　'publisher.setValidForSubmit', payload:'false'});
+        var sigData = signaturePadApi.getSignatureImage();
+        saveScribblePad(sigData);
+    }
+    
+    function initSigpad(){
+        //signature setting
+
+        if(innerWidth!=0){ padWidth= innerWidth;}else{padWidth = 516;}
+        if(innerHeight!=0){ padHeight= windowSize - 120;}else{padHeight = 200;}
+        signaturePadApi = $('.sigPad').signaturePad({
+            drawOnly:true,
+            penWidth:1,
+            penColour:'#000000',
+            lineTop:0,
+        });
+
+        $(".pad").attr({width:padWidth-4, Height:padHeight-4});
+        $('.sigPad').css('width',padWidth);  
+        $('.sigWrapper').css('height',padHeight); 
+    }
+</script>
+</html>
+</apex:page>

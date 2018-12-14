@@ -1,0 +1,52 @@
+<apex:page showHeader="false" sidebar="false">
+    <head>
+        <meta charset="utf-8" />
+        <title>Wss Client test</title>
+        <script type="text/javascript">
+            // WebSocketオブジェクト
+            var ws = null;
+            // 接続先URL
+        //                    var wsUrl = 'wss://127.0.0.1:60000/';
+                    var wsUrl = 'https://127.0.0.1:60000/';
+            try {
+                console.log("[debug]  WebSocket connect start");
+                ws = new WebSocket(wsUrl);
+
+                // イベントハンドラ設定
+                ws.onclose = onClose;
+                ws.onerror = onError;
+                ws.onopen = onOpen;
+                ws.onmessage = onMessage;
+            } catch (e) {
+                console.log(e);
+            }
+
+            // WebSocketハンドラ：接続成功時の処理
+            function onOpen(event) {
+                console.log("[debug]  WebSocket handler is onOpen");
+            }
+
+            // WebSocketハンドラ：エラー発生時の処理
+            function onError(event) {
+                console.log("[debug]  WebSocket handler is onError");
+            }
+
+            // WebSocketハンドラ：切断された時の処理
+            function onClose(event) {
+                console.log("[debug]  WebSocket handler is onClose");
+            }
+
+            // WebSocketハンドラ：メッセージ受信した時の処理
+            function onMessage(event) {
+                console.log("[debug]  WebSocket handler is onMessage");
+                var msgarea = document.getElementById("msgarea");
+                console.log(event);
+                msgarea.value = msgarea.value + "\n" + event.data;
+            }
+        </script>
+    </head>
+    <body>
+    <h1>Wss Client test</h1>
+    <textarea id="msgarea" rows="20" style="width: 400px;"></textarea>
+  </body>
+</apex:page>

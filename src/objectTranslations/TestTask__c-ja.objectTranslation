@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>テストタスク</value>
+    </caseValues>
+    <fields>
+        <label><!-- 担当者 --></label>
+        <name>Charge__c</name>
+        <relationshipLabel><!-- テストタスク --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 終了日 --></label>
+        <name>EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 進捗率 --></label>
+        <name>Progress__c</name>
+    </fields>
+    <fields>
+        <label><!-- 開始日 --></label>
+        <name>StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- タスク内容 --></label>
+        <name>TestTaskMsg__c</name>
+    </fields>
+    <fields>
+        <label><!-- テストプロジェクトタスク --></label>
+        <name>TestTask__c</name>
+        <relationshipLabel><!-- テストタスク --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

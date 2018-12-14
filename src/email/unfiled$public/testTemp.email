@@ -1,0 +1,7 @@
+<messaging:emailTemplate subject="テスト件名" recipientType="User" relatedToType="ApexClass">
+<messaging:plainTextEmailBody >
+<script type="text/javascript">
+      location.href = "https://na7.salesforce.com/00OA0000005m5eW";
+  </script>
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

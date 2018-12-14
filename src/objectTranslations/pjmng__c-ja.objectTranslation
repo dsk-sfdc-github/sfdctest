@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>プロジェクト管理</value>
+    </caseValues>
+    <fields>
+        <label><!-- ガントチャート --></label>
+        <name>chart__c</name>
+    </fields>
+    <fields>
+        <label><!-- 開発リーダー --></label>
+        <name>devleader__c</name>
+        <relationshipLabel><!-- プロジェクト管理 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 終了日 --></label>
+        <name>enddate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 課題数 --></label>
+        <name>kadai_cnt__c</name>
+    </fields>
+    <fields>
+        <label><!-- 未解決課題数 --></label>
+        <name>mikaiketsu_cnt__c</name>
+    </fields>
+    <fields>
+        <label><!-- プロジェクトリーダー --></label>
+        <name>pjleader__c</name>
+        <relationshipLabel><!-- プロジェクト管理 (プロジェクト責任者) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- プロジェクト種別 --></label>
+        <name>shubetsu__c</name>
+        <picklistValues>
+            <masterLabel>基盤</masterLabel>
+            <translation><!-- 基盤 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>移行</masterLabel>
+            <translation><!-- 移行 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 開始日 --></label>
+        <name>startdate__c</name>
+    </fields>
+    <fields>
+        <label><!-- ステータス --></label>
+        <name>status__c</name>
+        <picklistValues>
+            <masterLabel>中止</masterLabel>
+            <translation><!-- 中止 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>終了</masterLabel>
+            <translation><!-- 終了 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>計画中</masterLabel>
+            <translation><!-- 計画中 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>開始済み</masterLabel>
+            <translation><!-- 開始済み --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- システム概要 --></label>
+        <name>summary__c</name>
+    </fields>
+    <layouts>
+        <layout>プロジェクト管理レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 課題情報 --></label>
+            <section>課題情報</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

@@ -1,0 +1,13 @@
+{!Receiving_User.FirstName} 様
+
+            {!Community_Name}パスワードのリセット要求をお受けいたしましたが、現在パスワードをリセットすることができません。ログイン試行回数が多すぎてお客様のアカウントはロックされています。
+
+            {!CASE(1,
+            IF(VALUE(PASSWORD_LOCK_TIME) > 0, 1, 0), "" + PASSWORD_LOCK_TIME + " 分後にもう一度お試しください。",
+            IF(VALUE(PASSWORD_LOCK_TIME) < 0, 1, 0), "アカウントのロックを解除するように" + Community_Name + "管理者に依頼してください。",
+            "")}
+
+            お客様がパスワードのリセットを要求していない場合、または最近アカウントへのログインを試みていない場合は、{!Community_Name}管理者にお問い合わせいただくか、このメールにご返信ください。
+
+            よろしくお願いします。
+            {!Community_Name}

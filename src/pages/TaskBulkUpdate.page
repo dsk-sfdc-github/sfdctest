@@ -1,0 +1,121 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0" standardController="Task2__c">
+
+<c:BusyIndicator id="busyIndicator" displayMessage="処理中..."/>
+<apex:actionStatus onStart="SetBusy(true);" onStop="SetBusy(false);"  id="actionStatus"/>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Template &middot; Bootstrap</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN" />
+
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"></apex:stylesheet>
+		<!--<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"></apex:stylesheet>-->
+		<!--<apex:stylesheet value="{!URLFOR($Resource.jsPanel, 'jsPanel-bootstrap-1.3.0/source/jsPanel.css')}"></apex:stylesheet>-->
+
+		<apex:includeScript value="{!$Resource.jQuery}" />
+		<!--<apex:includeScript value="{!$Resource.bootstrap_tab_js}" />-->
+		<apex:includeScript value="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.min.js')}"></apex:includeScript>
+		<apex:includeScript value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"></apex:includeScript>
+		<!--<apex:includeScript value="{!URLFOR($Resource.jsPanel, 'jsPanel-bootstrap-1.3.0/source/jquery.jspanel.bs-1.3.0.min.js')}"></apex:includeScript>-->
+
+	</head>
+
+	<body>
+		<apex:form >
+		<h3 style="margin:0px;">
+			タスク一括編集
+		</h3>
+		<div class="well well-large" id="divTopArea" style='margin: 5px; background-color: #FFFFFF; padding: 10px;'>
+			<div class="container">
+				<div id="msgArea" style="height:100px; overflow-y: scroll;">
+					<table >
+						<tr><td><font color="red">以下のエラーが発生しています。内容を確認して下さい。</font>
+						</td></tr>
+						<tr><td><font color="red">・タスク番号【TXXXX】の対応内容は文字制限を超えています</font>
+						</td></tr>
+						<tr><td><font color="red">・タスク番号【TXXXX】の対応内容は文字制限を超えています</font>
+						</td></tr>
+						<tr><td><font color="red">・タスク番号【TXXXX】の対応内容は文字制限を超えています</font>
+						</td></tr>
+						<tr><td><font color="red">・タスク番号【TXXXX】の対応内容は文字制限を超えています</font>
+						</td></tr>
+						<tr><td><font color="red">・タスク番号【TXXXX】の対応内容は文字制限を超えています</font>
+						</td></tr>
+						<tr><td><font color="red">・タスク番号【TXXXX】の対応内容は文字制限を超えています</font>
+						</td></tr>
+
+					</table>
+
+				</div>
+				<br/>
+				<div class="row">
+        			<div class="span12">
+        				<div class="row">
+	        				<div class="span6">
+								<h5 style="margin:0px;">
+									タスク状況
+								</h5>
+								<div style="margin:5px; margin-left: 15px !important;">
+									<label class="checkbox inline">
+										<input type="checkbox" name='inlineCheckbox' id="inlineCheckbox" value="option2"> </input>
+									</label>
+									<apex:inputField value="{!Task2__c.Status__c}"></apex:inputField>
+								</div>
+							</div>
+							<div class="span6">
+								<h5 style="margin:0px;">
+									優先度
+								</h5>
+								<div style="margin:5px; margin-left: 15px !important;">
+									<label class="checkbox inline">
+										<input type="checkbox" name='inlineCheckbox' id="inlineCheckbox2" value="option2"> </input>
+									</label>
+									<apex:inputField value="{!Task2__c.Priority__c}"></apex:inputField>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+	        				<div class="span12">
+								<h5 style="margin:0px;">
+									指示依頼内容
+								</h5>
+								<div style="margin:5px; margin-left: 15px !important;">
+									<label class="checkbox inline">
+										<input type="checkbox" name='inlineCheckbox' id="inlineCheckbox3" value="option2"> </input>
+									</label>
+									<apex:inputField value="{!Task2__c.Order__c}" style="width: 500px;"></apex:inputField>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="span12" align="center">
+								<button type='button' id='caseRegist' class='btn btn-success' style='width:40%;' onclick="befExecAction();">保存</button>&nbsp;
+								<button type='button' id='caseTempBack' class='btn' style='width:40%;' onclick="window.close(); return false;">キャンセル</button>
+							</div>
+						</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+
+        <apex:actionFunction id="refreshEvent" name="refreshEvent" status="actionStatus" reRender="" onComplete="document.getElementById('msgArea').style.display = 'block';" />
+        </apex:form>
+
+        <script type="text/javascript">
+
+        	document.getElementById('msgArea').style.display = 'none';
+        	function befExecAction() {
+        		if (confirm('タスクの一括編集を行います\r\nよろしいですか？')) {
+        			//実行
+        			refreshEvent();
+        		}
+        	}
+
+        </script>
+	</body>
+</apex:page>

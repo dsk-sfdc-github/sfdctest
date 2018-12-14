@@ -1,0 +1,70 @@
+<apex:page controller="EventEditController_Report" tabstyle="event" sidebar="true">
+ <apex:sectionHeader title="活動・関連商談編集" />
+ <apex:form >
+  <apex:pageBlock title="編集">
+
+      <apex:facet name="footer">
+      <apex:outputPanel > 
+       <apex:commandButton action="{!saveApp}" value="保存" styleClass="btn" />
+       <apex:commandButton action="{!cancel}" value="キャンセル" styleClass="btn" />
+       </apex:outputPanel>
+      </apex:facet>
+      <apex:pageBlockSection title="活動情報">
+
+      <table class="detailList">
+      <tr><td >
+        <apex:panelGrid columns="4" styleClass="detailList">
+          <apex:outputLabel value="任命先" for="eventOwner" styleClass="labelCol requiredInput" />
+          <apex:inputField id="eventOwner" value="{!event.OwnerId}"  />
+          
+          <apex:outputLabel value="場所" for="Location" styleClass="labelCol requiredInput" />
+          <apex:inputField id="Location" value="{!event.Location}"/>
+          
+          <apex:outputLabel value="件名" for="eventSubject" styleClass="labelCol requiredInput" />
+          <apex:inputField id="eventSubject" value="{!event.Subject}"  />
+
+
+          <apex:outputLabel value="開始日時" for="StartDateTime"  styleClass="labelCol requiredInput"/>
+          <apex:inputField id="StartDateTime" value="{!event.StartDateTime}"/>
+          
+          <apex:outputLabel value="終了日時" for="EndDateTime"  styleClass="labelCol requiredInput"/>
+          <apex:inputField id="EndDateTime" value="{!event.EndDateTime}"/>
+
+        </apex:panelGrid>
+
+        </td></tr>
+        <tr><td>
+        <apex:panelGrid columns="2">
+          <apex:outputLabel value="詳細" for="Description" styleClass="labelCol requiredInput" />
+          <apex:inputTextarea id="Description" value="{!event.Description}" cols="80" rows="3"/>
+        </apex:panelGrid>
+      </td></tr></table>
+      </apex:pageBlockSection>
+
+
+      <apex:pageBlockSection title="商談情報">
+      <table>
+      <tr><td>
+        <apex:panelGrid columns="4">
+          <apex:outputLabel value="商談名" for="OppName" styleClass="labelCol requiredInput" />
+          <apex:inputField id="OppName" value="{!opportunity.name}"/>
+          <apex:outputLabel value="フェーズ" for="OppStageName" styleClass="labelCol requiredInput" />
+          <apex:inputField id="OppStageName" value="{!opportunity.StageName}"/>
+          <apex:outputLabel value="完了予定日" for="OppCloseDate" styleClass="labelCol requiredInput" />
+          <apex:inputField id="OppCloseDate" value="{!opportunity.CloseDate}"/>
+          <apex:outputLabel value="金額" for="OppAmount" styleClass="labelCol requiredInput" />
+          <apex:inputField id="OppAmount" value="{!opportunity.Amount}"/>
+        </apex:panelGrid>
+        </td></tr>
+        <tr><td>
+        <apex:panelGrid columns="2">
+          <apex:outputLabel value="詳細" for="OppDescription" styleClass="labelCol requiredInput" />
+          <apex:inputTextarea id="OppDescription" value="{!opportunity.Description}" cols="80" rows="5"/>
+
+        </apex:panelGrid>
+      </td></tr></table>
+      </apex:pageBlockSection>
+      </apex:pageBlock>
+
+ </apex:form>
+</apex:page>

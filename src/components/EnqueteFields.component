@@ -1,0 +1,51 @@
+<apex:component >
+    <apex:attribute name="fieldList" type="FieldEntity[]" required="true" description="" />
+
+    <div class="container-fluid">
+    <div class="row">
+        <apex:repeat value="{!fieldList}" var="f">
+            <div class="form-group {!f.columnClass}">
+                <label>{!f.labelName}   <span class="label label-danger {!IF(f.isRequired, '', 'hidden')}">必須</span>{!IF(f.helpText <> '', '　（' & f.helpText & '）', '')}</label>
+                <!-- 通常のテキスト入力 -->
+                <input type="text" class="form-control {!IF(f.isNormal, '', 'hidden')}" />
+                <!-- テキストエリア -->
+                <textarea rows="3" class="form-control {!IF(f.isTextArea, '', 'hidden')}" />
+                <!-- 日付 -->
+                <input type="text" class="form-control dateInput {!IF(f.isDate, '', 'hidden')}" />
+                <!-- ラジオボタン -->
+                <div class="radio {!IF(f.isRadio, '', 'hidden')}">
+                    <div class="row">
+                        <apex:repeat value="{!f.options}" var="option" rendered="{!f.isRadio}">
+                            <div class="form-group col-xs-12 col-sm-6 col-md-4">
+                                <label>
+                                    <input type="radio" name="{!f.apiName}" value="{!option[1]}">{!option[0]}</input>
+                                </label>
+                            </div>
+                        </apex:repeat>
+                    </div>
+                </div>
+                <!-- 選択リスト -->
+                <!--
+                <select name="{!f.apiName}" class="form-control {!IF(f.isRadio, '', 'hidden')}">
+                    <apex:repeat value="{!f.options}" var="option" rendered="{!f.isRadio}">
+                        <option value="{!option[1]}">{!option[0]}</option>
+                    </apex:repeat>
+                </select>
+                -->
+                <!-- チェックボックス -->
+                <div class="checkbox {!IF(f.isCheck, '', 'hidden')}">
+                    <div class="row">
+                        <apex:repeat value="{!f.options}" var="option" rendered="{!f.isCheck}">
+                            <div class="form-group col-xs-12 col-sm-6 col-md-4">
+                                <label>
+                                    <input type="checkbox" name="{!f.apiName}" value="{!option[1]}">{!option[0]}</input>
+                                </label>
+                            </div>
+                        </apex:repeat>
+                    </div>
+                </div>
+            </div>
+        </apex:repeat>
+    </div>
+    </div>
+</apex:component>

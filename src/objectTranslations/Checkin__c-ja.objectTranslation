@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>チェックイン</value>
+    </caseValues>
+    <fields>
+        <help><!-- チェックインした位置の住所を別途保存 --></help>
+        <label><!-- 住所 --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- お店の名前などチェックインした位置の名前を保存する --></help>
+        <label><!-- ロケーション名 --></label>
+        <name>LocationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- 地理位置情報のオプション：小数
+小数点の位置：15 --></help>
+        <label><!-- ロケーション --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- チェックインしたユーザのニックネームを保存する --></help>
+        <label><!-- ニックネーム --></label>
+        <name>NickName__c</name>
+    </fields>
+</CustomObjectTranslation>

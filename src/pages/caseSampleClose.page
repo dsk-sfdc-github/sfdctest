@@ -1,0 +1,6 @@
+<apex:page standardController="Account" extensions="SampleApexDetailController2" showHeader="false">    
+    <script>
+        top.opener.newParamID = "{!paramNewID}";
+        window.close();
+    </script>
+</apex:page>

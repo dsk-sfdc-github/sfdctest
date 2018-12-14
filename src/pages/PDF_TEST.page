@@ -1,0 +1,50 @@
+<apex:page controller="pdftestdesu" renderAs="{!pdfParam}">
+<head>
+<apex:includeScript value="{!$Resource.jQuery}" />
+<!--
+<apex:includeScript value="{!URLFOR($Resource.qrcode, '/jquery-qrcode-master/jquery.qrcode.min.js')}"/>
+ -->
+<apex:includeScript value="{!URLFOR($Resource.qrcode2, '/jquery.qrcode-0.12.0.min.js')}"/>
+</head>
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <div id="output"></div>
+  <!-- End Default Content REMOVE THIS -->
+
+<script>
+var JJ = jQuery.noConflict();
+JJ(document).ready(function() {
+	//JJ('#output').qrcode(options);
+	JJ('#output').qrcode({
+		// render method: 'canvas', 'image' or 'div'
+    	"render": 'image',
+	    "size": 100,
+	    "color": "#3a3",
+	    "text": "http://larsjung.de/qrcode"
+	});
+    //JJ('#output').qrcode("https://na7.salesforce.com/001A0000018OIHd");
+})
+</script>
+<!--
+<img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://allabout.co.jp/" width="150" height="150" alt="QRコード" />
+ -->
+<apex:form >
+	<!--
+	<apex:image url="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://allabout.co.jp/"></apex:image>
+	 -->
+	 <!--
+	<apex:outputText value='{!accRec.QR__c}' escape="false" />
+	 -->
+	 <apex:image url="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACZElEQVR4nO2Vy24DMQwD8/8/3d5ToAYxlO1kh4BPelGaBfb1er1+Nr93TcdXSvuP30cgAkEHSeMrCQQeJI2vdD2QttL+beBU2/vftpBAdg8M8wUyPTDMF8iiID3IdP+0X6rt9xFI1q/tXyChBBL2T/ulEgjsT/2c9i+QhQQC+wskHTjcXyDpwDBO/XzaByWQsn+BlB/1L5Dyo/7HgVDR/umC6fz2B5NKIOU4lUDKcSqBlONUSyDTb2no8vj4fQQikNGDTccFcll8932uEz3oKv/jDnJaArlMArlMjwMy/RPa/VM9vR/1J5DyfgIp1wskjH89kDihnN8G1vZH++F6gQhEIM0CgWRa1u8GkOanL51P+1FAseHT+QK5LF8gl+U/Dkhb1CBdmAKkfq4DJhCBRPUCgfWPAzJ9wNMHmD5o259AyvOpP4GU51N/AinPp/7iATSf6nbgdJ88AeZTCYQ2LEsgtGFZjwcyPZAeiGr6A8T3FMhsvkCgv3a+QKC/dv6ynh6gbTB9VPSDoP7+5AtEIAL5p59Awv7jQE4v0DbYPujuhxcWiEAif6mf0w8vLJDDQNpqA5rOv62+LoEIBOXfVl+XQN7qv+2n1QaSxvF9BCKQUQkkHTisrwPS1vSBaH+6f/1+AhEIyhfI5v4CWTRcLZDWUz+p2vuNAxWIQDKDUAJZDUwNQglkNRD2b38AqZ/p/QQS+pneTyChn+n9BBL6md7vOiArTc+jHwi9l0AWcYEsJBA4QCBlIFS3H/C0f14QSiACEQjpL5DyQvQA9INoA2jPi/0JZHaeQML50/MEEs6fnhe9X6uGDQ04D9xHAAAAAElFTkSuQmCC"></apex:image>
+	 <!--
+	 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACZElEQVR4nO2Vy24DMQwD8/8/3d5ToAYxlO1kh4BPelGaBfb1er1+Nr93TcdXSvuP30cgAkEHSeMrCQQeJI2vdD2QttL+beBU2/vftpBAdg8M8wUyPTDMF8iiID3IdP+0X6rt9xFI1q/tXyChBBL2T/ulEgjsT/2c9i+QhQQC+wskHTjcXyDpwDBO/XzaByWQsn+BlB/1L5Dyo/7HgVDR/umC6fz2B5NKIOU4lUDKcSqBlONUSyDTb2no8vj4fQQikNGDTccFcll8932uEz3oKv/jDnJaArlMArlMjwMy/RPa/VM9vR/1J5DyfgIp1wskjH89kDihnN8G1vZH++F6gQhEIM0CgWRa1u8GkOanL51P+1FAseHT+QK5LF8gl+U/Dkhb1CBdmAKkfq4DJhCBRPUCgfWPAzJ9wNMHmD5o259AyvOpP4GU51N/AinPp/7iATSf6nbgdJ88AeZTCYQ2LEsgtGFZjwcyPZAeiGr6A8T3FMhsvkCgv3a+QKC/dv6ynh6gbTB9VPSDoP7+5AtEIAL5p59Awv7jQE4v0DbYPujuhxcWiEAif6mf0w8vLJDDQNpqA5rOv62+LoEIBOXfVl+XQN7qv+2n1QaSxvF9BCKQUQkkHTisrwPS1vSBaH+6f/1+AhEIyhfI5v4CWTRcLZDWUz+p2vuNAxWIQDKDUAJZDUwNQglkNRD2b38AqZ/p/QQS+pneTyChn+n9BBL6md7vOiArTc+jHwi9l0AWcYEsJBA4QCBlIFS3H/C0f14QSiACEQjpL5DyQvQA9INoA2jPi/0JZHaeQML50/MEEs6fnhe9X6uGDQ04D9xHAAAAAElFTkSuQmCC" />
+	  -->
+	  <img src="data:image;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAACZElEQVR4nO2Vy24DMQwD8/8/3d5ToAYxlO1kh4BPelGaBfb1er1+Nr93TcdXSvuP30cgAkEHSeMrCQQeJI2vdD2QttL+beBU2/vftpBAdg8M8wUyPTDMF8iiID3IdP+0X6rt9xFI1q/tXyChBBL2T/ulEgjsT/2c9i+QhQQC+wskHTjcXyDpwDBO/XzaByWQsn+BlB/1L5Dyo/7HgVDR/umC6fz2B5NKIOU4lUDKcSqBlONUSyDTb2no8vj4fQQikNGDTccFcll8932uEz3oKv/jDnJaArlMArlMjwMy/RPa/VM9vR/1J5DyfgIp1wskjH89kDihnN8G1vZH++F6gQhEIM0CgWRa1u8GkOanL51P+1FAseHT+QK5LF8gl+U/Dkhb1CBdmAKkfq4DJhCBRPUCgfWPAzJ9wNMHmD5o259AyvOpP4GU51N/AinPp/7iATSf6nbgdJ88AeZTCYQ2LEsgtGFZjwcyPZAeiGr6A8T3FMhsvkCgv3a+QKC/dv6ynh6gbTB9VPSDoP7+5AtEIAL5p59Awv7jQE4v0DbYPujuhxcWiEAif6mf0w8vLJDDQNpqA5rOv62+LoEIBOXfVl+XQN7qv+2n1QaSxvF9BCKQUQkkHTisrwPS1vSBaH+6f/1+AhEIyhfI5v4CWTRcLZDWUz+p2vuNAxWIQDKDUAJZDUwNQglkNRD2b38AqZ/p/QQS+pneTyChn+n9BBL6md7vOiArTc+jHwi9l0AWcYEsJBA4QCBlIFS3H/C0f14QSiACEQjpL5DyQvQA9INoA2jPi/0JZHaeQML50/MEEs6fnhe9X6uGDQ04D9xHAAAAAElFTkSuQmCC" />
+	  <apex:image url="https://c.na7.content.force.com/servlet/servlet.ImageServer?id=015A0000002jgJz&oid=00DA0000000gG9R&lastMod=1448362889000" width="256" height="256"/>
+  <apex:commandbutton action="{!send}" />
+</apex:form>
+
+
+
+</apex:page>

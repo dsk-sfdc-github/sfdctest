@@ -1,0 +1,621 @@
+<!--
+*
+* ページ名      : AttachedPhotoTopics.page
+* ページ概要     : ファイル添付機能
+* @created  : 2017/02/20 I Len Tran Thanh
+* @modified :
+*
+-->
+<apex:page showHeader="false" sidebar="false" standardController="BusinessTripReports__c"
+    extensions="AttachedPhotoTopics" docType="html-5.0" showQuickActionVfHeader="false">
+
+    <apex:includeScript value="https://code.jquery.com/jquery-1.11.3.min.js"/>
+    <!-- 20170823 DSK ADD -->
+    <!--
+    <apex:includeScript value="{!$Resource.EXIF_JS}"/>
+     -->
+    <style type="text/css">
+        .clsReview {
+            width: 25%;
+            float: left;
+            border: 0px;
+            padding: 5px;
+            margin: 3px;
+        }
+        .clsButton {
+            padding: 10px 10px !important;
+        }
+        .txtComment{
+            resize: none;
+        }
+
+        .jconfirm.jconfirm-white .jconfirm-box .jconfirm-buttons button,
+        .jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons button {
+            width: 90px;
+        }
+
+        @media all and (min-width: 320px) {
+            .errorM3 .msgIcon, .errorMedium {
+                background-image: url(/img/msg_icons/error24.png);
+                background-position: 0 0;
+                width: 24px;
+                height: 24px;
+            }
+            .errorM6, .errorM4, .errorM3, .errorM2, .errorS1 {
+                border-color: #c00;
+            }
+            .message {
+                background-color: #ffc;
+                border-style: solid;
+                border-width: 1px;
+                color: #000;
+                padding: 6px 8px 6px 6px;
+                margin: 4px 20px;
+                webkit-border-radius: 4px;
+                border-radius: 4px;
+            }
+            .message .messageText {
+                margin-left: 8px;
+            }
+
+            .message .messageText h4 {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+
+    <apex:outputPanel layout="block" style="height: 50px; text-align: center;">
+        <apex:outputLabel value="写真添付" style="font-weight: bold;" />
+        <hr />
+    </apex:outputPanel>
+    <apex:outputPanel layout="block" style="overflow-y: scroll; height: 510px;" styleClass="divBody" id="divBody">
+        <apex:pageMessages id="messages" />
+        <apex:form id="form">
+            <table style="width:100%">
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="{!$Label.LBL_PHT_BUTTONNAME01}" style="width: 49%" onclick="cancel(); return false;" class="btn clsButton" />
+                        <input type="button" value="{!$Label.LBL_PHT_BUTTONNAME02}" style="width: 49%" class="btn clsButton" onclick="uploadFileToSF(); return false;" id="btnSave" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left">
+                        <apex:outputLabel value="{!pName}" />
+                    </td>
+                    <td style="text-align: right; width: 100px;">
+                        <input type="button" id="btnImg" value="{!$Label.LBL_PHT_BUTTONNAME03}" class="btn clsButton" style="width: 80px" />
+                        <input type="file" id="imgInp" accept="image/*" multiple="multiple" style="display: none" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <apex:variable var="index" value="{!0}" />
+
+                        <apex:repeat value="{!listAttachment}" var="imageDto">
+                            <div id="divFileNo{!index}" class="divFileUpload" style="display: inline-block;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <apex:outputLabel value="画像0{!index + 1}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <img src="https://placehold.jp/cccccc/cccccc/320x240.png" alt="" width="320" height="240" exif="true"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <apex:inputTextarea rows="3" cols="100" style="width: 314px;" value="{!imageDto.Name}" id="txtComment" styleClass="txtComment" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <apex:variable var="index" value="{!index + 1}" />
+                        </apex:repeat>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="button" value="{!$Label.LBL_PHT_BUTTONNAME01}" style="width: 49%" onclick="cancel(); return false;" class="btn clsButton" />
+                        <input type="button" value="{!$Label.LBL_PHT_BUTTONNAME02}" style="width: 49%" class="btn clsButton" onclick="uploadFileToSF(); return false;" id="btnSave2" />
+                    </td>
+                </tr>
+            </table>
+            <apex:actionFunction name="refreshMessage" reRender="messages" />
+            <apex:actionFunction name="afSave" status="Waiting" reRender="messages" oncomplete="closeWindowNotError();" />
+            <apex:actionFunction name="showPageMessage" action="{!showPageMessage}" reRender="messages">
+                <apex:param id="msgError" name="msgError" value="" assignTo="{!message}" />
+            </apex:actionFunction>
+
+        </apex:form>
+        <!-- 20170823 DSK ADD ST  -->
+        <canvas style="display:none"></canvas>
+        <!-- 20170823 DSK ADD ED  -->
+    </apex:outputPanel>
+    <script type="text/javascript" src="/soap/ajax/38.0/connection.js"></script>
+    <script type="text/javascript" src="/soap/ajax/38.0/apex.js"></script>
+    <script type='text/javascript' src='/canvas/sdk/js/publisher.js'></script>
+    <script type="text/javascript">
+        sforce.connection.sessionId = "{!$Api.Session_ID}";
+        var $j = jQuery.noConflict();
+        var currentIndex = 0;
+        var arrayContentVersion = [];
+        var arrReaderComplete = [];
+        var userId = '{!$User.Id}';
+        var totalFile = 0;
+        var pId = '{!pId}';
+        var max_file_number = 10;
+        var max_file_name = 50;
+        $j(window).on('load', function(){
+            disableTextarea();
+            if(pId.length < 1) {
+                showPageMessage('Can not get Id トピックス(BusinessTripReports__c)');
+                $j('#btnSave').prop('disabled', true);
+                $j('#btnSave2').prop('disabled', true);
+                $j('#btnImg').prop('disabled', true);
+                $j('#imgInp').prop('disabled', true);
+            }
+        });
+
+        // input file change
+        $j("#imgInp").change(function(){
+            totalFile = this.files.length;
+            if (totalFile > max_file_number) {
+                for(var i = 0; i < arrayContentVersion.length; i++){
+                    $j('#divFileNo' + i ).find('img')[0].setAttribute('src', 'https://placehold.jp/cccccc/cccccc/320x240.png');
+                    $j('#divFileNo' + i ).find('textarea')[0].value = '';
+                    $j('#divFileNo' + i ).find('textarea')[0].setAttribute('disabled', 'disabled');
+                }
+                arrayContentVersion = [];
+                totalFile = 0;
+                showPageMessage('{!JSENCODE($Label.MSG_ERR_TOOMANYFILES)}');
+            } else {
+                $j('.divFileUpload').find('[id$="txtComment"]').val('');
+                readURL(this);
+            }
+
+        });
+
+        function readURL(input) {
+            arrayContentVersion = [];
+            arrReaderComplete = [];
+            currentIndex = 0;
+            if (input.files) {
+                var errorInput = false;
+                // reset all image and caption
+                for(var i = 0; i < max_file_number; i++){
+                    $j('#divFileNo' + i ).find('img')[0].setAttribute('src', 'https://placehold.jp/cccccc/cccccc/320x240.png');
+                    $j('#divFileNo' + i ).find('textarea')[0].value = '';
+                    $j('#divFileNo' + i ).find('textarea')[0].setAttribute('disabled', 'disabled');
+                    // check type image
+                    if (input.files[i] != null && input.files[i].type.match('image/') == null) {
+                        errorInput = true;
+                        break;
+                    }
+                }
+                // show message if file not image
+                if (errorInput) {
+                    //errorSelectFile();
+                    showPageMessage('{!JSENCODE($Label.MSG_ERR_SELECTIONFILE)}');
+                    return;
+                }
+                refreshMessage();
+                // show image review
+                var inputImageLength = input.files.length;
+                if (inputImageLength > max_file_number) {
+                    inputImageLength = max_file_number
+                }
+                for(var i = 0; i < inputImageLength; i++){
+                    readFile(input.files[i]);
+                }
+            }
+        }
+
+        // read choose file
+        function readFile(file){
+            disableButtonSave(true);
+
+            //20170823 DSK ADD ST
+            //画像圧縮
+            canvas = document.querySelector('canvas');
+            ctx = canvas.getContext('2d');
+            canvas.width = 0;
+            canvas.height = 0;
+            image = new Image();
+            size = 50;	//TODO カスタム表示ラベル
+            //20170823 DSK ADD ED
+
+            var reader = new FileReader();
+            var fileName = file.name.substring(0, file.name.lastIndexOf('.'));
+            reader.onload = function (e) {
+            	//20170823 DSK ADD ST
+            	image.onload = function() { // 画像が読み込めた時の処理
+	                //画像圧縮
+                	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	                var w = image.width * (size/100);
+	                var h = image.height * (size/100);
+	                console.log("元々のサイズ:" + image.width + "×" + image.height);
+	      			console.log("縮小後のサイズ:" + w + "×" + h);
+
+	      			canvas.width = w;
+					canvas.height = h;
+
+					//EXIF情報（6で時計周りに90度回転）
+					if (getOrientation(e.target.result) == 6) {
+						alert("回転");
+						ctx.translate(w / 2, h / 2);
+			            ctx.rotate(90 * Math.PI / 180);
+			            ctx.translate(- w / 2, -h / 2);
+					}
+
+					ctx.drawImage(image, 0, 0, w, h);
+
+					var fileBody = canvas.toDataURL();
+
+					$j('#divFileNo' + (currentIndex - 1)).find('img').attr('src', fileBody);
+					$j('#divFileNo' + (currentIndex - 1)).find('[id$="txtComment"]').val(fileName);
+					$j('#divFileNo' + (currentIndex - 1)).find('textarea')[0].removeAttribute('disabled');
+
+					// remove 'data:image/png;base64,'
+	                var indexFirstComma = fileBody.indexOf(',');
+	                fileBody = fileBody.slice(indexFirstComma + 1);
+					arrayContentVersion.push(createAttachment(file, fileName, fileBody));
+      			}
+      			//image.src = reader.result;
+      			image.src = e.target.result;
+            	//20170823 DSK ADD ED
+
+            	//20170823 DSK ADD ST
+                //var fileBody = e.target.result;
+                //20170823 DSK ADD ED
+                console.log('loadstart');
+
+				//20170823 DSK ADD ST
+                //$j('#divFileNo' + currentIndex ).find('img').attr('src', fileBody);
+                //$j('#divFileNo' + currentIndex ).find('[id$="txtComment"]').val(fileName);
+                //$j('#divFileNo' + currentIndex ).find('textarea')[0].removeAttribute('disabled');
+
+                // remove 'data:image/png;base64,'
+                //var indexFirstComma = fileBody.indexOf(',');
+                //fileBody = fileBody.slice(indexFirstComma + 1);
+
+                //arrayContentVersion.push(createAttachment(file, fileName, fileBody));
+                //reader.Index = currentIndex;
+                //arrReaderComplete[reader.Index] = false;
+                //currentIndex += 1;
+                //20170823 DSK ADD ED
+                reader.Index = currentIndex;
+               	arrReaderComplete[reader.Index] = false;
+               	currentIndex += 1;
+            }
+            reader.onloadend = function(e){
+            	alert("完了");
+                arrReaderComplete[reader.Index] = true;
+                if(isAllFileLoadComplete()){
+                	alert("すべて完了");
+                    console.log('loadend');
+                    disableButtonSave(false);
+                }
+            }
+            reader.readAsDataURL(file);
+        }
+
+        //20170823 DSK ADD ST
+        function getOrientation(imgDataURL){
+		    var byteString = atob(imgDataURL.split(',')[1]);
+		    var orientaion = byteStringToOrientation(byteString);
+		    return orientaion;
+
+		    function byteStringToOrientation(img){
+		        var head = 0;
+		        var orientation;
+		        while (1){
+		            if (img.charCodeAt(head) == 255 & img.charCodeAt(head + 1) == 218) {break;}
+		            if (img.charCodeAt(head) == 255 & img.charCodeAt(head + 1) == 216) {
+		                head += 2;
+		            }
+		            else {
+		                var length = img.charCodeAt(head + 2) * 256 + img.charCodeAt(head + 3);
+		                var endPoint = head + length + 2;
+		                if (img.charCodeAt(head) == 255 & img.charCodeAt(head + 1) == 225) {
+		                    var segment = img.slice(head, endPoint);
+		                    var bigEndian = segment.charCodeAt(10) == 77;
+		                    var count;
+		                    if (bigEndian) {
+		                        count = segment.charCodeAt(18) * 256 + segment.charCodeAt(19);
+		                    } else {
+		                        count = segment.charCodeAt(18) + segment.charCodeAt(19) * 256;
+		                    }
+		                    for (i=0; i < count; i++){
+		                        var field = segment.slice(20 + 12 * i, 32 + 12 * i);
+		                        if ((bigEndian && field.charCodeAt(1) == 18) || (!bigEndian && field.charCodeAt(0) == 18)) {
+		                            orientation = bigEndian ? field.charCodeAt(9) : field.charCodeAt(8);
+		                        }
+		                    }
+		                    break;
+		                }
+		                head = endPoint;
+		            }
+		            if (head > img.length){break;}
+		        }
+		        return orientation;
+		    }
+		}
+
+		function _resize(img, compressSize) {
+			var exif = img.exifdata.Orientation
+            var raw_width = img.width;
+            var raw_height = img.height;
+            var canvas = document.createElement('canvas');
+            canvas.width = compressSize;
+            canvas.height = compressSize;
+            var ctx = canvas.getContext('2d');
+            ctx.translate(canvas.width / 2, canvas.height / 2);
+            switch (exif) {
+            case 1:
+                break;
+            case 2: // vertical flip
+                ctx.scale(-1, 1);
+                break;
+            case 3: // 180 rotate left
+                ctx.rotate(Math.PI);
+                break;
+            case 4: // horizontal flip
+                ctx.scale(1, -1);
+                break;
+            case 5: // vertical flip + 90 rotate right
+                ctx.rotate(0.5 * Math.PI);
+                ctx.scale(1, -1);
+                break;
+            case 6: // 90 rotate right
+                ctx.rotate(0.5 * Math.PI);
+                break;
+            case 7: // horizontal flip + 90 rotate right
+                ctx.rotate(0.5 * Math.PI);
+                ctx.scale(-1, 1);
+                break;
+            case 8: // 90 rotate left
+                ctx.rotate(-0.5 * Math.PI);
+                break;
+            default:
+                break;
+            }
+            var dx = -canvas.width / 2;
+            var dy = -canvas.height / 2;
+            var dw = canvas.width;
+            var dh = canvas.height;
+            var sx = Math.max((raw_width - raw_height) / 2, 0);
+            var sy = Math.max((raw_height - raw_width) / 2, 0);
+            var sw = Math.min(raw_height, raw_width);
+            var sh = Math.min(raw_height, raw_width);
+            ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh);
+            var url = canvas.toDataURL('image/jpeg');
+            ctx = null;
+            canvas = null;
+            return url;
+        }
+        //20170823 DSK ADD ED
+
+        function createAttachment(file, fileName, fileBody) {
+            var attachment = new sforce.SObject('Attachment');
+            attachment.Name = fileName;
+            attachment.IsPrivate = false;
+            attachment.ContentType = file.type;
+            attachment.Body = fileBody;
+            attachment.Description = fileName;
+            attachment.ParentId = pId;
+            attachment.OwnerId = userId;
+            return attachment;
+        }
+
+        // if all file loader,then upload all file to SF
+        function uploadFileToSF(){
+            var isError = false;
+            if(arrayContentVersion.length < 1) {
+                showPageMessage('{!JSENCODE($Label.MSG_ERR_NOFILE)}');
+                return;
+            } else {
+                for(var i = 0; i < arrayContentVersion.length; i++) {
+                    var fileName = $j('#divFileNo' + i ).find('[id$="txtComment"]').val();
+                    if(fileName.length < 1) {
+                        isError = true;
+                        $j('#divFileNo' + i ).find('[id$="txtComment"]').focus();
+                        showPageMessage('{!JSENCODE($Label.MSG_ERR_FILENAME)}');
+                        break;
+                    } else {
+                        arrayContentVersion[i].Name = fileName;
+                        arrayContentVersion[i].Description = fileName;
+                    }
+                }
+            }
+
+            if(arrayContentVersion.length > 0 && !isError) {
+                disableButtonSave(true);
+                var result = insertAllRec(arrayContentVersion);
+                console.log(result);
+                var fileError = '';
+                if(result.length){
+                    for(var i = 0; i < result.length; i++){
+                        var temp = (result[i].success == 'false') ? result[i].Id : '';
+                        fileError += temp.length > 0 ? ', ' + temp : fileError;
+                    }
+
+                    if(fileError.length > 0) {
+                        showPageMessage('Files insert error: ' + fileError);
+                    }
+                    afSave();
+                }
+            }
+
+        }
+
+        function isAllFileLoadComplete(){
+        	alert(arrReaderComplete.length);
+        	alert(totalFile);
+            if(arrReaderComplete.length < totalFile){
+                return false;
+            }
+            for(var i = 0; i < totalFile; i++){
+                if(arrReaderComplete[i] === false){
+                    return false;
+                }
+            }
+            return true;
+        }
+        //レコードの追加
+        function insertAllRec(insertList){
+            try{
+                var result = [];
+                /*
+                var recList = new Array();
+                var recCount = insertList.length;
+                for(var i=0; i< recCount; i++){
+                    if(insertList.length <= 200 && recList.length == 0){
+                        result = sforce.connection.create(insertList);
+                        break;
+                    }else{
+                        recList.push(insertList.pop());
+                        if(recList.length == 200){
+                            result.pushValues(sforce.connection.create(recList));
+                            recList = new Array();
+                        }
+                    }
+                }
+                */
+                for(var i=0; i < insertList.length; i++) {
+                    var attachment = new sforce.SObject("Attachment");
+                    attachment = insertList[i];
+                    var r = sforce.connection.create([attachment]);
+                    result.push(r);
+                }
+                return result;
+            }catch(e){
+                //alert(" ----追加システムエラー " + e);
+                showPageMessage('{!JSENCODE($Label.MSG_ERR_SYSTEM)}' + e);
+            }
+        }
+
+        // hide text box and text field of input file
+        var button = document.getElementById('btnImg');
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            $j("#imgInp").click();
+        });
+
+        function disableButtonSave(isDisable){
+            if (isDisable) {
+                $j('#btnSave').prop('disabled', true);
+                $j('#btnSave').addClass('btnDisabled');
+                $j('#btnSave2').prop('disabled', true);
+                $j('#btnSave2').addClass('btnDisabled');
+            } else {
+                $j('#btnSave').prop('disabled', false);
+                $j('#btnSave').removeClass('btnDisabled');
+                $j('#btnSave2').prop('disabled', false);
+                $j('#btnSave2').removeClass('btnDisabled');
+            }
+        }
+
+        // check error message on screen
+        function closeWindowNotError() {
+            if ($j('[id$=messages]').find('[alt=ERROR]').length <= 0 && $j('[id$=messages]').find('[alt=INFO]').length <= 0) {
+                refreshWindow();
+            }else{
+                disableButtonSave(false);
+            }
+        }
+
+        function refreshWindow(){
+            if ((typeof sforce != 'undefined') && (sforce) && (!!sforce.one)) {
+                Sfdc.canvas.publisher.publish({
+                    name: "publisher.close",
+                    payload:{ refresh: "true" }
+                });
+            } else {
+                goPageDetail();
+            }
+        }
+
+        function cancel() {
+            /*
+            var isCancel = confirm('{!$Label.LBL_PHT_DIALOGMESSAGE01}');
+            if (isCancel) {
+                if ((typeof sforce != 'undefined') && (sforce) && (!!sforce.one)) {
+                    Sfdc.canvas.publisher.publish({
+                        name: "publisher.close"
+                    });
+                } else {
+                    goPageDetail();
+                }
+            }*/
+
+            var width = '45%';
+            if ((typeof sforce != 'undefined') && (sforce) && (!!sforce.one)) {
+                 width = '80%';
+            }
+
+            $j.confirm({
+                //title: '保存確認',
+                title: '',
+                content: '{!JSENCODE($Label.LBL_PHT_DIALOGMESSAGE01)}',
+                //type: 'blue',
+                typeAnimated: true,
+                alignMiddle: false,
+                animation: 'none',
+                boxWidth: width,
+                useBootstrap: false,
+                buttons: {
+                    ok: {
+                        //text: 'OK',
+                        //btnClass: 'btn-blue',
+                        action: function(){
+                            goPageDetail();
+                        }
+                    },
+                    cancel: {
+                        text: 'キャンセル',
+                        //btnClass: 'btn-red',
+                        action: function(){
+                        }
+                    }
+                }
+            });
+
+        }
+
+        function disableTextarea() {
+            for(var i = 0; i < max_file_number; i++){
+                $j('#divFileNo' + i ).find('textarea')[0].setAttribute('disabled', 'disabled');
+                $j('#divFileNo' + i ).find('textarea')[0].setAttribute('maxlength', max_file_name);
+            }
+            if ((typeof sforce != 'undefined') && (sforce) && (!!sforce.one)) {
+                $j('.divBody').css('height','');
+            }
+        }
+
+        function goPageDetail() {
+           var pageDetail = pId.length > 0 ? "/"+pId : "/a00";
+           if((typeof sforce != 'undefined') && sforce && (!!sforce.one)){
+               sforce.one.navigateToURL(pageDetail, true);
+           } else {
+               //location.href = pageDetail;
+               window.top.location.href = pageDetail;
+           }
+       }
+
+       // fix bug iPhone scrolling on top while focus at the bottom, don't remove
+       (function(){try{var a=navigator.userAgent;
+        if((a.indexOf('Salesforce')!=-1)&&(a.indexOf('iPhone')!=-1||a.indexOf('iPad')!=-1) &&(a.indexOf('Safari')==-1)){
+            var s=document.createElement('style');
+            s.innerHTML="html,html body{overflow: auto;-webkit-overflow-scrolling:touch;}body{position:absolute;left:0;right:-5px;top:0;bottom:0;}";
+            document.getElementsByTagName('head')[0].appendChild(s);}}catch(e){}})();
+
+        //window.onload = disableTextarea;
+    </script>
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.1.0/jquery-confirm.min.js" />
+    <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.1.0/jquery-confirm.min.css" />
+</apex:page>

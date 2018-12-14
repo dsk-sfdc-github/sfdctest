@@ -1,0 +1,17 @@
+<apex:page standardController="Account" extensions="ApexMetadataLayoutSampleController">
+    <apex:sectionHeader title="{!IF(Account.ID="","取引先の編集",Account.Name)}" subtitle="{!IF(Account.ID=="","新規取引先","")}" />
+    <apex:pageBlock mode="maindetail">
+        <apex:repeat value="{!layout.sections}" var="section">
+            <!-- TODO detailHeading,editHeadingが共にFalseの場合、セクションを隠して表示 -->
+            <!--  <apex:pageBlockSection title="{!section.label}" rendered="{!AND(section.detailHeading, NOT(section.isCustomLink))}"> -->
+            <!-- <apex:pageBlockSection title="{!section.label}" > -->
+            <apex:pageBlockSection title="{!section.label}" columns="{!section.columns}">
+                <apex:repeat value="{!section.items}" var="item">
+                    <!-- <apex:outputField value="{!Account[item.field]}" rendered="{!AND(NOT(item.isEmptySpace), NOT(item.isCustomLink), NOT(item.isAddress))}"/> -->
+                    <apex:outputField value="{!Account[item.field]}" rendered="{!AND(NOT(item.isEmptySpace), NOT(item.isCustomLink), NOT(item.isAddress))}"/>
+                    <apex:outputLabel rendered="{!item.isEmptySpace}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+</apex:page>

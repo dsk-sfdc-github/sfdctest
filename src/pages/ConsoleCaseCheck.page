@@ -1,0 +1,22 @@
+<apex:page standardController="Account" extensions="ConsoleCaseCheckController">
+
+
+	<apex:sectionHeader title="取引先標準機能の確認" />
+
+	<apex:pageMessages />
+
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockSection columns="1" title="保存処理">
+	            <apex:inputField value="{!accRec.Name}" />
+	            <apex:inputField value="{!accRec.Field6__c}" required="true"/>
+	        </apex:pageBlockSection>
+			<apex:pageBlock mode="edit">
+			    <apex:pageBlockButtons location="bottom">
+			        <apex:commandButton value="保存" action="{!save}" />
+			        <apex:commandButton value="キャンセル" action="{!cancel}" />
+			    </apex:pageBlockButtons>
+			</apex:pageBlock>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page standardController="Contact">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+
+<apex:outputField value="{!Contact.Phone}"/>
+<apex:outputField value="{!Contact.Email}"/>
+
+</apex:pageBlockSection>
+
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

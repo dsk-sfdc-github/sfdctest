@@ -1,0 +1,12 @@
+{!Connection_ExternalContactFirstName}様
+
+Salesforce.com の Apex プラットフォームにおける貴社の組織「{!Connection_ExternalCompanyName}」との接続にご招待いただきありがとうございます。
+
+貴社からのご招待を喜んでお受けいたします。弊社組織「{!Organization.Name}」において、両者のパートナーコミュニティとの実り多い継続的な関係が築けることを楽しみにしております。
+
+株式会社セールスフォース・ドットコム
+
+
+{!User.FirstName} {!User.LastName}
+
+{!Organization.Name}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>お知らせ事項</value>
+    </caseValues>
+    <fields>
+        <label><!-- お知らせ事項の色 --></label>
+        <name>contentFontColor__c</name>
+    </fields>
+    <fields>
+        <label><!-- お知らせ事項の文字サイズ --></label>
+        <name>contentFontSize__c</name>
+    </fields>
+    <fields>
+        <label><!-- お知らせ事項 --></label>
+        <name>contents__c</name>
+    </fields>
+    <fields>
+        <label><!-- お知らせ詳細 URL --></label>
+        <name>detailUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- 掲載終了日 --></label>
+        <name>endDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 見出しの色 --></label>
+        <name>headerFontColor__c</name>
+    </fields>
+    <fields>
+        <label><!-- 見出しの文字サイズ --></label>
+        <name>headerFontSize__c</name>
+    </fields>
+    <fields>
+        <label><!-- 表示順 --></label>
+        <name>orderNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- 掲載開始日 --></label>
+        <name>startDate__c</name>
+    </fields>
+    <layouts>
+        <layout>お知らせ事項レイアウト</layout>
+        <sections>
+            <label><!-- お知らせ事項 --></label>
+            <section>お知らせ事項</section>
+        </sections>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- システム情報 --></label>
+            <section>システム情報</section>
+        </sections>
+        <sections>
+            <label><!-- 情報 --></label>
+            <section>情報</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

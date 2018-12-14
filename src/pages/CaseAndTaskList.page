@@ -1,0 +1,301 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0" id="page" standardController="Case">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Template &middot; Bootstrap</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN" />
+
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.min.css')}"></apex:stylesheet>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.min.css')}"></apex:stylesheet>
+        <apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"></apex:stylesheet>
+        <apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"></apex:stylesheet>
+        <apex:stylesheet value="{!URLFOR($Resource.TreeViewJS, 'maxazan-jquery-treegrid-898df7d/css/jquery.treegrid.css')}"></apex:stylesheet>
+        <!--<apex:stylesheet value="{!URLFOR($Resource.bootstrap3CSS, 'dist/css/bootstrap.css')}"></apex:stylesheet>-->
+
+        <apex:includeScript value="{!$Resource.jQuery}" />
+        <!-- <apex:includeScript value="{!$Resource.bootstrap_tab_js}" />-->
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.min.js')}"></apex:includeScript>
+        <apex:includeScript value="{!URLFOR($Resource.TreeViewJS, 'maxazan-jquery-treegrid-898df7d/js/jquery.treegrid.js')}"></apex:includeScript>
+        <apex:includeScript value="{!URLFOR($Resource.TreeViewJS, 'maxazan-jquery-treegrid-898df7d/js/jquery.treegrid.bootstrap2.js')}"></apex:includeScript>
+
+    </head>
+
+    <body>
+        <div class="container contop" style='width: 99%; margin-left: -1px;'>
+            <div class="well well-large" id="divTopArea" style='margin: 5px; background-color: #FFFFFF; border-width: 3px; border-color: #FFA500;'>
+                <div class="row">
+                    <div class="span12" style='width: 98%;'>
+                        <div class="row">
+                            <div class="span3">
+                                <h5 style="margin:0px;">
+                                    名前
+                                </h5>
+                                <div style="margin:5px; margin-left: 15px !important;">
+                                    <apex:outputLabel >
+                                        <a class="pull-left" data-toggle="modal" href="#myModal" >富士　太郎（フジ　タロウ）</a>
+                                    </apex:outputLabel>
+                                </div>
+                                <hr style='margin-top: 2px; margin-bottom: 4px;' />
+                            </div>
+                            <div class="span3">
+                                <h5 style="margin:0px;">
+                                    お客様ステータス
+                                </h5>
+                                <div style="margin:5px; margin-left: 15px !important;">
+                                    <apex:outputLabel id="accSts">【様々なマークを表示】</apex:outputLabel>
+                                </div>
+                                <hr style='margin-top: 2px; margin-bottom: 4px;' />
+                            </div>
+                            <div class="span3">
+                                <h5 style="margin:0px;">
+                                    受付番号
+                                </h5>
+                                <div style="margin:5px; margin-left: 15px !important;">
+                                    <apex:outputLabel id="accNo">0154125478</apex:outputLabel>
+                                </div>
+                                <hr style='margin-top: 2px; margin-bottom: 4px;' />
+                            </div>
+                            <div class="span3">
+                                <h5 style="margin:0px;">
+                                    お客様ID
+                                </h5>
+                                <div style="margin:5px; margin-left: 15px !important;">
+                                    <apex:outputLabel id="accID">5485412678</apex:outputLabel>
+                                </div>
+                                <hr style='margin-top: 2px; margin-bottom: 4px;' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container contop" style='width: 35%; float: left;'>
+            <div class="row">
+                <div class="span1" style='width: 95%;'>
+                    <div class="well well-large" id="divTopArea" style='margin: 5px; background-color: rgb(255, 255, 255); border-width: 3px; border-color: rgb(255, 165, 0); padding: 0px;'>
+                        <div class="container contop" style='width: 100%;'>
+                            <div class="tabbable" style='margin: 0px;'>
+                                <ul class="nav nav-tabs" style=''>
+                                    <li class="active">
+                                        <a href="#home" data-toggle="tab" style='width: 100px; height: 20px; white-space: nowrap;'><i class="icon-calendar"></i>&nbsp;ツリー一覧</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab1" data-toggle="tab" style='width: 100px; height: 20px; white-space: nowrap;'><i class="icon-calendar"></i>&nbsp;時系列一覧</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab2" data-toggle="tab" style='width: 100px; height: 20px; white-space: nowrap;'><i class="icon-comment"></i>&nbsp;対応内容</a>
+                                    </li>
+                                </ul>
+                                <div id="my-tab-content" class="tab-content" style='margin: 5px; background-color: #FFFFFF; overflow-y: scroll; height: 800px;'>
+                                    <div class="tab-pane active" id="home">
+                                        <!--<div class="row">-->
+                                            <table class="table tree table-bordered table-striped table-condensed">
+                                                <tr class="treegrid-1">
+                                                    <td>&nbsp;<font color="green">ケース</font>：2013-05-05<font color="red">入電時参照：【要】</font><br/>
+                                                    　　<a>04837076</a>　『解約/返却キット早期送付依頼』<br/>
+                                                    　　ステータス：クローズ<br/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-2 treegrid-parent-1">
+                                                    <td>&nbsp;<font color="green">タスク</font>：2013-05-05<br/>
+                                                    　　　　04837076『接続設（HG…<br/>
+                                                    　　　　状況：クローズ
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-3 treegrid-parent-1">
+                                                    <td>&nbsp;<font color="green">タスク</font>：2013-05-06<font color="red">入電時参照：【要】</font><br/>
+                                                    　　　　04837076　『解約手続き問合せ』<br/>
+                                                    　　　　状況：未着手<br/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-4 treegrid-parent-3">
+                                                    <td>&nbsp;<font color="green">ケース</font>：2013-04-02<br/>
+                                                    　　　　　　04837076 　『137入電受付』<br/>
+                                                    　　　　　　ステータス：クローズ
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-5">
+                                                    <td>&nbsp;<font color="green">ケース</font>：2013-04-01<font color="red">入電時参照：【要】</font><br/>
+                                                    　　04837076『137入電受付』<br/>
+                                                    　　ステータス：クローズ
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-6 treegrid-parent-5">
+                                                    <td>&nbsp;<font color="green">タスク</font>：2013-01-01<br/>
+                                                    　　　　04837076『接続設（HG…<br/>
+                                                    　　　　状況：クローズ
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-7 treegrid-parent-5">
+                                                    <td>&nbsp;<font color="green">タスク</font>：2013-01-01<font color="red">入電時参照：【要】</font><br/>
+                                                    　　　　04837076『接続設（HG…<br/>
+                                                    　　　　状況：クローズ<br/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-8 treegrid-parent-7">
+                                                    <td>&nbsp;<font color="green">タスク</font>：2013-04-02<br/>
+                                                    　　　　　　04837076 　『137入電受付』<br/>
+                                                    　　　　　　ステータス：クローズ
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-9 treegrid-parent-7">
+                                                    <td>&nbsp;<font color="green">タスク</font>：2013-04-02<br/>
+                                                    　　　　　　04837076 　『137入電受付』<br/>
+                                                    　　　　　　ステータス：クローズ
+                                                    </td>
+                                                </tr>
+                                                <tr class="treegrid-10 treegrid-parent-7">
+                                                    <td>&nbsp;<font color="green">タスク</font>：2013-04-02<br/>
+                                                    　　　　　　04837076 　『137入電受付』<br/>
+                                                    　　　　　　ステータス：クローズ
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        <!--</div>-->
+                                    </div>
+                                    <div class="tab-pane" id="tab1">
+                                        <h5 style="margin:5px;">
+                                            <font color="red">2013-05-05</font>
+                                        </h5>
+                                        <div style="margin:20px;">
+                                            ケース：&nbsp;<apex:outputLink >04837076</apex:outputLink>&nbsp;『接続設定（HG）...<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;ステータス：クローズ<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;入電時参照：【要】
+                                        </div>
+                                        <div style="margin:20px;">
+                                            ケース：&nbsp;<apex:outputLink >04836404</apex:outputLink>&nbsp;『【障】H終端L...<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;ステータス：クローズ
+                                        </div>
+                                        <div style="margin:20px;">
+                                            タスク：&nbsp;<apex:outputLink >T1305-7552032</apex:outputLink>&nbsp;『137入電...<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;状況：未着手<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;実行期限：2006-12-27
+                                        </div>
+
+                                        <h5 style="margin:5px;">
+                                            <font color="red">2013-04-17</font>
+                                        </h5>
+                                        <div style="margin:20px;">
+                                            タスク：&nbsp;<apex:outputLink >T1304-7471900</apex:outputLink>&nbsp;『137入電...<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;状況：未着手<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;実行期限：2006-12-27
+                                        </div>
+                                        <div style="margin:20px;">
+                                            タスク：&nbsp;<apex:outputLink >T1304-7474536</apex:outputLink>&nbsp;『他事業者...<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;状況：完了<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;実行期限：2013-04-17
+                                        </div>
+
+                                        <h5 style="margin:5px;">
+                                            <font color="red">2013-04-16</font>
+                                        </h5>
+                                        <div style="margin:20px;">
+                                            ケース：&nbsp;<apex:outputLink >04789532</apex:outputLink>&nbsp;『解約取消依頼』...<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;ステータス：クローズ
+                                        </div>
+                                        <div style="margin:20px;">
+                                            タスク：&nbsp;<apex:outputLink >T1304-7468719</apex:outputLink>&nbsp;『解約／撤...<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;状況：完了<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;実行期限：2013-04-17
+                                        </div>
+                                        <div style="margin:20px;">
+                                            タスク：&nbsp;<apex:outputLink >T1304-7468716</apex:outputLink>&nbsp;『他事業者...<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;状況：完了<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;実行期限：2013-04-16
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        <h5 style="margin:5px;">
+                                            <font color="red">2013/05/03 15:43--CC-登録CM</font><br/>
+                                        </h5>
+                                        <div style="margin:20px;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;■--登録C：CTC　花子--<br /><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;■ステップ割申込<br /><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;【受付番号】1305005857
+                                            &nbsp;&nbsp;&nbsp;&nbsp;※上記受付番号にて入力済。
+                                        </div>
+                                        <h5 style="margin:5px;">
+                                            <font color="red">2013/04/24 14:03--CC-登録CM</font><br/>
+                                        </h5>
+                                        <div style="margin:20px;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;■--登録C：CTC　やす子—<br /><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;■ステップ割申込<br /><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;【受付番号】1305005857<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;※上記受付番号にて代行入力済。<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;【受付番号】1304048995<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;【メニュー】アクセスコミュファ・ホー<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;ム → ホーム３００・セレクト<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;【プロバイダ】ＯＤＮ<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;【変更希望日】2013年5月3日<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;【工事進捗】サービス中<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;【機器返却】返却キット<br /><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;※上記受付番号にて代行入力しました。
+
+                                        </div>
+                                        <h5 style="margin:5px;">
+                                            <font color="red">2013/04/22 11:13--サポート発信管理者 (テトラポット)</font><br/>
+                                        </h5>
+                                        <div style="margin:20px;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;金谷<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;奥様。９時過ぎ希望。
+                                        </div>
+                                        <h5 style="margin:5px;">
+                                            <font color="red">2013/04/19 19:07--サポート発信CSt(テトラポット)</font><br/>
+                                        </h5>
+                                        <div style="margin:20px;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;荷電者：上野<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;荷電先：携帯<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;対応者：ご家族様（奥様）<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;内容：教室をやっているため午後は授業<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;中。<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;荷電は平日の午前中にして下さいとの事。
+                                        </div>
+                                        <h5 style="margin:5px;">
+                                            <font color="red">2013/04/16 13:28--CC-登録CM</font><br/>
+                                        </h5>
+                                        <div style="margin:20px;">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;荷電者：上野<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;荷電先：携帯<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;対応者：ご家族様（奥様）<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;内容：教室をやっているため午後は授業<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;中。<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;荷電は平日の午前中にして下さいとの事。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container contop" style='width: 65%; float: left;'>
+            <div class="row">
+                <div class="span1" style='width: 95%;'>
+                    <div class="well well-large" id="divTopArea" style='margin: 5px; background-color: rgb(255, 255, 255); border-width: 3px; border-color: rgb(255, 165, 0); padding: 0px;'>
+                        <apex:form >
+                            <!-- <apex:iframe src="/500A000000JufMJ?isdtp=vw" scrolling="true" id="frame2" width="99%" height="840px;"/> -->
+                            <apex:detail />
+                        </apex:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script type='text/javascript'>
+        var JJ = jQuery.noConflict();
+
+        JJ(document).ready(function() {
+            jQuery('.tree').treegrid({
+                        expanderExpandedClass: 'icon-minus-sign',
+                        expanderCollapsedClass: 'icon-plus-sign'
+                    });
+        });
+
+    </script>
+
+</apex:page>

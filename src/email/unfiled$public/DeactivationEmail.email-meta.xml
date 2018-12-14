@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>無効化通知のテンプレート</description>
+    <encodingKey>ISO-2022-JP</encodingKey>
+    <name>Salesforce to Salesforce: 無効化 (サンプル)</name>
+    <style>none</style>
+    <subject>{!Organization.Name}からの接続中止のお知らせ</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

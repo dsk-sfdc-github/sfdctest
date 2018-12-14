@@ -1,0 +1,9 @@
+<apex:component >
+    <apex:attribute name="text" type="String" description="コンポーネント表示"/>
+    <fieldset>
+        <legend>コンポーネントテスト</legend>
+        <br />
+        <h1>{!text}</h1>
+        <br />
+    </fieldset>
+</apex:component>

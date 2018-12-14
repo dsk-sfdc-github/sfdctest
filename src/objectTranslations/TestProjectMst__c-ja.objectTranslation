@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>テストプロジェクト</value>
+    </caseValues>
+    <fields>
+        <label><!-- 終了日付 --></label>
+        <name>EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 外部キーテスト --></label>
+        <name>InitialKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- 責任者 --></label>
+        <name>Manager__c</name>
+        <relationshipLabel><!-- テストプロジェクト --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 開始日付 --></label>
+        <name>StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 進捗状況 --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>終了済</masterLabel>
+            <translation><!-- 終了済 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>進行中</masterLabel>
+            <translation><!-- 進行中 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>開始前</masterLabel>
+            <translation><!-- 開始前 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- 最大255文字です。 --></help>
+        <label><!-- テストプロジェクト名 --></label>
+        <name>TestProjectName__c</name>
+    </fields>
+    <fields>
+        <label><!-- qertetr --></label>
+        <name>qertetr__c</name>
+    </fields>
+    <layouts>
+        <layout>TestProjectPage</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

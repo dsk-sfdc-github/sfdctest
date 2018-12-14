@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>アンケート</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- アンケートにご協力ください --></label>
+        <name>Enquete</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- プロフィール入力 --></label>
+        <name>Profile</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- S1_1_Test --></label>
+        <name>S1_1_Test</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- 挙式のご希望について --></label>
+        <name>WeddingPlan</name>
+    </fieldSets>
+    <fields>
+        <label><!-- 会社 --></label>
+        <name>Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- 名 --></label>
+        <name>FirstName__c</name>
+    </fields>
+    <fields>
+        <help><!-- 複数選択可能 --></help>
+        <label><!-- 重視ポイント --></label>
+        <name>ImportancePoint__c</name>
+        <picklistValues>
+            <masterLabel>10：付帯設備</masterLabel>
+            <translation><!-- 10：付帯設備 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11：チャペル</masterLabel>
+            <translation><!-- 11：チャペル --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12：神殿</masterLabel>
+            <translation><!-- 12：神殿 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13：日取り</masterLabel>
+            <translation><!-- 13：日取り --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14：演出</masterLabel>
+            <translation><!-- 14：演出 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15：その他</masterLabel>
+            <translation><!-- 15：その他 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1：料金予算</masterLabel>
+            <translation><!-- 1：料金予算 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2：場所</masterLabel>
+            <translation><!-- 2：場所 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3：交通の便</masterLabel>
+            <translation><!-- 3：交通の便 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4：接客態度応対</masterLabel>
+            <translation><!-- 4：接客態度応対 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5：料理</masterLabel>
+            <translation><!-- 5：料理 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6：披露宴会場</masterLabel>
+            <translation><!-- 6：披露宴会場 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7：格式</masterLabel>
+            <translation><!-- 7：格式 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8：知名度</masterLabel>
+            <translation><!-- 8：知名度 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9：ロビー外観</masterLabel>
+            <translation><!-- 9：ロビー外観 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- 全角５０文字 --></help>
+        <label><!-- 姓 --></label>
+        <name>LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- 知ったきっかけ --></label>
+        <name>Media__c</name>
+        <picklistValues>
+            <masterLabel>10：会員</masterLabel>
+            <translation><!-- 10：会員 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11：紹介</masterLabel>
+            <translation><!-- 11：紹介 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12：列席経験</masterLabel>
+            <translation><!-- 12：列席経験 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13：映画館ＣＭ</masterLabel>
+            <translation><!-- 13：映画館ＣＭ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14：DM</masterLabel>
+            <translation><!-- 14：DM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15：折り込みチラシ</masterLabel>
+            <translation><!-- 15：折り込みチラシ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16：ゼクシィアウトレット</masterLabel>
+            <translation><!-- 16：ゼクシィアウトレット --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17：家族のすすめ</masterLabel>
+            <translation><!-- 17：家族のすすめ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18：紹介・クチコミ</masterLabel>
+            <translation><!-- 18：紹介・クチコミ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19：フリーペーパー</masterLabel>
+            <translation><!-- 19：フリーペーパー --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1：ゼクシィ</masterLabel>
+            <translation><!-- 1：ゼクシィ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20：TVCM</masterLabel>
+            <translation><!-- 20：TVCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21：ラジオCM</masterLabel>
+            <translation><!-- 21：ラジオCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22：設置広告</masterLabel>
+            <translation><!-- 22：設置広告 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23：屋外広告</masterLabel>
+            <translation><!-- 23：屋外広告 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24：交通広告</masterLabel>
+            <translation><!-- 24：交通広告 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25：通りがかり</masterLabel>
+            <translation><!-- 25：通りがかり --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26：楽天ウエディング</masterLabel>
+            <translation><!-- 26：楽天ウエディング --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2：ゼクシィネット</masterLabel>
+            <translation><!-- 2：ゼクシィネット --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3：ゼクシィなび</masterLabel>
+            <translation><!-- 3：ゼクシィなび --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4：すぐ婚</masterLabel>
+            <translation><!-- 4：すぐ婚 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5：自社ＨＰ</masterLabel>
+            <translation><!-- 5：自社ＨＰ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6：みんなのＷ</masterLabel>
+            <translation><!-- 6：みんなのＷ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7：Ｗパーク</masterLabel>
+            <translation><!-- 7：Ｗパーク --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8：結婚チャオ</masterLabel>
+            <translation><!-- 8：結婚チャオ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9：チャオネット</masterLabel>
+            <translation><!-- 9：チャオネット --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- その他ご要望 --></label>
+        <name>OtherDemand__c</name>
+    </fields>
+    <fields>
+        <label><!-- 見学件数 --></label>
+        <name>PreviewCount__c</name>
+        <picklistValues>
+            <masterLabel>1：１件目</masterLabel>
+            <translation><!-- 1：１件目 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2：２件目</masterLabel>
+            <translation><!-- 2：２件目 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3：３件目</masterLabel>
+            <translation><!-- 3：３件目 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4：４件目</masterLabel>
+            <translation><!-- 4：４件目 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5：５件目</masterLabel>
+            <translation><!-- 5：５件目 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6：６件目以上</masterLabel>
+            <translation><!-- 6：６件目以上 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 性別 --></label>
+        <name>Sex__c</name>
+        <picklistValues>
+            <masterLabel>女性</masterLabel>
+            <translation><!-- 女性 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>男性</masterLabel>
+            <translation><!-- 男性 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 電話番号 --></label>
+        <name>Tel__c</name>
+    </fields>
+    <fields>
+        <label><!-- 挙式予定日 --></label>
+        <name>WeddingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 希望挙式スタイル --></label>
+        <name>WeddingStyle__c</name>
+        <picklistValues>
+            <masterLabel>1：チャペル式</masterLabel>
+            <translation><!-- 1：チャペル式 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2：神殿式</masterLabel>
+            <translation><!-- 2：神殿式 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3：人前式</masterLabel>
+            <translation><!-- 3：人前式 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4：外式</masterLabel>
+            <translation><!-- 4：外式 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5：なし</masterLabel>
+            <translation><!-- 5：なし --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6：その他</masterLabel>
+            <translation><!-- 6：その他 --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

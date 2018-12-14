@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>カリキュラム</value>
+    </caseValues>
+    <fields>
+        <label><!-- 制御する項目 --></label>
+        <name>Main_classification__c</name>
+        <picklistValues>
+            <masterLabel>あ</masterLabel>
+            <translation><!-- あ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>い</masterLabel>
+            <translation><!-- い --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>う</masterLabel>
+            <translation><!-- う --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>え</masterLabel>
+            <translation><!-- え --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>お</masterLabel>
+            <translation><!-- お --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 連動する項目 --></label>
+        <name>test__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E</masterLabel>
+            <translation><!-- E --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

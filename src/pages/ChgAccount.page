@@ -1,0 +1,3 @@
+<apex:page sidebar="true" showHeader="true" id="page" standardController="Contact" extensions="ChgAccountController" action="{!initAction}">
+	<apex:detail showChatter="true" relatedListHover="true"/>
+</apex:page>

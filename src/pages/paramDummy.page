@@ -1,0 +1,23 @@
+<apex:page sidebar="false" showHeader="false" docType="html-5.0" controller="paramDummy">
+    <head>
+        <!-- <title>タスク一括編集</title> --> <!-- iframeにて表示されるため、タイトルは親フレームにて定義 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN" />
+    </head>
+    <body onLoad="initPage()">
+        <input type="text" value="{!ids}" />
+    </body>
+    <script type="text/javascript">
+        var ids = "{!ids}";
+        if (ids.length) {
+            var idsStr = ids;
+            var win = window.showModalDialog("{!$Resource.IdPassMain}",idsStr,"top=9999px,left=9999px");
+            //var win = window.showModalDialog("https://na7.salesforce.com/apexpages/setup/viewStaticResource.apexp?id=081A0000000ITAq",idsStr,"top=9999px,left=9999px");
+            window.close();
+        } else {
+            alert('Select one or more Contacts');
+        }
+    </script>
+</apex:page>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 通貨桁テスト --></label>
+        <name>AmountTest__c</name>
+    </fields>
+    <fields>
+        <label><!-- BCNフラグ --></label>
+        <name>BCNFlg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Priority --></label>
+        <name>CustomerPriority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 中部自動車確認用２ --></label>
+        <name>CyubuCheck2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 中部自動車確認用 --></label>
+        <name>CyubuCheck__c</name>
+    </fields>
+    <fields>
+        <label><!-- 日時テスト --></label>
+        <name>DatetimeTest__c</name>
+    </fields>
+    <fields>
+        <label><!-- トリガ更新項目２ --></label>
+        <name>Field10__c</name>
+    </fields>
+    <fields>
+        <label><!-- 入力規則停止フラグ --></label>
+        <name>Field11__c</name>
+    </fields>
+    <fields>
+        <label><!-- 日程変更理由 --></label>
+        <name>Field12__c</name>
+        <picklistValues>
+            <masterLabel>理由A</masterLabel>
+            <translation><!-- 理由A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>理由B</masterLabel>
+            <translation><!-- 理由B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>理由C</masterLabel>
+            <translation><!-- 理由C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 作業内容 --></label>
+        <name>Field13__c</name>
+        <picklistValues>
+            <masterLabel>作業A</masterLabel>
+            <translation><!-- 作業A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>作業B</masterLabel>
+            <translation><!-- 作業B --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ささ --></label>
+        <name>Field14__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field5 --></label>
+        <name>Field5__c</name>
+        <picklistValues>
+            <masterLabel>毎月10日締</masterLabel>
+            <translation><!-- 毎月10日締 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>毎月15日締</masterLabel>
+            <translation><!-- 毎月15日締 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>毎月20日締</masterLabel>
+            <translation><!-- 毎月20日締 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>毎月25日締</masterLabel>
+            <translation><!-- 毎月25日締 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>毎月末日締</masterLabel>
+            <translation><!-- 毎月末日締 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- テスト --></label>
+        <name>Field6__c</name>
+    </fields>
+    <fields>
+        <label><!-- 自動更新項目１ --></label>
+        <name>Field7__c</name>
+    </fields>
+    <fields>
+        <label><!-- 自動更新項目２ --></label>
+        <name>Field8__c</name>
+    </fields>
+    <fields>
+        <label><!-- トリガ更新項目 --></label>
+        <name>Field9__c</name>
+    </fields>
+    <fields>
+        <label><!-- 今年経過日数 --></label>
+        <name>Keika__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Locations --></label>
+        <name>NumberofLocations__c</name>
+    </fields>
+    <fields>
+        <label><!-- QRコード --></label>
+        <name>QR__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Expiration Date --></label>
+        <name>SLAExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Serial Number --></label>
+        <name>SLASerialNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA --></label>
+        <name>SLA__c</name>
+        <picklistValues>
+            <masterLabel>Bronze</masterLabel>
+            <translation><!-- Bronze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold</masterLabel>
+            <translation><!-- Gold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum</masterLabel>
+            <translation><!-- Platinum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silver</masterLabel>
+            <translation><!-- Silver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Upsell Opportunity --></label>
+        <name>UpsellOpportunity__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 制御下 --></label>
+        <name>seigyoBase__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E</masterLabel>
+            <translation><!-- E --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 制御先 --></label>
+        <name>seigyosaki__c</name>
+        <picklistValues>
+            <masterLabel>１</masterLabel>
+            <translation><!-- １ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>２</masterLabel>
+            <translation><!-- ２ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>３</masterLabel>
+            <translation><!-- ３ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>４</masterLabel>
+            <translation><!-- ４ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>５</masterLabel>
+            <translation><!-- ５ --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 指定締め --></label>
+        <name>targetDate__c</name>
+    </fields>
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション --></label>
+            <section>新規セクション</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション2 --></label>
+            <section>新規セクション2</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション3 --></label>
+            <section>新規セクション3</section>
+        </sections>
+        <sections>
+            <label><!-- 非表示テスト --></label>
+            <section>非表示テスト</section>
+        </sections>
+        <sections>
+            <label><!-- 非表示テストです --></label>
+            <section>非表示テストです</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ApexTest</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 動的PL --></label>
+            <section>動的PL</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション --></label>
+            <section>新規セクション</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション2 --></label>
+            <section>新規セクション2</section>
+        </sections>
+        <sections>
+            <label><!-- 新規セクション3 --></label>
+            <section>新規セクション3</section>
+        </sections>
+        <sections>
+            <label><!-- 非表示テスト --></label>
+            <section>非表示テスト</section>
+        </sections>
+        <sections>
+            <label><!-- 非表示テストです --></label>
+            <section>非表示テストです</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- TSSA --></label>
+        <name>TSSA</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- TestRT --></label>
+        <name>TestRT</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- TestRT2 --></label>
+        <name>TestRT2</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- １２３４５６７８９０ --></errorMessage>
+        <name>AccountErrMsg</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 使用できない文字が含まれています --></errorMessage>
+        <name>FobbidenCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- 返却キット送付依頼が行われておりません。
+「処理依頼内容」へ返却キット送付依頼項目を選択して下さい。 --></errorMessage>
+        <name>RegistErr</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- ダブルクオーテーションはダメ --></errorMessage>
+        <name>test</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Billing --></label>
+        <name>Billing</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CustomLink1 --></label>
+        <name>CustomLink1</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CustomLink2 --></label>
+        <name>CustomLink2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Author_Info --></label>
+        <name>sf4twitter__Get_Author_Info</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Author_Info_Massive --></label>
+        <name>sf4twitter__Get_Author_Info_Massive</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Klout_Score --></label>
+        <name>sf4twitter__Get_Klout_Score</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Klout_Score_Massive --></label>
+        <name>sf4twitter__Get_Klout_Score_Massive</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Twitter_Username --></label>
+        <name>sf4twitter__Get_Twitter_Username</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,568 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0" standardController="Contact">
+	<head>
+		<meta charset="utf-8" />
+		<title>Template &middot; Bootstrap</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN" />
+
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"></apex:stylesheet>
+		<apex:includeScript value="{!$Resource.jQuery}" />
+		<!--<apex:includeScript value="{!$Resource.bootstrap_tab_js}" />-->
+		<apex:includeScript value="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.min.js')}"></apex:includeScript>
+
+	</head>
+
+	<body>
+		<div class="well well-large" id="divTopArea" style='margin: 5px; background-color: #FFFFFF; border-width: 3px; border-color: #FFA500;'>
+			<div class="container">
+				<div class="row">
+        			<div class="span12">
+        				<!--<form class="form-search" style="margin-bottom:0px;" id="TopAreaForm" method="post">-->
+							<div class="row">
+								<div class="span3">
+									<h5 style="margin:0px;">
+										名前
+									</h5>
+									<!-- <div style="margin:5px; margin-left: 15px !important;"> -->
+										<!-- <apex:outputLabel > -->
+											<a class="pull-left" data-toggle="modal" href="#myModal" >
+												<div style="margin:5px; margin-left: 15px !important;">
+													富士　太郎（フジ　タロウ）
+												</div>
+											</a>
+										<!-- </apex:outputLabel> -->
+									<!-- </div> -->
+									<br/>
+									<hr style='margin-top: 2px; margin-top: 10px; margin-bottom: 4px;' />
+								</div>
+								<div class="span3">
+									<h5 style="margin:0px;">
+										受付番号
+									</h5>
+									<div style="margin:5px; margin-left: 15px !important;">
+										<apex:outputLabel id="accNo">0154125478</apex:outputLabel>
+									</div>
+									<hr style='margin-top: 2px; margin-bottom: 4px;' />
+								</div>
+								<div class="span3">
+									<h5 style="margin:0px;">
+										お客様ID
+									</h5>
+									<div style="margin:5px; margin-left: 15px !important;">
+										<apex:outputLabel id="accID">5485412678</apex:outputLabel>
+									</div>
+									<hr style='margin-top: 2px; margin-bottom: 4px;' />
+								</div>
+								<div class="span3">
+									<h5 style="margin:0px;">
+										受付状態
+									</h5>
+									<div style="margin:5px; margin-left: 15px !important;">
+										<apex:outputLabel id="recSts">サービス中</apex:outputLabel>
+									</div>
+									<hr style='margin-top: 2px; margin-bottom: 4px;' />
+								</div>
+							</div>
+							<div class="row">
+								<div class="span3">
+									<h5 style="margin:0px;">
+										お客様ステータス
+									</h5>
+									<div style="margin:5px; margin-left: 15px !important;">
+										<apex:outputLabel id="accSts">【様々なマークを表示】</apex:outputLabel>
+									</div>
+									<hr style='margin-top: 2px; margin-bottom: 4px;' />
+								</div>
+								<div class="span3">
+									<h5 style="margin:0px;">
+										メニュー
+									</h5>
+									<div style="margin:5px; margin-left: 15px !important;">
+										<apex:outputLabel id="menu">ホーム３００・セレクト（タイプC）</apex:outputLabel>
+									</div>
+									<hr style='margin-top: 2px; margin-bottom: 4px;' />
+								</div>
+								<div class="span3">
+									<h5 style="margin:0px;">
+										回線状態
+									</h5>
+									<div style="margin:5px; margin-left: 15px !important;">
+										<apex:outputLabel id="lineSts">サービス中</apex:outputLabel>
+									</div>
+									<hr style='margin-top: 2px; margin-bottom: 4px;' />
+								</div>
+								<div class="span3">
+									<h5 style="margin:0px;">
+										電話番号
+									</h5>
+									<div style="margin:5px; margin-left: 15px !important;">
+										<apex:outputLabel id="tell">052-740-8011</apex:outputLabel>
+									</div>
+									<hr style='margin-top: 2px; margin-bottom: 4px;' />
+								</div>
+							</div>
+						<!--</form>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="well well-large" id="divUnderArea" style='margin: 5px; background-color: #FFFFFF; border-width: 3px; border-color: #FFA500; padding: 0px;'>
+			<div class="container" style='width: 100%;'>
+				<!--<div class="row">-->
+					<!--<div class="span12" style='width: 98%;'>-->
+						<!--<div class="container contop" style='width: 100%;'>-->
+							<div class="tabbable tabs-left" style='margin: 0px;'>
+
+								<ul class="nav nav-tabs" id='leftMenuTab'>
+									<li class="active">
+										<a href="#home" data-toggle="tab" style='height: 40px;'><i class="icon-user"></i>&nbsp;基本情報</a>
+									</li>
+									<li class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#tab" style='height: 40px;'>
+											<i class="icon-file"></i>&nbsp;サービス
+											<b class="caret"></b>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a href="#tab1_1" data-toggle="tab" style='height: 40px;'><i class="icon-off"></i>&nbsp;光TV</a></li>
+											<li><a href="#tab1_2" data-toggle="tab" style='height: 40px;'><i class="icon-headphones"></i>&nbsp;光電話</a></li>
+											<li><a href="#tab1_3" data-toggle="tab" style='height: 40px;'><i class="icon-gift"></i>&nbsp;Wサポート</a></li>
+											<li><a href="#tab1_4" data-toggle="tab" style='height: 40px;'><i class="icon-th-large"></i>&nbsp;シェアド情報</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<a href="#tab2" data-toggle="tab" style='height: 40px;'><i class="icon-asterisk"></i>&nbsp;工事進捗</a>
+									</li>
+									<li>
+										<a href="#tab3" data-toggle="tab" style='height: 40px;'><i class="icon-folder-open"></i>&nbsp;ケース作成</a>
+									</li>
+									<li>
+										<a href="#tab4" data-toggle="tab" style='height: 40px;'><i class="icon-cog"></i>&nbsp;タスク作成</a>
+									</li>
+								</ul>
+
+								<div id="my-tab-content" class="tab-content" style='margin-top: 5px; background-color: #FFFFFF; overflow-y: scroll; height: 500px;'>
+									<div class="tab-pane active" id="home">
+										<!--<div class="container">-->
+										<div class="span12">
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span5">
+													<h5 style="margin:0px;">
+														申込経路
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="appRoute">申込書（CTC）</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span5">
+													<h5 style="margin:0px;">
+														申込年月日
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="appDate">2006/10/03</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span2" />
+											</div>
+											<div class="row">
+												<div class="span5">
+													<h5 style="margin:0px;">
+														BO入力年月日
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="boInDate">2007/04/01</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span5">
+													<h5 style="margin:0px;">
+														最新申込区分
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="stepDis">ステップ割引申込</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span2" />
+											</div>
+											<div class="row">
+												<div class="span5">
+													<h5 style="margin:0px;">
+														本登録日
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="RegistDate">2006/12/21</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span5">
+													<h5 style="margin:0px;">
+														キャンセル日
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="cancelDate"></apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span2" />
+											</div>
+											<div class="row">
+												<div class="span5">
+													<h5 style="margin:0px;">
+														サービス開始日
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="svStDate">2006/12/21</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span5">
+													<h5 style="margin:0px;">
+														基本契約期間満了日
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="svEndDate">2008/12/20</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span2" />
+											</div>
+											<div class="row">
+												<div class="span5">
+													<h5 style="margin:0px;">
+														ご利用プロバイダ
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="provider">ODN</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span5">
+													<h5 style="margin:0px;">
+														プロバイダ契約区分
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="providerKbn">コース変更</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span2" />
+											</div>
+											<div class="row">
+												<div class="span10">
+													<h5 style="margin:0px;">
+														お客様要望欄
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="Demand" style="width: 80%;">
+															お客様要望が表示されます
+														</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span2" />
+											</div>
+											<div class="row">
+												<div class="span10">
+													<h5 style="margin:0px;">
+														備考
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="Remarks" style="width: 80%;">
+															備考が表示されます
+														</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span2" />
+											</div>
+										<!--</div>-->
+									</div>
+									</div>
+									<div class="tab-pane" id="tab1">
+										<p>tab2</p>
+									</div>
+									<div class="tab-pane" id="tab1_1">
+										<p>光TV情報を表示</p>
+									</div>
+									<div class="tab-pane" id="tab1_2">
+										<p>光電話情報を表示</p>
+									</div>
+									<div class="tab-pane" id="tab1_3">
+										<p>Wサポート情報を表示</p>
+									</div>
+									<div class="tab-pane" id="tab1_4">
+										<p>シェアド情報を表示</p>
+									</div>
+									<div class="tab-pane" id="tab2">
+										<p>工事進捗情報を表示</p>
+									</div>
+									<div class="tab-pane" id="tab3">
+										<form class="form-search" style="margin-bottom:0px;" id="TabAreaCreateCase" method="post">
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span2">
+													<h5 style="margin:0px;">
+														カテゴリ小検索
+													</h5>
+													<div class="controls">
+														<li>
+															<label class="radio inline">
+																<input type="radio" name='inlineRadio' id="inlineRadio1" value="option1" checked='checked'> 入力</input>
+															</label>
+														</li>
+														<li>
+															<label class="radio inline">
+																<input type="radio" name='inlineRadio' id="inlineRadio2" value="option2"> 選択</input>
+															</label>
+														</li>
+													</div>
+												</div>
+												<div class="span9" style='margin-top: 30px;'>
+													<div class="controls">
+														<input type='text' class="input-large focused" id="focusedInput" value="" style='width: 350px;'></input>
+														<select class='span3' id='focusedSelect'>
+															<option>--なし--</option>
+															<option>エリアチェック</option>
+															<option>マンション導入照会</option>
+															<option>エリア拡大希望</option>
+															<option>一般顧客</option>
+															<option>管理会社・オーナー</option>
+															<option>代理店・取次店・量販店</option>
+															<option>サービス全般</option>
+															<option>申込方法全般</option>
+															<option>資料請求</option>
+															<option>etc...</option>
+														</select>
+														<button type='button' class='btn btn-primary' onclick="alert('大・中・小カテゴリがセットされます。')">反映する</button>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="span12">
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span2">
+													<h5 style="margin:0px;">
+														テンプレート選択
+													</h5>
+												</div>
+											</div>
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span12">
+													<h5 style="margin:0px;">
+														カテゴリ大
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<select class='span3'>
+															<option>カテゴリ大１</option>
+															<option>カテゴリ大２</option>
+															<option>カテゴリ大３</option>
+															<option>カテゴリ大４</option>
+															<option>カテゴリ大５</option>
+														</select>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span12">
+													<h5 style="margin:0px;">
+														カテゴリ中
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<select class='span3'>
+															<option>カテゴリ中１</option>
+															<option>カテゴリ中２</option>
+															<option>カテゴリ中３</option>
+															<option>カテゴリ中４</option>
+															<option>カテゴリ中５</option>
+														</select>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span12">
+													<h5 style="margin:0px;">
+														カテゴリ小
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<select class='span3'>
+															<option>カテゴリ小１</option>
+															<option>カテゴリ小２</option>
+															<option>カテゴリ小３</option>
+															<option>カテゴリ小４</option>
+															<option>カテゴリ小５</option>
+														</select>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row">
+												<div class="span12">
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row">
+												<div class="span12" align="center">
+													<button type='button' id='caseNext' class='btn btn-success' style='width:20%;'>OK</button>&nbsp;
+													<button type='button' class='btn btn-info' style='width:20%;'>ソリューション選択</button>&nbsp;
+													<button type='button' class='btn' style='width:20%;'>テンプレート不要</button>
+												</div>
+											</div>
+										</form>
+										<form class="form-search" style="margin-bottom:0px;" id="TabAreaCreateCase2" method="post">
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span12">
+													<h5 style="margin:0px;">
+														選択カテゴリ
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<apex:outputLabel id="selectedCategory">【サービス案内・手続き（申込前）】－【入電者・量販店・代理店関連】－【その他】</apex:outputLabel>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span12">
+													<h5 style="margin:0px;">
+														件名
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<div class="controls">
+														<input type='text' class="input-large focused" id="caseName" value="" style='width: 400px;'></input>
+													</div>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span6">
+													<h5 style="margin:0px;">
+														優先度
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<select class='span3'>
+															<option>高</option>
+															<option>中</option>
+															<option>低</option>
+														</select>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+												<div class="span6">
+													<h5 style="margin:0px;">
+														入電時参照
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<label class="checkbox inline">
+															<input type="checkbox" name='inlineCheckbox' id="inlineCheckbox" value="option2"> </input>
+														</label>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row" style='margin-top: 10px;'>
+												<div class="span12">
+													<h5 style="margin:0px;">
+														問い合わせ内容
+													</h5>
+													<div style="margin:5px; margin-left: 15px !important;">
+														<div class="controls">
+															<textarea class="input-large focused" id="caseDetailInput" style='width: 80%;' rows='7'></textarea>
+														</div>
+													</div>
+													<hr style='margin-top: 2px; margin-bottom: 4px;' />
+												</div>
+											</div>
+											<div class="row">
+												<div class="span12" align="center">
+													<button type='button' id='caseRegist' class='btn btn-success' style='width:40%;'>登録</button>&nbsp;
+													<button type='button' id='caseTempBack' class='btn' style='width:40%;'>戻る</button>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="tab-pane" id="tab4">
+										<apex:form >
+											<apex:iframe src="/500N0000001JGJp?isdtp=vw" scrolling="true" id="frame2" width="100%" height="450px;"/>
+										</apex:form>
+									</div>
+
+								</div>
+							</div>
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+		</div>
+
+		<div class="modal hide fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3></h3>
+			</div>
+			<div class="modal-body">
+    				<!--
+    				<apex:form >
+						<apex:detail subject="{!contact.Id}" relatedList="false" inlineEdit="true" />
+					</apex:form>
+					-->
+					申込顧客の詳細画面が表示される想定です。
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">閉じる</a>
+			</div>
+		</div>
+
+	</body>
+
+	<script type='text/javascript'>
+
+		var JJ = jQuery.noConflict();
+
+		JJ('#TabAreaCreateCase2').hide();
+
+		JJ('#caseNext').click(function (){
+    		JJ('#TabAreaCreateCase2').show();
+    		JJ('#TabAreaCreateCase').hide();
+  		})
+
+  		JJ('#caseTempBack').click(function (){
+  			JJ('#TabAreaCreateCase').show();
+    		JJ('#TabAreaCreateCase2').hide();
+  		})
+
+  		//ケーステンプレート選択
+  		JJ('#focusedSelect').hide();
+
+		JJ('input[name="inlineRadio"]:radio' ).change( function() {
+			if (JJ('#inlineRadio1').is(':checked')) {
+				JJ('#focusedInput').show();
+				JJ('#focusedSelect').hide();
+			} else {
+				JJ('#focusedInput').hide();
+				JJ('#focusedSelect').show();
+			}
+		});
+
+		JJ('.myTab').click(function (){
+    		jQuery('.myTab a:last').tab('show')
+  		})
+
+		JJ('#myModal').click(function (){
+			//JJ('#parentModal',parent.document).modal('show');
+		})
+	</script>
+
+</apex:page>

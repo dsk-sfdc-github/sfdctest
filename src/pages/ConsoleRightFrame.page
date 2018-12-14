@@ -1,0 +1,108 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0" >
+	<head>
+		<meta charset="utf-8" />
+		<title>Template &middot; Bootstrap</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"></apex:stylesheet>
+		<apex:includeScript value="{!$Resource.jQuery}" />
+		<!--<apex:includeScript value="{!$Resource.bootstrap_tab_js}" />-->
+		<apex:includeScript value="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.min.js')}"></apex:includeScript>
+
+	</head>
+
+	<body style='padding-left: 5px; padding-right: 5px;'>
+		<div class="container contop" style='width: 95%;'>
+			<div class="row">
+				<div class="span1" style='width: 95%;'>
+					<div class="well well-large" id="divTopArea" style='margin: 5px; background-color: rgb(255, 255, 255); border-width: 3px; border-color: rgb(255, 165, 0); padding: 0px;'>
+						<div class="container contop" style='width: 100%;'>
+							<div class="tabbable" style='margin: 0px;'>
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a href="#home" data-toggle="tab" style='width: 120px; height: 20px;'><i class="icon-calendar"></i>&nbsp;ケース／タスク</a>
+									</li>
+									<li>
+										<a href="#tab1" data-toggle="tab" style='width: 150px; height: 20px;'><i class="icon-comment"></i>&nbsp;対応内容</a>
+									</li>
+								</ul>
+								<div id="my-tab-content" class="tab-content" style='margin: 5px; background-color: #FFFFFF; overflow-y: scroll; height: 637px;'>
+									<div class="tab-pane active" id="home">
+										<h5 style="margin:5px;">
+											<font color="red">2013-05-05</font>
+										</h5>
+										<div style="margin:20px;">
+											ケース：&nbsp;<apex:outputLink >04837076</apex:outputLink>&nbsp;『接続設定（HG）...<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;ステータス：クローズ<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;入電時参照：【要】
+										</div>
+										<div style="margin:20px;">
+											ケース：&nbsp;<apex:outputLink >04836404</apex:outputLink>&nbsp;『【障】H終端L...<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;ステータス：クローズ
+										</div>
+										<div style="margin:20px;">
+											タスク：&nbsp;<apex:outputLink >T1305-7552032</apex:outputLink>&nbsp;『137入電...<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;状況：未着手<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;実行期限：2006-12-27
+										</div>
+
+										<h5 style="margin:5px;">
+											<font color="red">2013-04-17</font>
+										</h5>
+										<div style="margin:20px;">
+											タスク：&nbsp;<apex:outputLink >T1304-7471900</apex:outputLink>&nbsp;『137入電...<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;状況：未着手<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;実行期限：2006-12-27
+										</div>
+										<div style="margin:20px;">
+											タスク：&nbsp;<apex:outputLink >T1304-7474536</apex:outputLink>&nbsp;『他事業者...<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;状況：完了<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;実行期限：2013-04-17
+										</div>
+
+										<h5 style="margin:5px;">
+											<font color="red">2013-04-16</font>
+										</h5>
+										<div style="margin:20px;">
+											ケース：&nbsp;<apex:outputLink >04789532</apex:outputLink>&nbsp;『解約取消依頼』...<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;ステータス：クローズ
+										</div>
+										<div style="margin:20px;">
+											タスク：&nbsp;<apex:outputLink >T1304-7468719</apex:outputLink>&nbsp;『解約／撤...<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;状況：完了<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;実行期限：2013-04-17
+										</div>
+										<div style="margin:20px;">
+											タスク：&nbsp;<apex:outputLink >T1304-7468716</apex:outputLink>&nbsp;『他事業者...<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;状況：完了<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;実行期限：2013-04-16
+										</div>
+									</div>
+									<div class="tab-pane" id="tab1">
+										<p>tab2</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<script type='text/javascript'>
+		var JJ = jQuery.noConflict();
+
+		JJ('.myTab').click(function (){
+    		jQuery('.myTab a:last').tab('show')
+  		})
+
+	</script>
+
+</apex:page>

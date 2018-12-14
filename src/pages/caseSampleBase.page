@@ -1,0 +1,22 @@
+<apex:page standardController="Account" showHeader="false">
+    <apex:form >
+    <div>
+        ここは親フレーム
+    </div>
+    
+    <input type='button' value='新規ウインドウ立ち上げ' onClick='openNewWindow();' />
+    <input type='button' value='既存ウインドウ立ち上げ' onClick='openEditWindow();' />
+    
+    <script>
+        var newParamID = null;
+        
+        function openNewWindow() {
+            var win = window.open('/001/e?isdtp=vw&saveURL=/apex/caseSampleClose');
+        }
+        
+        function openEditWindow() {
+            var win = window.open('/'+newParamID+'/e?isdtp=vw&saveURL=/apex/caseSampleClose');
+        }
+    </script>
+    </apex:form>
+</apex:page>

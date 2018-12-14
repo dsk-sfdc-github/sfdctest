@@ -1,0 +1,38 @@
+<apex:page id="Page" showHeader="false" renderAs="{!renderAsStr}" Controller="TestCreatePDF" standardStyleSheets="false" action="{!seikyuUp}">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="charset=UTF-8"/>
+        <style media="all">         
+            @page { size: A4; }
+            
+            div.datePicker
+            {
+                display: none;
+            }
+            
+            div.PreviewCenter
+            {
+                width: 750px;
+            } 
+        </style>
+    </head>
+    <apex:outputPanel layout="block" id="InfoViewPanel">
+        <apex:form id="InfoView" >
+            <apex:outputPanel layout="block" styleclass="PreviewCenter" style="font-size: 13px; margin: auto; font-family: Arial Unicode MS !important;">
+                固定文言
+                <apex:outputLabel value="{!outputName}"></apex:outputLabel>
+            </apex:outputPanel>
+        </apex:form>
+        <script type="text/javascript">
+            window.onload = function() {
+                if("{!renderAsStr}" == ""){
+                    alert("請求書の発行は失敗しました。再度検索画面から発行してください。");
+                    window.close();
+                    return false;
+                } else {
+                    window.opener.outMsg();
+                }
+            }
+        </script>
+    </apex:outputPanel>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:component controller="Component02Controller">
+<apex:attribute name="dtoData" description="required" assignTo="{!dto}" type="MainDTO" required="true"/>
+スケジュール管理のイメージ<br/>
+<apex:form >
+ケース項目１：<apex:inputText value="{!dto.strA}"/><br/>
+ケース項目２：<apex:inputText value="{!dto.strB}"/><br/>
+<apex:commandButton action="{!movePrevious}" value="戻る"/>
+</apex:form>
+</apex:component>

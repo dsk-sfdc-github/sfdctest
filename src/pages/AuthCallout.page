@@ -1,0 +1,5 @@
+<apex:page controller="AuthCallout">
+	<apex:form >
+		<apex:commandButton value="実行" action="{!basicAuthCallout}" />
+	</apex:form>
+</apex:page>

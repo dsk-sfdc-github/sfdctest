@@ -1,0 +1,5 @@
+<apex:page standardController="event">
+<apex:form >
+    <apex:inputField value="{!event.Subject}"/>
+</apex:form>
+</apex:page>

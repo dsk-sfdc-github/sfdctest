@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>行動テスト</value>
+    </caseValues>
+    <fields>
+        <label><!-- 取引先 --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- 行動テスト --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 既存取引内容 --></label>
+        <name>ExistTrade__c</name>
+    </fields>
+    <fields>
+        <label><!-- 打ち合わせ内容 --></label>
+        <name>Meeting__c</name>
+    </fields>
+    <fields>
+        <label><!-- 自社参加メンバー --></label>
+        <name>MyMember__c</name>
+    </fields>
+    <fields>
+        <label><!-- 新規取引時内容 --></label>
+        <name>NewTrade__c</name>
+    </fields>
+    <fields>
+        <label><!-- 相手先参加メンバー --></label>
+        <name>ToMember__c</name>
+    </fields>
+    <fields>
+        <label><!-- 相手先氏名 --></label>
+        <name>ToName__c</name>
+    </fields>
+    <fields>
+        <label><!-- 連絡先 --></label>
+        <name>ToTell__c</name>
+    </fields>
+    <fields>
+        <label><!-- 行動リスト --></label>
+        <name>TodoList__c</name>
+        <picklistValues>
+            <masterLabel>打ち合わせ</masterLabel>
+            <translation><!-- 打ち合わせ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>新規顧客</masterLabel>
+            <translation><!-- 新規顧客 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>既存顧客</masterLabel>
+            <translation><!-- 既存顧客 --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,25 @@
+<apex:page id="page" standardController="Task2__c" showHeader="false" sidebar="false">
+
+	<head>
+		<apex:includeScript value="{!$Resource.jQuery}" />
+	</head>
+
+    <apex:detail title="true" relatedList="false"/>
+
+    <script type="text/javascript">
+
+    	var JJ = jQuery.noConflict();
+
+    	//① HTMLから（class=pbSubHeader）要素を検索
+    	JJ(".pbSubheader").each(function(i, elem) {
+    		//② ①の子要素<h3>を検索し、text()を取得、カスタム表示ラベルの文言と一致する場合
+
+			//③ ②が非表示対象である場合、①の次要素next()を取得
+			//④ ③の要素をdisabledへ
+			JJ(elem).next().css("display", "none");
+			JJ(elem).css("display", "none");
+
+		});
+
+    </script>
+</apex:page>

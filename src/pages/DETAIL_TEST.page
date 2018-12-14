@@ -1,0 +1,99 @@
+<apex:page sidebar="false" showHeader="false" id="page" standardController="Task2__c" >
+
+
+    <head>
+        <apex:includeScript value="{!$Resource.jQuery}" />
+
+        <style type="text/css">
+
+            button.btn {
+                height: 25px;
+            }
+        </style>
+    </head>
+
+    <body>
+    <apex:form id="form">
+        <div style="height: 390px; overflow: auto;">
+            <apex:detail relatedList="false" title="true" subject="{!Task2__c.Id}"></apex:detail>
+        </div>
+
+        <div class="row" style="margin-top: 3px;">
+            <div style='white-space: nowrap; float: left; width: 25%;'>
+                
+            </div>
+            <div style='white-space: nowrap;  float: right; width: 75%;'>
+                
+                <apex:outputPanel rendered="{!$ObjectType.Task2__c.updateable}">
+
+                    <button type='button' class='btn' style='width: 85px; ' id='btnTaskChgOwner' onClick="fncTaskChgOwner();">所有者変更</button>
+
+                </apex:outputPanel>
+            </div>
+
+
+        </div>
+
+        <script type="text/javascript" >
+            var __sfdcSessionId = '{!GETSESSIONID()}';
+        </script>
+
+        <script src="../../soap/ajax/26.0/connection.js" type="text/javascript"></script>
+
+        <script type='text/javascript'>
+            
+            var paramRetURL = "&retURL=%2Fapex%2FDETAIL_TEST?id={!Task2__c.Id}";
+
+
+            
+
+            
+
+            function existRecord() {
+                //データが存在するかを確認する
+                var recArray = sforce.connection.query("select Id From Task2__c Where Id = '{!Task2__c.Id}'");
+                var record = recArray.getArray("records");
+
+                if (record.length) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            
+            
+            
+            
+            
+            function fncTaskChgOwner() {
+                //所有者変更処理
+                try {
+                    if (existRecord()) {
+                        //location.href = "/{!Task2__c.Id}/a?isdtp=vw" + paramRetURL;
+                        //location.href = "/{!Task2__c.Id}/a?isdtp=vw" + paramRetURL;
+                        //location.href = "/setup/ui/recordtypeselect.jsp?id={!Task2__c.Id}&isdtp=vw" + paramRetURL;
+                        location.href = "https://na7.salesforce.com/setup/ui/recordtypeselect.jsp?id={!Task2__c.Id}&retURL=%2F{!Task2__c.Id}";
+                    } else {
+                        alert("該当するデータが存在しません。\r\n再度、タブを開きなおして下さい。");
+                    }
+                } catch (e) {
+                    alert("aaa"+e);
+                }
+
+            }
+
+
+        </script>
+
+    </apex:form>
+
+    <!-- 追記文言セット -->
+    <form name="myForm" method="POST" action="" target="_self">
+        <input type="hidden" name="00N10000000U5lT" id="00N10000000U5lT" value=" " />
+        <input type="hidden" name="00N10000000U7Fs" id="00N10000000U7Fs" value="1" />
+    </form>
+
+    </body>
+
+</apex:page>

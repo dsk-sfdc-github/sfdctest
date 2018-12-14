@@ -1,0 +1,12 @@
+最近、あなたは {!Community_Name} でアクションを試行しました。
+        アクション: {!Action}
+
+        ブラウザ: {!Browser}
+        OS: {!Operating_System}
+        ユーザ名: {!User.Username}
+	
+        アカウントのセキュリティを確保するために、あなたの身元を確認させていただきます。{!Community_Name} に促されたら、次のコードを入力してください。
+        
+        確認コード: {!Verification_Code}
+        
+        Salesforce で {!Community_Name} を試みていない場合や、このブラウザまたはオペレーティングシステムに見覚えがない場合は、{!Community_Name} 管理者にご連絡ください。

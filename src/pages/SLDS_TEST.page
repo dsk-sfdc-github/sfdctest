@@ -1,0 +1,16 @@
+<apex:page >
+<head>
+<apex:stylesheet value="{$Resource.SLDS0120}" />
+<style type="text/css">
+</style>
+</head>
+<apex:form >
+<div class="slds-form-element">
+  <label class="slds-checkbox" for="checkboxSample1">
+    <input name="checkbox" type="checkbox" id="checkboxSample1" />
+    <span class="slds-checkbox--faux"></span>
+    <span class="slds-form-element__label">Checkbox Label</span>
+  </label>
+</div>
+</apex:form>
+</apex:page>

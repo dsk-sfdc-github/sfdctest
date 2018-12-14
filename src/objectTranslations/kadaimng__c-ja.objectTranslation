@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>課題管理</value>
+    </caseValues>
+    <fields>
+        <label><!-- 完了日 --></label>
+        <name>completedate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 内容 --></label>
+        <name>content__c</name>
+    </fields>
+    <fields>
+        <label><!-- 期限 --></label>
+        <name>deadline__c</name>
+    </fields>
+    <fields>
+        <label><!-- 重要度 --></label>
+        <name>importance__c</name>
+        <picklistValues>
+            <masterLabel>中</masterLabel>
+            <translation><!-- 中 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>低</masterLabel>
+            <translation><!-- 低 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>高</masterLabel>
+            <translation><!-- 高 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 区分 --></label>
+        <name>kbn__c</name>
+        <picklistValues>
+            <masterLabel>仕様変更</masterLabel>
+            <translation><!-- 仕様変更 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>要望</masterLabel>
+            <translation><!-- 要望 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>課題</masterLabel>
+            <translation><!-- 課題 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 関連プロジェクト --></label>
+        <name>pjname__c</name>
+        <relationshipLabel><!-- 課題管理 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 優先度 --></label>
+        <name>priority__c</name>
+        <picklistValues>
+            <masterLabel>中</masterLabel>
+            <translation><!-- 中 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>低</masterLabel>
+            <translation><!-- 低 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>高</masterLabel>
+            <translation><!-- 高 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 方針／結果 --></label>
+        <name>result__c</name>
+    </fields>
+    <fields>
+        <label><!-- 発生日 --></label>
+        <name>start_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ステータス --></label>
+        <name>status__c</name>
+        <picklistValues>
+            <masterLabel>保留</masterLabel>
+            <translation><!-- 保留 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>完了</masterLabel>
+            <translation><!-- 完了 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>対応なし</masterLabel>
+            <translation><!-- 対応なし --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>対応中</masterLabel>
+            <translation><!-- 対応中 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>未対応</masterLabel>
+            <translation><!-- 未対応 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 担当者 --></label>
+        <name>tanto__c</name>
+        <relationshipLabel><!-- 課題管理 --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>課題管理レイアウト</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+        <sections>
+            <label><!-- 結果情報 --></label>
+            <section>結果情報</section>
+        </sections>
+        <sections>
+            <label><!-- 詳細情報 --></label>
+            <section>詳細情報</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

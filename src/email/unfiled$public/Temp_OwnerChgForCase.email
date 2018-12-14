@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="{!relatedTo.CaseNumber}の所有者があなたに割り当てられました" recipientType="User" relatedToType="Case">
+<messaging:plainTextEmailBody >
+ケース {!relatedTo.CaseNumber} があなたに割り当てられました。詳細を参照するには、下記のリンクをクリックしてください。
+
+https://na7.slesforce.com/{!relatedTo.Id}
+パートナーユーザはこちらへ
+https://ctc-commufa.force.com/Community/{!relatedTo.Id} 
+
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

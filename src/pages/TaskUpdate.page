@@ -1,0 +1,7 @@
+<apex:page controller="TaskUpdate">
+
+	<apex:form >
+		<apex:commandButton value="実行" action="{!dmlTask}"></apex:commandButton>
+	</apex:form>
+
+</apex:page>

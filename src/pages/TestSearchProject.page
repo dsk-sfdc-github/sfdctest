@@ -1,0 +1,40 @@
+<apex:page controller="TestSearchProjectController"  tabStyle="TestSearchProjectTab__tab">
+<script src="text/javascript">
+</script>
+<apex:form >
+    <apex:sectionHeader title="プロジェクト検索一覧" subtitle="プロジェクトの検索一覧を表示します" />
+    <apex:outputpanel >
+        <apex:pageBlock title="プロジェクト一覧">
+            <apex:pageBlockSection title="検索条件入力" >
+                <h>プロジェクト名</h><apex:inputText value="{!searchProjectName}"/>
+                <apex:commandButton action="{!searchProject}" value="検索" />
+                <apex:commandButton action="{!regist}" value="新規作成" />
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!listProject}" var="prj" rendered="{!gridRenderedFlg}">
+                <apex:facet name="caption">プロジェクト一覧</apex:facet>
+                <apex:facet name="header">プロジェクト一覧ヘッダ部</apex:facet>
+                <apex:facet name="footer">プロジェクト一覧フッタ部</apex:facet>
+                <apex:column style="width:120px;">
+                    <apex:facet name="header">プロジェクト名</apex:facet>
+                    <apex:outputLink value="/apex/TestEditProject" >
+                    	<apex:param name="hiddenId" value="{!prj.Name}" />
+                    	<apex:outputField value="{!prj.TestProjectName__c}" />
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column style="width:120px;">
+                    <apex:facet name="header">期間</apex:facet>
+                    <apex:outputField value="{!prj.StartDate__c}" />～<apex:outputField value="{!prj.EndDate__c}" />
+                </apex:column>
+                <apex:column style="width:120px;">
+                    <apex:facet name="header">進捗状況</apex:facet>
+                    <apex:outputField value="{!prj.Status__c}" />
+                </apex:column>
+                <apex:column style="width:120px;">
+                    <apex:facet name="header">責任者</apex:facet>
+                    <apex:outputField value="{!prj.Manager__c}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:outputpanel>
+</apex:form>
+</apex:page>

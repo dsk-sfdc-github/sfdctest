@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>商談検索用クライテリア</value>
+    </caseValues>
+    <fields>
+        <label><!-- 所有者 --></label>
+        <name>OpportunitiesOwner__c</name>
+        <picklistValues>
+            <masterLabel>すべての商談</masterLabel>
+            <translation><!-- すべての商談 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 終了日 --></label>
+        <name>endDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- 商談名 --></label>
+        <name>name__c</name>
+    </fields>
+    <fields>
+        <label><!-- 順序 --></label>
+        <name>sortOrder__c</name>
+        <picklistValues>
+            <masterLabel>昇順</masterLabel>
+            <translation><!-- 昇順 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>降順</masterLabel>
+            <translation><!-- 降順 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ソート --></label>
+        <name>sort__c</name>
+        <picklistValues>
+            <masterLabel>最終更新日</masterLabel>
+            <translation><!-- 最終更新日 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 開始日 --></label>
+        <name>startDate__c</name>
+    </fields>
+    <sharingReasons>
+        <label><!-- テスト --></label>
+        <name>SharingReason1</name>
+    </sharingReasons>
+</CustomObjectTranslation>

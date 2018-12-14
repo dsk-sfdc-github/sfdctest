@@ -1,0 +1,11 @@
+<apex:component controller="Component01Controller">
+<apex:attribute name="dtoData" description="required" assignTo="{!dto}" type="MainDTO" required="true"/>
+<body>
+コンソール画面のイメージ<br/>
+<apex:form >
+ケース項目１：<apex:inputText value="{!dto.strA}"/><br/>
+ケース項目２：<apex:inputText value="{!dto.strB}"/><br/>
+<apex:commandButton action="{!moveNext}" value="進む"/>
+</apex:form>
+</body>
+</apex:component>

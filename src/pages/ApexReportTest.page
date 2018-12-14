@@ -1,0 +1,16 @@
+<apex:page renderAs="{!renderStr}" controller="testPDF">
+  
+  <script type="text/javascript">
+      //location.href = "https://na7.salesforce.com/00OA0000005m5eW";
+      //testAction();
+  </script>
+  
+  <apex:form >
+  <!--
+  <apex:actionFunction name="testAction" action="{!initPage}"/>
+  -->
+    <iframe src="https://na7.salesforce.com/00OA0000005m5eW" name="sample" width="200" height="150">
+    
+    </iframe>
+  </apex:form>
+</apex:page>

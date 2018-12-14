@@ -1,0 +1,35 @@
+<apex:page sidebar="false" showHeader="true" standardStylesheets="false" docType="html-5.0" id="page" standardController="Contact">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Template &middot; Bootstrap</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN" />
+
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"></apex:stylesheet>
+		<apex:stylesheet value="{!URLFOR($Resource.jQuery_UI_1_10_2, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"></apex:stylesheet>
+		<apex:includeScript value="{!$Resource.jQuery}" />
+		<!--<apex:includeScript value="{!$Resource.bootstrap_tab_js}" />-->
+		<apex:includeScript value="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.min.js')}"></apex:includeScript>
+
+	</head>
+
+	<apex:iframe src="/apex/ConsoleLeftFrame" scrolling="true" id="frame1" width="70%" height="750px;"/>
+	<!--<c:LeftConsol account="{!Account}" />-->
+	<apex:iframe src="/apex/ConsoleRightFrame" scrolling="true" id="frame2" width="30%" height="750px;"/>
+
+<!--
+	<script type='text/javascript'>
+		var JJ = jQuery.noConflict();
+
+		JJ('.myTab').click(function (){
+    		jQuery('.myTab a:last').tab('show')
+  		})
+	</script>
+-->
+
+</apex:page>

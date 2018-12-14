@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>挨拶</fullName>
+        <default>true</default>
+        <label>挨拶</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FAQ</fullName>
+        <default>false</default>
+        <label>FAQ</label>
+    </standardValue>
+    <standardValue>
+        <fullName>結語</fullName>
+        <default>false</default>
+        <label>結語</label>
+    </standardValue>
+</StandardValueSet>

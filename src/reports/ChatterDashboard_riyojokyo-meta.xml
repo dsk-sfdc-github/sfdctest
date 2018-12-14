@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>hamano@densan-s.co.jp</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>Chatterダッシュボード用レポート（利用状況確認）</name>
+</ReportFolder>
