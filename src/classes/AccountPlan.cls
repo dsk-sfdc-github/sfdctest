@@ -25,7 +25,7 @@ global class AccountPlan {
        acct.AccountNumber = String.valueOf(vPlan.planNumber);
        insert acct;
 
-       	System.debug('あいうえお');
+       	System.debug('かきくけこ');
          System.debug('あいうえおあああああ');
 
        vPlan.planId=acct.Id;
